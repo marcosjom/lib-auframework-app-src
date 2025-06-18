@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="lib-auframework-app-nucleo">
+      <UniqueIdentifier>{ea1a80d9-c30a-40bb-aaca-11188410bbf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\EscenasDebug">
+      <UniqueIdentifier>{87fc9df2-baa1-4a02-9859-95adfa2b4e6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\EscenasAdmin">
+      <UniqueIdentifier>{e73ade4a-c4b3-4d26-95bc-befb2d63c711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\EscenasTransiciones">
+      <UniqueIdentifier>{78a27c4e-4a89-48e7-8b0d-613c566ff952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores">
+      <UniqueIdentifier>{f845ebee-b3a0-4f7f-9a0b-57ee1d5c2a89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Store">
+      <UniqueIdentifier>{50337593-f4a4-4c62-9ad5-6c1dc95f6116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Notifications">
+      <UniqueIdentifier>{be4c7ed5-5092-4284-9d04-8ee9619574fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\GameKit">
+      <UniqueIdentifier>{2fdbfe22-2047-4409-ac3c-434ab5bdede9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\OSTools">
+      <UniqueIdentifier>{866a29ed-d2b3-4ac8-a297-a65e7271dd81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\ExternalGlues">
+      <UniqueIdentifier>{4a3fb0e0-fd65-48d3-b76b-384ec4752b10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\ExternalGlues\AppFileSystem">
+      <UniqueIdentifier>{6e839372-1100-46f3-a880-db4f2d173f9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\AVCapture">
+      <UniqueIdentifier>{9cda0f02-19d0-4ddd-87b7-32cfad1555eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Social">
+      <UniqueIdentifier>{2b29bce9-974b-40b8-beb9-4c2be9e1abe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Social\Facebook">
+      <UniqueIdentifier>{14fd1fb3-792a-44ed-9d31-34b95823f478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Social\Google">
+      <UniqueIdentifier>{07b9456c-a068-4d93-a0f4-d9025e5f1323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\OSSecure">
+      <UniqueIdentifier>{336a114e-1b90-4d64-8e37-8a6f9a1fead8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Telephony">
+      <UniqueIdentifier>{a71f47a3-557c-4d08-a754-6bd7ef2b98eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\PDFKit">
+      <UniqueIdentifier>{204f3a6e-0684-4bc7-9873-fbeeb71ee2c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Contacts">
+      <UniqueIdentifier>{c9f6637c-0faa-4458-b323-97c80c63cc63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\Gestores\Biometrics">
+      <UniqueIdentifier>{bfeddd41-ec64-4434-bb14-60749db81abc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\ExternalGlues\OSSecure">
+      <UniqueIdentifier>{02ef387c-a7e0-44f9-a84f-59b26d7de5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\ExternalGlues\PDFKit">
+      <UniqueIdentifier>{6aadfaba-7735-4cf1-8958-bc1840c69450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework-app-nucleo\ExternalGlues\OSTools">
+      <UniqueIdentifier>{fc8251eb-fcff-4f9f-b6d5-22bad24bb5a3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\AUApp.h">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppI.h">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppNucleo.h">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppNucleoEncabezado.h">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppNucleoPrecompilado.h">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppNucleoRegistro.h">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppSobrecargaOperadoresNew.h">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrGameKit.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\GameKit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrGameKit.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\GameKit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrNotifs.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrNotifs.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrOSTools.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrOSTools.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrStore.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrStore.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueWinFiles.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\AppFileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppEscenasResumenDebug.h">
+      <Filter>lib-auframework-app-nucleo\EscenasDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppEscena.h">
+      <Filter>lib-auframework-app-nucleo\EscenasAdmin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppEscenasAdmin.h">
+      <Filter>lib-auframework-app-nucleo\EscenasAdmin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppEscenasAdminSimple.h">
+      <Filter>lib-auframework-app-nucleo\EscenasAdmin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppTransicion.h">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppTransicionConCaptura.h">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppTransicionConColorSolido.h">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppTransicionConCortina.h">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppTransicionConFondo.h">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrAVCapture.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\AVCapture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrAVCapture.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\AVCapture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrFbLogin.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Facebook</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrFbLogin.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Facebook</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrGoogleLogin.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Google</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrGoogleLogin.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Google</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrOSSecure.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSSecure</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrOSSecure.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSSecure</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrOSTelephony.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Telephony</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrOSTelephony.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Telephony</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrContacts.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrContacts.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrBiometrics.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Biometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrBiometrics.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\Biometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMngrPdfKit.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\PDFKit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMngrPdfKit.h">
+      <Filter>lib-auframework-app-nucleo\Gestores\PDFKit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueWinSecure.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSSecure</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGluePdfium.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\PDFKit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueWinTools.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidAVCapture.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidBiometrics.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidContacts.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidFiles.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidJNI.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidKeyboard.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidNotifs.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidStore.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidTelephony.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidTools.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidSecure.h">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSSecure</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\cpp\AUApp.cpp">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppNucleoPrecompilado.cpp">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppNucleoRegistro.cpp">
+      <Filter>lib-auframework-app-nucleo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrGameKit.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\GameKit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrGameKit.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\GameKit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrNotifs.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrNotifs.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrOSTools.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrOSTools.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrStore.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrStore.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinFiles.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\AppFileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscenasResumenDebug.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasDebug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscena.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasAdmin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscenasAdmin.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasAdmin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscenasAdminSimple.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasAdmin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicion.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConCaptura.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConColorSolido.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConCortina.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConFondo.cpp">
+      <Filter>lib-auframework-app-nucleo\EscenasTransiciones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrAVCapture.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\AVCapture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrAVCapture.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\AVCapture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrFbLogin.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Facebook</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrFbLogin.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Facebook</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrGoogleLogin.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Google</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrGoogleLogin.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Social\Google</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrOSSecure.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSSecure</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrOSSecure.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\OSSecure</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrOSTelephony.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Telephony</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrOSTelephony.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Telephony</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrPdfKit.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\PDFKit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrPdfKit.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\PDFKit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrBiometrics.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Biometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrBiometrics.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Biometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMngrContacts.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBMngrContacts.cpp">
+      <Filter>lib-auframework-app-nucleo\Gestores\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinSecure.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSSecure</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGluePdfium.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\PDFKit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinTools.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidAVCapture.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidBiometrics.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidContacts.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidFiles.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidJNI.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidKeyboard.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidNotifs.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidStore.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidTelephony.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidTools.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidSecure.cpp">
+      <Filter>lib-auframework-app-nucleo\ExternalGlues\OSSecure</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

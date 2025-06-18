@@ -1,0 +1,1976 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C053C2D220880A6001B0787 /* AUAppGlueIOSTelephony.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C2B220880A6001B0787 /* AUAppGlueIOSTelephony.mm */; };
+		2C053C3322088166001B0787 /* AUMngrOSTelephony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C2F22088166001B0787 /* AUMngrOSTelephony.cpp */; };
+		2C053C3422088166001B0787 /* AUMngrOSTelephony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C2F22088166001B0787 /* AUMngrOSTelephony.cpp */; };
+		2C053C3522088166001B0787 /* NBMngrOSTelephony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C3222088166001B0787 /* NBMngrOSTelephony.cpp */; };
+		2C053C3622088166001B0787 /* NBMngrOSTelephony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C3222088166001B0787 /* NBMngrOSTelephony.cpp */; };
+		2C053C51220CC361001B0787 /* NBMngrBiometrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C4D220CC360001B0787 /* NBMngrBiometrics.cpp */; };
+		2C053C52220CC361001B0787 /* NBMngrBiometrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C4D220CC360001B0787 /* NBMngrBiometrics.cpp */; };
+		2C053C53220CC361001B0787 /* AUMngrBiometrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C4E220CC360001B0787 /* AUMngrBiometrics.cpp */; };
+		2C053C54220CC361001B0787 /* AUMngrBiometrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C4E220CC360001B0787 /* AUMngrBiometrics.cpp */; };
+		2C053C59220CC8B8001B0787 /* AUAppGlueIOSBiometrics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C053C57220CC8B8001B0787 /* AUAppGlueIOSBiometrics.mm */; };
+		2C0ACBCC1F02D925002F31AD /* AUMngrStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C0ACBCA1F02D925002F31AD /* AUMngrStore.cpp */; };
+		2C0ACBCD1F02D925002F31AD /* NBMngrStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C0ACBCB1F02D925002F31AD /* NBMngrStore.cpp */; };
+		2C0ACBD11F02DE63002F31AD /* NBMngrStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C0ACBCB1F02D925002F31AD /* NBMngrStore.cpp */; };
+		2C0ACBD21F02DE65002F31AD /* AUMngrStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C0ACBCA1F02D925002F31AD /* AUMngrStore.cpp */; };
+		2C0ACBD61F030281002F31AD /* AUAppGlueIOSStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C0ACBD51F030281002F31AD /* AUAppGlueIOSStore.mm */; };
+		2C1BBA8D1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C1BBA8C1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp */; };
+		2C1BBA8E1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C1BBA8C1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp */; };
+		2C274D351F0AEBFB009D6632 /* AUIOSSurfaceView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D341F0AEBFB009D6632 /* AUIOSSurfaceView.mm */; };
+		2C274D391F0AF214009D6632 /* AUIOSMonoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D381F0AF214009D6632 /* AUIOSMonoViewController.mm */; };
+		2C274D3D1F0AFEC2009D6632 /* AUIOSAudioSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D3C1F0AFEC2009D6632 /* AUIOSAudioSession.cpp */; };
+		2C274D411F0B2E72009D6632 /* AUAppGlueIOSTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D401F0B2E72009D6632 /* AUAppGlueIOSTools.mm */; };
+		2C274D471F0B3816009D6632 /* AUMngrOSTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D451F0B3816009D6632 /* AUMngrOSTools.cpp */; };
+		2C274D481F0B3816009D6632 /* NBMngrOSTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D461F0B3816009D6632 /* NBMngrOSTools.cpp */; };
+		2C274D491F0B3935009D6632 /* AUMngrOSTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D451F0B3816009D6632 /* AUMngrOSTools.cpp */; };
+		2C274D4A1F0B393A009D6632 /* NBMngrOSTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C274D461F0B3816009D6632 /* NBMngrOSTools.cpp */; };
+		2C3066CE21ADE6130098DF8A /* AUEscenaDemoTextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB972F1CCC7D6200963FF6 /* AUEscenaDemoTextBox.cpp */; };
+		2C3066D121ADE6130098DF8A /* AUEscenaDemoTextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB972F1CCC7D6200963FF6 /* AUEscenaDemoTextBox.cpp */; };
+		2C42499421F2915400F8EC75 /* AUAppGlueIOSAVCapture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C42499321F2915400F8EC75 /* AUAppGlueIOSAVCapture.mm */; };
+		2C5183AC22AB16D600CDAE15 /* AUAppGlueIOSKeyInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C3A86F022023A07000625D5 /* AUAppGlueIOSKeyInput.mm */; };
+		2C6470ED1A26BC8000BE4797 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6470EC1A26BC8000BE4797 /* AppDelegate.mm */; };
+		2C6470EF1A26BC8000BE4797 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6470EE1A26BC8000BE4797 /* main.mm */; };
+		2C6470F11A26BC8000BE4797 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C6470F01A26BC8000BE4797 /* Images.xcassets */; };
+		2C6470F41A26BC8000BE4797 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6470F21A26BC8000BE4797 /* MainMenu.xib */; };
+		2C6471091A26BD6300BE4797 /* AUGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6471071A26BD6300BE4797 /* AUGLView.mm */; };
+		2C6471161A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6471151A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp */; };
+		2C6471171A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6471151A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp */; };
+		2C64711B1A26D88100BE4797 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C64711A1A26D88100BE4797 /* OpenAL.framework */; };
+		2C64711D1A26D89500BE4797 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C64711C1A26D89400BE4797 /* QuartzCore.framework */; };
+		2C64711F1A26D8A400BE4797 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C64711E1A26D8A400BE4797 /* Cocoa.framework */; };
+		2C64716C1A27ABFD00BE4797 /* AUDemosRegistro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6471681A27ABFD00BE4797 /* AUDemosRegistro.cpp */; };
+		2C64716D1A27ABFD00BE4797 /* AUDemosRegistro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6471681A27ABFD00BE4797 /* AUDemosRegistro.cpp */; };
+		2C64716F1A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C64716A1A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp */; };
+		2C6471701A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C64716A1A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp */; };
+		2C6471721A27AD5000BE4797 /* libdemos-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C64712E1A27A87600BE4797 /* libdemos-osx.a */; };
+		2C6C4F921F215B3400C89B1B /* AUAppGlueIOSKeyboard.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C4F911F215B3400C89B1B /* AUAppGlueIOSKeyboard.mm */; };
+		2C6C6F721EFC293C0052FBD4 /* AUMngrNotifs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C6F701EFC293C0052FBD4 /* AUMngrNotifs.cpp */; };
+		2C6C6F731EFC293C0052FBD4 /* NBMngrNotifs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C6F711EFC293C0052FBD4 /* NBMngrNotifs.cpp */; };
+		2C6C6F741EFC2B2F0052FBD4 /* NBMngrNotifs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C6F711EFC293C0052FBD4 /* NBMngrNotifs.cpp */; };
+		2C6C6F751EFC2B320052FBD4 /* AUMngrNotifs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C6F701EFC293C0052FBD4 /* AUMngrNotifs.cpp */; };
+		2C6C6F7A1EFC30AF0052FBD4 /* AUAppGlueIOSNotifs.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C6F791EFC30AF0052FBD4 /* AUAppGlueIOSNotifs.mm */; };
+		2C6D373022306891007F50DA /* NBMngrContacts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D372C22306890007F50DA /* NBMngrContacts.cpp */; };
+		2C6D373122306891007F50DA /* NBMngrContacts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D372C22306890007F50DA /* NBMngrContacts.cpp */; };
+		2C6D373222306891007F50DA /* AUMngrContacts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D372F22306891007F50DA /* AUMngrContacts.cpp */; };
+		2C6D373322306891007F50DA /* AUMngrContacts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D372F22306891007F50DA /* AUMngrContacts.cpp */; };
+		2C6D373722306C77007F50DA /* AUAppGlueAppleContacts.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D373522306C76007F50DA /* AUAppGlueAppleContacts.mm */; };
+		2C6D373822306C77007F50DA /* AUAppGlueAppleContacts.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D373522306C76007F50DA /* AUAppGlueAppleContacts.mm */; };
+		2C7BA48D1F857F5000C34342 /* AUMngrGoogleLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BA4891F857F4F00C34342 /* AUMngrGoogleLogin.cpp */; };
+		2C7BA48E1F857F5000C34342 /* NBMngrGoogleLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BA48B1F857F5000C34342 /* NBMngrGoogleLogin.cpp */; };
+		2C7BA4941F85B40400C34342 /* NBMngrFbLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFDE781F8423440019EA1B /* NBMngrFbLogin.cpp */; };
+		2C7BA4951F85B40600C34342 /* AUMngrFbLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFDE791F8423450019EA1B /* AUMngrFbLogin.cpp */; };
+		2C7BA4961F85B40C00C34342 /* AUMngrGoogleLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BA4891F857F4F00C34342 /* AUMngrGoogleLogin.cpp */; };
+		2C7BA4971F85B40E00C34342 /* NBMngrGoogleLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BA48B1F857F5000C34342 /* NBMngrGoogleLogin.cpp */; };
+		2C7D26AD1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D26AC1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp */; };
+		2C7D26AE1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D26AC1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp */; };
+		2C947446234EA7AD00C8BE93 /* AUAppGlueOsxTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C947445234EA7AD00C8BE93 /* AUAppGlueOsxTools.mm */; };
+		2C9875BE18FA3020000DEB16 /* AUAppTransicion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C9875BD18FA3020000DEB16 /* AUAppTransicion.cpp */; };
+		2C9875BF18FA3020000DEB16 /* AUAppTransicion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C9875BD18FA3020000DEB16 /* AUAppTransicion.cpp */; };
+		2CA8C7E3205C7DE4001B1CE2 /* NBMngrOSSecure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8C7DF205C7DE3001B1CE2 /* NBMngrOSSecure.cpp */; };
+		2CA8C7E4205C7DE4001B1CE2 /* AUMngrOSSecure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8C7E0205C7DE4001B1CE2 /* AUMngrOSSecure.cpp */; };
+		2CA8C7E5205C81D6001B1CE2 /* AUMngrOSSecure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8C7E0205C7DE4001B1CE2 /* AUMngrOSSecure.cpp */; };
+		2CA8C7E6205C81D9001B1CE2 /* NBMngrOSSecure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8C7DF205C7DE3001B1CE2 /* NBMngrOSSecure.cpp */; };
+		2CA8C7EA205C8507001B1CE2 /* AUAppGlueAppleSecure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8C7E9205C8507001B1CE2 /* AUAppGlueAppleSecure.cpp */; };
+		2CA8C7EC205C8975001B1CE2 /* AUAppGlueAppleSecure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8C7E9205C8507001B1CE2 /* AUAppGlueAppleSecure.cpp */; };
+		2CB3EDE7214C7B080034A8A8 /* libnbframework-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB3EDE6214C7B080034A8A8 /* libnbframework-ios.a */; };
+		2CB3EDE9214C7B120034A8A8 /* libnbframework-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB3EDE8214C7B120034A8A8 /* libnbframework-osx.a */; };
+		2CCFC76C21A61BDA003808A6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6471181A26D87B00BE4797 /* OpenGL.framework */; };
+		2CCFDE7B1F8423450019EA1B /* NBMngrFbLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFDE781F8423440019EA1B /* NBMngrFbLogin.cpp */; };
+		2CCFDE7C1F8423450019EA1B /* AUMngrFbLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFDE791F8423450019EA1B /* AUMngrFbLogin.cpp */; };
+		2CD060722243010400C4EE4F /* AUMngrPdfKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CD060712243010400C4EE4F /* AUMngrPdfKit.cpp */; };
+		2CD060732243010400C4EE4F /* AUMngrPdfKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CD060712243010400C4EE4F /* AUMngrPdfKit.cpp */; };
+		2CD060752243012000C4EE4F /* NBMngrPdfKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CD060742243012000C4EE4F /* NBMngrPdfKit.cpp */; };
+		2CD060762243012000C4EE4F /* NBMngrPdfKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CD060742243012000C4EE4F /* NBMngrPdfKit.cpp */; };
+		2CD0607D22430E3500C4EE4F /* AUAppGlueApplePdfKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0607C22430E3500C4EE4F /* AUAppGlueApplePdfKit.mm */; };
+		2CDB136E21F7A1860063BF46 /* NBMngrAVCapture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB136A21F7A1860063BF46 /* NBMngrAVCapture.cpp */; };
+		2CDB136F21F7A1860063BF46 /* NBMngrAVCapture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB136A21F7A1860063BF46 /* NBMngrAVCapture.cpp */; };
+		2CDB137021F7A1860063BF46 /* AUMngrAVCapture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB136C21F7A1860063BF46 /* AUMngrAVCapture.cpp */; };
+		2CDB137121F7A1860063BF46 /* AUMngrAVCapture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB136C21F7A1860063BF46 /* AUMngrAVCapture.cpp */; };
+		2CDB96CC1CCC64D600963FF6 /* libauframework-app-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDE695818F8A2E800286F1F /* libauframework-app-osx.a */; };
+		2CDB96CE1CCC64DA00963FF6 /* libauframework-media-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB96CD1CCC64DA00963FF6 /* libauframework-media-osx.a */; };
+		2CDB96D01CCC64E000963FF6 /* libauframework-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB96CF1CCC64E000963FF6 /* libauframework-osx.a */; };
+		2CDB96E31CCC6BDF00963FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB96E11CCC6BDF00963FF6 /* Main.storyboard */; };
+		2CDB96E51CCC6BDF00963FF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB96E41CCC6BDF00963FF6 /* Images.xcassets */; };
+		2CDB96E81CCC6BDF00963FF6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB96E61CCC6BDF00963FF6 /* LaunchScreen.xib */; };
+		2CDB97041CCC6C6500963FF6 /* AUAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB96FC1CCC6C6500963FF6 /* AUAppDelegate.mm */; };
+		2CDB97051CCC6C6500963FF6 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB96FE1CCC6C6500963FF6 /* EAGLView.mm */; };
+		2CDB97061CCC6C6500963FF6 /* EAGLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB97001CCC6C6500963FF6 /* EAGLViewController.mm */; };
+		2CDB97071CCC6C6500963FF6 /* iOSAudioSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB97011CCC6C6500963FF6 /* iOSAudioSession.cpp */; };
+		2CDB97081CCC6C6500963FF6 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB97031CCC6C6500963FF6 /* main.mm */; };
+		2CDB97121CCC6F7500963FF6 /* libauframework-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB97111CCC6F7500963FF6 /* libauframework-ios.a */; };
+		2CDB97131CCC6F7900963FF6 /* libauframework-app-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDE692D18F8A2C400286F1F /* libauframework-app-ios.a */; };
+		2CDB97151CCC6F7C00963FF6 /* libauframework-media-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB97141CCC6F7C00963FF6 /* libauframework-media-ios.a */; };
+		2CDB97171CCC6F8400963FF6 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB97161CCC6F8400963FF6 /* OpenAL.framework */; };
+		2CDB97191CCC6F8D00963FF6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB97181CCC6F8D00963FF6 /* OpenGLES.framework */; };
+		2CDB971B1CCC706100963FF6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB971A1CCC706100963FF6 /* QuartzCore.framework */; };
+		2CDB971D1CCC706C00963FF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB971C1CCC706C00963FF6 /* CoreGraphics.framework */; };
+		2CDB971F1CCC707400963FF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB971E1CCC707400963FF6 /* UIKit.framework */; };
+		2CDB97201CCC721A00963FF6 /* libdemos-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6471511A27A8D900BE4797 /* libdemos-ios.a */; };
+		2CDB97221CCC755900963FF6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDB97211CCC755900963FF6 /* AudioToolbox.framework */; };
+		2CDB97291CCC7A3400963FF6 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB97241CCC7A3400963FF6 /* arial.ttf */; };
+		2CDB972A1CCC7A3400963FF6 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB97251CCC7A3400963FF6 /* Roboto-Bold.ttf */; };
+		2CDB972B1CCC7A3400963FF6 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB97261CCC7A3400963FF6 /* Roboto-Italic.ttf */; };
+		2CDB972C1CCC7A3400963FF6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB97271CCC7A3400963FF6 /* Roboto-Regular.ttf */; };
+		2CDB972D1CCC7A3400963FF6 /* verdana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB97281CCC7A3400963FF6 /* verdana.ttf */; };
+		2CDE697618F8A40400286F1F /* AUApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697118F8A40400286F1F /* AUApp.cpp */; };
+		2CDE697718F8A40400286F1F /* AUApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697118F8A40400286F1F /* AUApp.cpp */; };
+		2CDE697818F8A40400286F1F /* AUAppEscenasResumenDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697218F8A40400286F1F /* AUAppEscenasResumenDebug.cpp */; };
+		2CDE697918F8A40400286F1F /* AUAppEscenasResumenDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697218F8A40400286F1F /* AUAppEscenasResumenDebug.cpp */; };
+		2CDE697A18F8A40400286F1F /* AUAppEscenasAdmin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697318F8A40400286F1F /* AUAppEscenasAdmin.cpp */; };
+		2CDE697B18F8A40400286F1F /* AUAppEscenasAdmin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697318F8A40400286F1F /* AUAppEscenasAdmin.cpp */; };
+		2CDE697E18F8A40400286F1F /* AUAppNucleoPrecompilado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697518F8A40400286F1F /* AUAppNucleoPrecompilado.cpp */; };
+		2CDE697F18F8A40400286F1F /* AUAppNucleoPrecompilado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE697518F8A40400286F1F /* AUAppNucleoPrecompilado.cpp */; };
+		2CDE698418F8A99200286F1F /* AUAppTransicionConCaptura.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE698118F8A99200286F1F /* AUAppTransicionConCaptura.cpp */; };
+		2CDE698518F8A99200286F1F /* AUAppTransicionConCaptura.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE698118F8A99200286F1F /* AUAppTransicionConCaptura.cpp */; };
+		2CDE698618F8A99200286F1F /* AUAppTransicionConColorSolido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE698218F8A99200286F1F /* AUAppTransicionConColorSolido.cpp */; };
+		2CDE698718F8A99200286F1F /* AUAppTransicionConColorSolido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE698218F8A99200286F1F /* AUAppTransicionConColorSolido.cpp */; };
+		2CDE698818F8A99200286F1F /* AUAppTransicionConFondo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE698318F8A99200286F1F /* AUAppTransicionConFondo.cpp */; };
+		2CDE698918F8A99200286F1F /* AUAppTransicionConFondo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE698318F8A99200286F1F /* AUAppTransicionConFondo.cpp */; };
+		2CDE699618F8ECF600286F1F /* AUAppEscena.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE699518F8ECF600286F1F /* AUAppEscena.cpp */; };
+		2CDE699718F8ECF600286F1F /* AUAppEscena.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE699518F8ECF600286F1F /* AUAppEscena.cpp */; };
+		2CDFFD4D22EA5B54003B27D3 /* AUAppGlueApplePdfKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0607C22430E3500C4EE4F /* AUAppGlueApplePdfKit.mm */; };
+		2CEC7D5A1EF49B2F00FC8CCC /* AUAppGlueIOSFiles.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7D581EF49B2F00FC8CCC /* AUAppGlueIOSFiles.mm */; };
+		2CEC7D5B1EF49B2F00FC8CCC /* AUAppGlueOsxFiles.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7D591EF49B2F00FC8CCC /* AUAppGlueOsxFiles.mm */; };
+		2CEC7D5C1EF49B7600FC8CCC /* AUAppGlueIOSFiles.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7D581EF49B2F00FC8CCC /* AUAppGlueIOSFiles.mm */; };
+		2CEC7D5D1EF49B7800FC8CCC /* AUAppGlueOsxFiles.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC7D591EF49B2F00FC8CCC /* AUAppGlueOsxFiles.mm */; };
+		2CF58BC81F3A552600118CEB /* AUMngrGameKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF58BC61F3A552600118CEB /* AUMngrGameKit.cpp */; };
+		2CF58BC91F3A552600118CEB /* NBMngrGameKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF58BC71F3A552600118CEB /* NBMngrGameKit.cpp */; };
+		2CFF503C1942235000D44E24 /* actualizarTodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF503B1942235000D44E24 /* actualizarTodos.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C64714F1A27A8D900BE4797 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2C03B339191953C800AC54C4 /* AUAppNucleoRegistro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppNucleoRegistro.h; path = ../../../include/AUAppNucleoRegistro.h; sourceTree = SOURCE_ROOT; };
+		2C053C28220880A5001B0787 /* AUAppGlueAndroidTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidTelephony.h; path = ../../../include/AUAppGlueAndroidTelephony.h; sourceTree = SOURCE_ROOT; };
+		2C053C29220880A5001B0787 /* AUAppGlueIOSTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSTelephony.h; path = ../../../include/AUAppGlueIOSTelephony.h; sourceTree = SOURCE_ROOT; };
+		2C053C2A220880A5001B0787 /* AUAppGlueAndroidTelephony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidTelephony.cpp; path = ../../../src/cpp/AUAppGlueAndroidTelephony.cpp; sourceTree = SOURCE_ROOT; };
+		2C053C2B220880A6001B0787 /* AUAppGlueIOSTelephony.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSTelephony.mm; path = ../../../src/cpp/AUAppGlueIOSTelephony.mm; sourceTree = SOURCE_ROOT; };
+		2C053C2F22088166001B0787 /* AUMngrOSTelephony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrOSTelephony.cpp; path = ../../../src/cpp/AUMngrOSTelephony.cpp; sourceTree = SOURCE_ROOT; };
+		2C053C3022088166001B0787 /* NBMngrOSTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrOSTelephony.h; path = ../../../include/NBMngrOSTelephony.h; sourceTree = SOURCE_ROOT; };
+		2C053C3122088166001B0787 /* AUMngrOSTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrOSTelephony.h; path = ../../../include/AUMngrOSTelephony.h; sourceTree = SOURCE_ROOT; };
+		2C053C3222088166001B0787 /* NBMngrOSTelephony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrOSTelephony.cpp; path = ../../../src/cpp/NBMngrOSTelephony.cpp; sourceTree = SOURCE_ROOT; };
+		2C053C372208EC62001B0787 /* AUAppGlueAndroidAVCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidAVCapture.h; path = ../../../include/AUAppGlueAndroidAVCapture.h; sourceTree = "<group>"; };
+		2C053C382208EC62001B0787 /* AUAppGlueAndroidAVCapture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidAVCapture.cpp; path = ../../../src/cpp/AUAppGlueAndroidAVCapture.cpp; sourceTree = "<group>"; };
+		2C053C4D220CC360001B0787 /* NBMngrBiometrics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrBiometrics.cpp; path = ../../../src/cpp/NBMngrBiometrics.cpp; sourceTree = SOURCE_ROOT; };
+		2C053C4E220CC360001B0787 /* AUMngrBiometrics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrBiometrics.cpp; path = ../../../src/cpp/AUMngrBiometrics.cpp; sourceTree = SOURCE_ROOT; };
+		2C053C4F220CC360001B0787 /* AUMngrBiometrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrBiometrics.h; path = ../../../include/AUMngrBiometrics.h; sourceTree = SOURCE_ROOT; };
+		2C053C50220CC361001B0787 /* NBMngrBiometrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrBiometrics.h; path = ../../../include/NBMngrBiometrics.h; sourceTree = SOURCE_ROOT; };
+		2C053C57220CC8B8001B0787 /* AUAppGlueIOSBiometrics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSBiometrics.mm; path = ../../../src/cpp/AUAppGlueIOSBiometrics.mm; sourceTree = SOURCE_ROOT; };
+		2C053C58220CC8B8001B0787 /* AUAppGlueIOSBiometrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSBiometrics.h; path = ../../../include/AUAppGlueIOSBiometrics.h; sourceTree = SOURCE_ROOT; };
+		2C0ACBC81F02D925002F31AD /* AUMngrStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrStore.h; path = ../../../include/AUMngrStore.h; sourceTree = SOURCE_ROOT; };
+		2C0ACBC91F02D925002F31AD /* NBMngrStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrStore.h; path = ../../../include/NBMngrStore.h; sourceTree = SOURCE_ROOT; };
+		2C0ACBCA1F02D925002F31AD /* AUMngrStore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrStore.cpp; path = ../../../src/cpp/AUMngrStore.cpp; sourceTree = SOURCE_ROOT; };
+		2C0ACBCB1F02D925002F31AD /* NBMngrStore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrStore.cpp; path = ../../../src/cpp/NBMngrStore.cpp; sourceTree = SOURCE_ROOT; };
+		2C0ACBD41F030281002F31AD /* AUAppGlueIOSStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSStore.h; path = ../../../include/AUAppGlueIOSStore.h; sourceTree = SOURCE_ROOT; };
+		2C0ACBD51F030281002F31AD /* AUAppGlueIOSStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSStore.mm; path = ../../../src/cpp/AUAppGlueIOSStore.mm; sourceTree = SOURCE_ROOT; };
+		2C19909A205E275B00B5F48C /* AUAppGlueAndroidSecure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidSecure.cpp; path = ../../../src/cpp/AUAppGlueAndroidSecure.cpp; sourceTree = "<group>"; };
+		2C19909B205E275C00B5F48C /* AUAppGlueAndroidSecure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidSecure.h; path = ../../../include/AUAppGlueAndroidSecure.h; sourceTree = "<group>"; };
+		2C1BBA8C1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppNucleoRegistro.cpp; path = ../../../src/cpp/AUAppNucleoRegistro.cpp; sourceTree = SOURCE_ROOT; };
+		2C274D341F0AEBFB009D6632 /* AUIOSSurfaceView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUIOSSurfaceView.mm; path = ../../../src/cpp/AUIOSSurfaceView.mm; sourceTree = SOURCE_ROOT; };
+		2C274D371F0AF214009D6632 /* AUIOSMonoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUIOSMonoViewController.h; path = ../../../include/AUIOSMonoViewController.h; sourceTree = SOURCE_ROOT; };
+		2C274D381F0AF214009D6632 /* AUIOSMonoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUIOSMonoViewController.mm; path = ../../../src/cpp/AUIOSMonoViewController.mm; sourceTree = SOURCE_ROOT; };
+		2C274D3A1F0AF6AA009D6632 /* AUIOSSurfaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUIOSSurfaceView.h; path = ../../../include/AUIOSSurfaceView.h; sourceTree = "<group>"; };
+		2C274D3B1F0AFEC2009D6632 /* AUIOSAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUIOSAudioSession.h; path = ../../../include/AUIOSAudioSession.h; sourceTree = "<group>"; };
+		2C274D3C1F0AFEC2009D6632 /* AUIOSAudioSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUIOSAudioSession.cpp; path = ../../../src/cpp/AUIOSAudioSession.cpp; sourceTree = "<group>"; };
+		2C274D3F1F0B2E72009D6632 /* AUAppGlueIOSTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSTools.h; path = ../../../include/AUAppGlueIOSTools.h; sourceTree = SOURCE_ROOT; };
+		2C274D401F0B2E72009D6632 /* AUAppGlueIOSTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSTools.mm; path = ../../../src/cpp/AUAppGlueIOSTools.mm; sourceTree = SOURCE_ROOT; };
+		2C274D431F0B3816009D6632 /* AUMngrOSTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrOSTools.h; path = ../../../include/AUMngrOSTools.h; sourceTree = "<group>"; };
+		2C274D441F0B3816009D6632 /* NBMngrOSTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrOSTools.h; path = ../../../include/NBMngrOSTools.h; sourceTree = "<group>"; };
+		2C274D451F0B3816009D6632 /* AUMngrOSTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrOSTools.cpp; path = ../../../src/cpp/AUMngrOSTools.cpp; sourceTree = "<group>"; };
+		2C274D461F0B3816009D6632 /* NBMngrOSTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrOSTools.cpp; path = ../../../src/cpp/NBMngrOSTools.cpp; sourceTree = "<group>"; };
+		2C274D4B1F0B426D009D6632 /* AUAppGlueAndroidTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidTools.h; path = ../../../include/AUAppGlueAndroidTools.h; sourceTree = SOURCE_ROOT; };
+		2C274D4C1F0B426D009D6632 /* AUAppGlueAndroidTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidTools.cpp; path = ../../../src/cpp/AUAppGlueAndroidTools.cpp; sourceTree = SOURCE_ROOT; };
+		2C3A86EF22023A07000625D5 /* AUAppGlueIOSKeyInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSKeyInput.h; path = ../../../include/AUAppGlueIOSKeyInput.h; sourceTree = SOURCE_ROOT; };
+		2C3A86F022023A07000625D5 /* AUAppGlueIOSKeyInput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSKeyInput.mm; path = ../../../src/cpp/AUAppGlueIOSKeyInput.mm; sourceTree = SOURCE_ROOT; };
+		2C42499221F2915400F8EC75 /* AUAppGlueIOSAVCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSAVCapture.h; path = ../../../include/AUAppGlueIOSAVCapture.h; sourceTree = SOURCE_ROOT; };
+		2C42499321F2915400F8EC75 /* AUAppGlueIOSAVCapture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSAVCapture.mm; path = ../../../src/cpp/AUAppGlueIOSAVCapture.mm; sourceTree = SOURCE_ROOT; };
+		2C4FC8C42059DAC600D496F3 /* com_auframework_AppNative.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = com_auframework_AppNative.cpp; path = ../../../src/cpp/com_auframework_AppNative.cpp; sourceTree = "<group>"; };
+		2C4FC8C7205B2BE200D496F3 /* com_auframework_AppNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = com_auframework_AppNative.h; path = ../../../include/com_auframework_AppNative.h; sourceTree = "<group>"; };
+		2C4FC8C8205B3C7D00D496F3 /* com_auframework_AppNative_Wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = com_auframework_AppNative_Wrapper.c; path = ../../../include/com_auframework_AppNative_Wrapper.c; sourceTree = "<group>"; };
+		2C5BE7E62970EAF8009A3E0E /* AUAppGlueAndroidStoreV3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidStoreV3.cpp; path = ../../../src/cpp/AUAppGlueAndroidStoreV3.cpp; sourceTree = "<group>"; };
+		2C5BE7E72970EB08009A3E0E /* AUAppGlueAndroidStoreV3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidStoreV3.h; path = ../../../include/AUAppGlueAndroidStoreV3.h; sourceTree = "<group>"; };
+		2C5BE7EA2970ED80009A3E0E /* AppNative.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = AppNative.java; path = "../../../../../../CltBellaYves/sys-signit/sys-signit-src/projects/android-studio/app/src/main/java/com/auframework/AppNative.java"; sourceTree = "<group>"; };
+		2C6209CB1EFCBB1A00B96245 /* AUAppGlueAndroidNotifs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidNotifs.h; path = ../../../include/AUAppGlueAndroidNotifs.h; sourceTree = SOURCE_ROOT; };
+		2C6209CC1EFCBB1A00B96245 /* AUAppGlueAndroidNotifs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidNotifs.cpp; path = ../../../src/cpp/AUAppGlueAndroidNotifs.cpp; sourceTree = SOURCE_ROOT; };
+		2C6470E71A26BC8000BE4797 /* demos-app-osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demos-app-osx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6470EA1A26BC8000BE4797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C6470EB1A26BC8000BE4797 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2C6470EC1A26BC8000BE4797 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		2C6470EE1A26BC8000BE4797 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		2C6470F01A26BC8000BE4797 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2C6470F31A26BC8000BE4797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2C6471071A26BD6300BE4797 /* AUGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUGLView.mm; sourceTree = "<group>"; };
+		2C6471081A26BD6300BE4797 /* AUGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUGLView.h; sourceTree = "<group>"; };
+		2C64710A1A26BF9400BE4797 /* libbox2d-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d-osx.a"; path = "../../../../../../../../Library/Developer/Xcode/DerivedData/sis-refraneronica-aiwfeoqwewzofsfysjewnfaiimtb/Build/Products/Debug/libbox2d-osx.a"; sourceTree = "<group>"; };
+		2C64710C1A26BF9800BE4797 /* libauframework-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-ios.a"; path = "../../../../../lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug-iphoneos/libauframework-ios.a"; sourceTree = "<group>"; };
+		2C64710E1A26BFA400BE4797 /* libauframework-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-osx.a"; path = "../../../../../../../../Library/Developer/Xcode/DerivedData/sis-refraneronica-aiwfeoqwewzofsfysjewnfaiimtb/Build/Products/Debug/libauframework-osx.a"; sourceTree = "<group>"; };
+		2C6471101A26BFA800BE4797 /* libauframework-media-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-media-osx.a"; path = "../../../../../../../../Library/Developer/Xcode/DerivedData/sis-refraneronica-aiwfeoqwewzofsfysjewnfaiimtb/Build/Products/Debug/libauframework-media-osx.a"; sourceTree = "<group>"; };
+		2C6471131A26C02700BE4797 /* demos-app-osx-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "demos-app-osx-Prefix.pch"; sourceTree = "<group>"; };
+		2C6471141A26D12400BE4797 /* AUAppEscenasAdminSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppEscenasAdminSimple.h; path = ../../../include/AUAppEscenasAdminSimple.h; sourceTree = "<group>"; };
+		2C6471151A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppEscenasAdminSimple.cpp; path = ../../../src/cpp/AUAppEscenasAdminSimple.cpp; sourceTree = "<group>"; };
+		2C6471181A26D87B00BE4797 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2C64711A1A26D88100BE4797 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		2C64711C1A26D89400BE4797 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2C64711E1A26D8A400BE4797 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2C64712E1A27A87600BE4797 /* libdemos-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libdemos-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6471511A27A8D900BE4797 /* libdemos-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libdemos-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6471681A27ABFD00BE4797 /* AUDemosRegistro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUDemosRegistro.cpp; path = "../../../src/cpp/lib-demos-nucleo/AUDemosRegistro.cpp"; sourceTree = "<group>"; };
+		2C6471691A27ABFD00BE4797 /* AUDemosRegistro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUDemosRegistro.h; path = "../../../src/cpp/lib-demos-nucleo/AUDemosRegistro.h"; sourceTree = "<group>"; };
+		2C64716A1A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUEscenaDemoTextRender.cpp; path = "../../../src/cpp/lib-demos-nucleo/AUEscenaDemoTextRender.cpp"; sourceTree = "<group>"; };
+		2C64716B1A27ABFD00BE4797 /* AUEscenaDemoTextRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUEscenaDemoTextRender.h; path = "../../../src/cpp/lib-demos-nucleo/AUEscenaDemoTextRender.h"; sourceTree = "<group>"; };
+		2C6C4F901F215B3400C89B1B /* AUAppGlueIOSKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSKeyboard.h; path = ../../../include/AUAppGlueIOSKeyboard.h; sourceTree = "<group>"; };
+		2C6C4F911F215B3400C89B1B /* AUAppGlueIOSKeyboard.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSKeyboard.mm; path = ../../../src/cpp/AUAppGlueIOSKeyboard.mm; sourceTree = "<group>"; };
+		2C6C6F6E1EFC293C0052FBD4 /* AUMngrNotifs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrNotifs.h; path = ../../../include/AUMngrNotifs.h; sourceTree = SOURCE_ROOT; };
+		2C6C6F6F1EFC293C0052FBD4 /* NBMngrNotifs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrNotifs.h; path = ../../../include/NBMngrNotifs.h; sourceTree = SOURCE_ROOT; };
+		2C6C6F701EFC293C0052FBD4 /* AUMngrNotifs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrNotifs.cpp; path = ../../../src/cpp/AUMngrNotifs.cpp; sourceTree = SOURCE_ROOT; };
+		2C6C6F711EFC293C0052FBD4 /* NBMngrNotifs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrNotifs.cpp; path = ../../../src/cpp/NBMngrNotifs.cpp; sourceTree = SOURCE_ROOT; };
+		2C6C6F781EFC30AF0052FBD4 /* AUAppGlueIOSNotifs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSNotifs.h; path = ../../../include/AUAppGlueIOSNotifs.h; sourceTree = SOURCE_ROOT; };
+		2C6C6F791EFC30AF0052FBD4 /* AUAppGlueIOSNotifs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSNotifs.mm; path = ../../../src/cpp/AUAppGlueIOSNotifs.mm; sourceTree = SOURCE_ROOT; };
+		2C6D372C22306890007F50DA /* NBMngrContacts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrContacts.cpp; path = ../../../src/cpp/NBMngrContacts.cpp; sourceTree = SOURCE_ROOT; };
+		2C6D372D22306890007F50DA /* AUMngrContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrContacts.h; path = ../../../include/AUMngrContacts.h; sourceTree = SOURCE_ROOT; };
+		2C6D372E22306890007F50DA /* NBMngrContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrContacts.h; path = ../../../include/NBMngrContacts.h; sourceTree = SOURCE_ROOT; };
+		2C6D372F22306891007F50DA /* AUMngrContacts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrContacts.cpp; path = ../../../src/cpp/AUMngrContacts.cpp; sourceTree = SOURCE_ROOT; };
+		2C6D373522306C76007F50DA /* AUAppGlueAppleContacts.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueAppleContacts.mm; path = ../../../src/cpp/AUAppGlueAppleContacts.mm; sourceTree = SOURCE_ROOT; };
+		2C6D373622306C76007F50DA /* AUAppGlueAppleContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAppleContacts.h; path = ../../../include/AUAppGlueAppleContacts.h; sourceTree = SOURCE_ROOT; };
+		2C70C50B238EF1C10076E59C /* AUAppGlueAndroidContacts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidContacts.h; path = ../../../include/AUAppGlueAndroidContacts.h; sourceTree = SOURCE_ROOT; };
+		2C70C50C238EF1C10076E59C /* AUAppGlueAndroidContacts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidContacts.cpp; path = ../../../src/cpp/AUAppGlueAndroidContacts.cpp; sourceTree = SOURCE_ROOT; };
+		2C7BA4891F857F4F00C34342 /* AUMngrGoogleLogin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrGoogleLogin.cpp; path = ../../../src/cpp/AUMngrGoogleLogin.cpp; sourceTree = "<group>"; };
+		2C7BA48A1F857F5000C34342 /* AUMngrGoogleLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrGoogleLogin.h; path = ../../../include/AUMngrGoogleLogin.h; sourceTree = "<group>"; };
+		2C7BA48B1F857F5000C34342 /* NBMngrGoogleLogin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrGoogleLogin.cpp; path = ../../../src/cpp/NBMngrGoogleLogin.cpp; sourceTree = "<group>"; };
+		2C7BA48C1F857F5000C34342 /* NBMngrGoogleLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrGoogleLogin.h; path = ../../../include/NBMngrGoogleLogin.h; sourceTree = "<group>"; };
+		2C7D26AC1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppTransicionConCortina.cpp; path = ../../../src/cpp/AUAppTransicionConCortina.cpp; sourceTree = "<group>"; };
+		2C7D26AF1B1F5F4700D2C76F /* AUAppTransicionConCortina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppTransicionConCortina.h; path = ../../../include/AUAppTransicionConCortina.h; sourceTree = "<group>"; };
+		2C8ACDBD23FD708A000C629F /* AUAppGlueWinTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueWinTools.h; path = ../../../include/AUAppGlueWinTools.h; sourceTree = "<group>"; };
+		2C8ACDBE23FD708A000C629F /* AUAppGlueWinTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueWinTools.cpp; path = ../../../src/cpp/AUAppGlueWinTools.cpp; sourceTree = "<group>"; };
+		2C8DBF3522FD41C10067E293 /* AUAppGluePdfium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGluePdfium.h; path = ../../../include/AUAppGluePdfium.h; sourceTree = "<group>"; };
+		2C8DBF3622FD41C10067E293 /* AUAppGluePdfium.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGluePdfium.cpp; path = ../../../src/cpp/AUAppGluePdfium.cpp; sourceTree = "<group>"; };
+		2C947444234EA7AD00C8BE93 /* AUAppGlueOsxTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueOsxTools.h; path = ../../../include/AUAppGlueOsxTools.h; sourceTree = SOURCE_ROOT; };
+		2C947445234EA7AD00C8BE93 /* AUAppGlueOsxTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueOsxTools.mm; path = ../../../src/cpp/AUAppGlueOsxTools.mm; sourceTree = SOURCE_ROOT; };
+		2C9875BD18FA3020000DEB16 /* AUAppTransicion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppTransicion.cpp; path = ../../../src/cpp/AUAppTransicion.cpp; sourceTree = "<group>"; };
+		2CA8C7DF205C7DE3001B1CE2 /* NBMngrOSSecure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrOSSecure.cpp; path = ../../../src/cpp/NBMngrOSSecure.cpp; sourceTree = SOURCE_ROOT; };
+		2CA8C7E0205C7DE4001B1CE2 /* AUMngrOSSecure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrOSSecure.cpp; path = ../../../src/cpp/AUMngrOSSecure.cpp; sourceTree = SOURCE_ROOT; };
+		2CA8C7E1205C7DE4001B1CE2 /* AUMngrOSSecure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrOSSecure.h; path = ../../../include/AUMngrOSSecure.h; sourceTree = SOURCE_ROOT; };
+		2CA8C7E2205C7DE4001B1CE2 /* NBMngrOSSecure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrOSSecure.h; path = ../../../include/NBMngrOSSecure.h; sourceTree = SOURCE_ROOT; };
+		2CA8C7E8205C8507001B1CE2 /* AUAppGlueAppleSecure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAppleSecure.h; path = ../../../include/AUAppGlueAppleSecure.h; sourceTree = "<group>"; };
+		2CA8C7E9205C8507001B1CE2 /* AUAppGlueAppleSecure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAppleSecure.cpp; path = ../../../src/cpp/AUAppGlueAppleSecure.cpp; sourceTree = "<group>"; };
+		2CB3EDE6214C7B080034A8A8 /* libnbframework-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libnbframework-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB3EDE8214C7B120034A8A8 /* libnbframework-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libnbframework-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC4B3D41EF77F6500D875A8 /* AUAppGlueQnxFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueQnxFiles.h; path = ../../../include/AUAppGlueQnxFiles.h; sourceTree = SOURCE_ROOT; };
+		2CC4B3D51EF77F6500D875A8 /* AUAppGlueQnxFiles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueQnxFiles.cpp; path = ../../../src/cpp/AUAppGlueQnxFiles.cpp; sourceTree = SOURCE_ROOT; };
+		2CC529931F03266F00666A59 /* AUAppGlueAndroidStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidStore.h; path = ../../../include/AUAppGlueAndroidStore.h; sourceTree = "<group>"; };
+		2CC529941F03266F00666A59 /* AUAppGlueAndroidStore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidStore.cpp; path = ../../../src/cpp/AUAppGlueAndroidStore.cpp; sourceTree = "<group>"; };
+		2CCFDE771F8423440019EA1B /* AUMngrFbLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrFbLogin.h; path = ../../../include/AUMngrFbLogin.h; sourceTree = "<group>"; };
+		2CCFDE781F8423440019EA1B /* NBMngrFbLogin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrFbLogin.cpp; path = ../../../src/cpp/NBMngrFbLogin.cpp; sourceTree = "<group>"; };
+		2CCFDE791F8423450019EA1B /* AUMngrFbLogin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrFbLogin.cpp; path = ../../../src/cpp/AUMngrFbLogin.cpp; sourceTree = "<group>"; };
+		2CCFDE7A1F8423450019EA1B /* NBMngrFbLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrFbLogin.h; path = ../../../include/NBMngrFbLogin.h; sourceTree = "<group>"; };
+		2CD0606F224300CF00C4EE4F /* AUMngrPdfKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AUMngrPdfKit.h; path = ../../../include/AUMngrPdfKit.h; sourceTree = SOURCE_ROOT; };
+		2CD06070224300EA00C4EE4F /* NBMngrPdfKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NBMngrPdfKit.h; path = ../../../include/NBMngrPdfKit.h; sourceTree = SOURCE_ROOT; };
+		2CD060712243010400C4EE4F /* AUMngrPdfKit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrPdfKit.cpp; path = ../../../src/cpp/AUMngrPdfKit.cpp; sourceTree = SOURCE_ROOT; };
+		2CD060742243012000C4EE4F /* NBMngrPdfKit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrPdfKit.cpp; path = ../../../src/cpp/NBMngrPdfKit.cpp; sourceTree = SOURCE_ROOT; };
+		2CD0607B22430E1100C4EE4F /* AUAppGlueApplePdfKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AUAppGlueApplePdfKit.h; path = ../../../include/AUAppGlueApplePdfKit.h; sourceTree = SOURCE_ROOT; };
+		2CD0607C22430E3500C4EE4F /* AUAppGlueApplePdfKit.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueApplePdfKit.mm; path = ../../../src/cpp/AUAppGlueApplePdfKit.mm; sourceTree = SOURCE_ROOT; };
+		2CD2E7891F00966F0072D106 /* AUAppGlueAndroidJNI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidJNI.h; path = ../../../include/AUAppGlueAndroidJNI.h; sourceTree = SOURCE_ROOT; };
+		2CD2E78A1F00966F0072D106 /* AUAppGlueAndroidJNI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidJNI.cpp; path = ../../../src/cpp/AUAppGlueAndroidJNI.cpp; sourceTree = SOURCE_ROOT; };
+		2CDB136A21F7A1860063BF46 /* NBMngrAVCapture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrAVCapture.cpp; path = ../../../src/cpp/NBMngrAVCapture.cpp; sourceTree = SOURCE_ROOT; };
+		2CDB136B21F7A1860063BF46 /* AUMngrAVCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrAVCapture.h; path = ../../../include/AUMngrAVCapture.h; sourceTree = SOURCE_ROOT; };
+		2CDB136C21F7A1860063BF46 /* AUMngrAVCapture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrAVCapture.cpp; path = ../../../src/cpp/AUMngrAVCapture.cpp; sourceTree = SOURCE_ROOT; };
+		2CDB136D21F7A1860063BF46 /* NBMngrAVCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrAVCapture.h; path = ../../../include/NBMngrAVCapture.h; sourceTree = SOURCE_ROOT; };
+		2CDB96CD1CCC64DA00963FF6 /* libauframework-media-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-media-osx.a"; path = "../../../../../lib-auframework-media/lib-auframework-media/projects/xcode/lib-auframework-media/build/Debug/libauframework-media-osx.a"; sourceTree = "<group>"; };
+		2CDB96CF1CCC64E000963FF6 /* libauframework-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-osx.a"; path = "../../../../../lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug/libauframework-osx.a"; sourceTree = "<group>"; };
+		2CDB96D51CCC6BDF00963FF6 /* demos-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demos-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDB96D81CCC6BDF00963FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CDB96E21CCC6BDF00963FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2CDB96E41CCC6BDF00963FF6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CDB96E71CCC6BDF00963FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2CDB96FB1CCC6C6500963FF6 /* AUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUAppDelegate.h; sourceTree = "<group>"; };
+		2CDB96FC1CCC6C6500963FF6 /* AUAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUAppDelegate.mm; sourceTree = "<group>"; };
+		2CDB96FD1CCC6C6500963FF6 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		2CDB96FE1CCC6C6500963FF6 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
+		2CDB96FF1CCC6C6500963FF6 /* EAGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLViewController.h; sourceTree = "<group>"; };
+		2CDB97001CCC6C6500963FF6 /* EAGLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLViewController.mm; sourceTree = "<group>"; };
+		2CDB97011CCC6C6500963FF6 /* iOSAudioSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iOSAudioSession.cpp; sourceTree = "<group>"; };
+		2CDB97021CCC6C6500963FF6 /* iOSAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSAudioSession.h; sourceTree = "<group>"; };
+		2CDB97031CCC6C6500963FF6 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		2CDB97091CCC6DD500963FF6 /* demos-app-ios-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "demos-app-ios-Prefix.pch"; sourceTree = "<group>"; };
+		2CDB97111CCC6F7500963FF6 /* libauframework-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-ios.a"; path = "../../../../../lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug-iphoneos/libauframework-ios.a"; sourceTree = "<group>"; };
+		2CDB97141CCC6F7C00963FF6 /* libauframework-media-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-media-ios.a"; path = "../../../../../lib-auframework-media/lib-auframework-media/projects/xcode/lib-auframework-media/build/Debug-iphoneos/libauframework-media-ios.a"; sourceTree = "<group>"; };
+		2CDB97161CCC6F8400963FF6 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
+		2CDB97181CCC6F8D00963FF6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		2CDB971A1CCC706100963FF6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		2CDB971C1CCC706C00963FF6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		2CDB971E1CCC707400963FF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2CDB97211CCC755900963FF6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		2CDB97241CCC7A3400963FF6 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = arial.ttf; path = Fonts/arial.ttf; sourceTree = "<group>"; };
+		2CDB97251CCC7A3400963FF6 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		2CDB97261CCC7A3400963FF6 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "Fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		2CDB97271CCC7A3400963FF6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		2CDB97281CCC7A3400963FF6 /* verdana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = verdana.ttf; path = Fonts/verdana.ttf; sourceTree = "<group>"; };
+		2CDB972F1CCC7D6200963FF6 /* AUEscenaDemoTextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUEscenaDemoTextBox.cpp; path = "../../../src/cpp/lib-demos-nucleo/AUEscenaDemoTextBox.cpp"; sourceTree = "<group>"; };
+		2CDB97301CCC7D6200963FF6 /* AUEscenaDemoTextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUEscenaDemoTextBox.h; path = "../../../src/cpp/lib-demos-nucleo/AUEscenaDemoTextBox.h"; sourceTree = "<group>"; };
+		2CDE692D18F8A2C400286F1F /* libauframework-app-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libauframework-app-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDE693018F8A2C400286F1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2CDE693E18F8A2C500286F1F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2CDE694118F8A2C500286F1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2CDE695818F8A2E800286F1F /* libauframework-app-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libauframework-app-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDE695D18F8A3EE00286F1F /* AUApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUApp.h; path = ../../../include/AUApp.h; sourceTree = SOURCE_ROOT; };
+		2CDE695E18F8A3EE00286F1F /* AUAppEscenasResumenDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppEscenasResumenDebug.h; path = ../../../include/AUAppEscenasResumenDebug.h; sourceTree = SOURCE_ROOT; };
+		2CDE695F18F8A3EE00286F1F /* AUAppEscenasAdmin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppEscenasAdmin.h; path = ../../../include/AUAppEscenasAdmin.h; sourceTree = SOURCE_ROOT; };
+		2CDE696018F8A3EE00286F1F /* AUAppSobrecargaOperadoresNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppSobrecargaOperadoresNew.h; path = ../../../include/AUAppSobrecargaOperadoresNew.h; sourceTree = SOURCE_ROOT; };
+		2CDE696118F8A3EE00286F1F /* AUAppEscena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppEscena.h; path = ../../../include/AUAppEscena.h; sourceTree = SOURCE_ROOT; };
+		2CDE696318F8A3EE00286F1F /* AUAppNucleo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppNucleo.h; path = ../../../include/AUAppNucleo.h; sourceTree = SOURCE_ROOT; };
+		2CDE696518F8A3EE00286F1F /* AUAppNucleoEncabezado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppNucleoEncabezado.h; path = ../../../include/AUAppNucleoEncabezado.h; sourceTree = SOURCE_ROOT; };
+		2CDE696618F8A3EE00286F1F /* AUAppNucleoPrecompilado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppNucleoPrecompilado.h; path = ../../../include/AUAppNucleoPrecompilado.h; sourceTree = SOURCE_ROOT; };
+		2CDE697118F8A40400286F1F /* AUApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUApp.cpp; path = ../../../src/cpp/AUApp.cpp; sourceTree = SOURCE_ROOT; };
+		2CDE697218F8A40400286F1F /* AUAppEscenasResumenDebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppEscenasResumenDebug.cpp; path = ../../../src/cpp/AUAppEscenasResumenDebug.cpp; sourceTree = SOURCE_ROOT; };
+		2CDE697318F8A40400286F1F /* AUAppEscenasAdmin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppEscenasAdmin.cpp; path = ../../../src/cpp/AUAppEscenasAdmin.cpp; sourceTree = SOURCE_ROOT; };
+		2CDE697518F8A40400286F1F /* AUAppNucleoPrecompilado.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppNucleoPrecompilado.cpp; path = ../../../src/cpp/AUAppNucleoPrecompilado.cpp; sourceTree = SOURCE_ROOT; };
+		2CDE698118F8A99200286F1F /* AUAppTransicionConCaptura.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppTransicionConCaptura.cpp; path = ../../../src/cpp/AUAppTransicionConCaptura.cpp; sourceTree = "<group>"; };
+		2CDE698218F8A99200286F1F /* AUAppTransicionConColorSolido.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppTransicionConColorSolido.cpp; path = ../../../src/cpp/AUAppTransicionConColorSolido.cpp; sourceTree = "<group>"; };
+		2CDE698318F8A99200286F1F /* AUAppTransicionConFondo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppTransicionConFondo.cpp; path = ../../../src/cpp/AUAppTransicionConFondo.cpp; sourceTree = "<group>"; };
+		2CDE698A18F8A99F00286F1F /* AUAppTransicionConCaptura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppTransicionConCaptura.h; path = ../../../include/AUAppTransicionConCaptura.h; sourceTree = "<group>"; };
+		2CDE698B18F8A99F00286F1F /* AUAppTransicionConColorSolido.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppTransicionConColorSolido.h; path = ../../../include/AUAppTransicionConColorSolido.h; sourceTree = "<group>"; };
+		2CDE698C18F8A99F00286F1F /* AUAppTransicionConFondo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppTransicionConFondo.h; path = ../../../include/AUAppTransicionConFondo.h; sourceTree = "<group>"; };
+		2CDE699018F8AD0800286F1F /* AUAppTransicion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppTransicion.h; path = ../../../include/AUAppTransicion.h; sourceTree = "<group>"; };
+		2CDE699518F8ECF600286F1F /* AUAppEscena.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppEscena.cpp; path = ../../../src/cpp/AUAppEscena.cpp; sourceTree = "<group>"; };
+		2CE0734E1F05BAA00052DEC1 /* AUAppGlueAndroidKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidKeyboard.h; path = ../../../include/AUAppGlueAndroidKeyboard.h; sourceTree = SOURCE_ROOT; };
+		2CE0734F1F05BAA00052DEC1 /* AUAppGlueAndroidKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidKeyboard.cpp; path = ../../../src/cpp/AUAppGlueAndroidKeyboard.cpp; sourceTree = SOURCE_ROOT; };
+		2CE71EEF239188DF002B5776 /* fpdf_text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_text.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_text.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF0239188DF002B5776 /* fpdf_structtree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_structtree.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_structtree.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF1239188DF002B5776 /* fpdf_fwlevent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_fwlevent.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_fwlevent.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF2239188DF002B5776 /* fpdf_sysfontinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_sysfontinfo.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_sysfontinfo.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF3239188DF002B5776 /* fpdfview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdfview.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdfview.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF4239188DF002B5776 /* fpdf_attachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_attachment.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_attachment.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF5239188E0002B5776 /* fpdf_annot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_annot.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_annot.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF6239188E0002B5776 /* fpdf_edit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_edit.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_edit.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF7239188E0002B5776 /* fpdf_ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_ext.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_ext.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF8239188E0002B5776 /* fpdf_save.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_save.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_save.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EF9239188E0002B5776 /* fpdf_thumbnail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_thumbnail.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_thumbnail.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EFA239188E0002B5776 /* fpdf_doc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_doc.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_doc.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EFB239188E0002B5776 /* fpdf_formfill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_formfill.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_formfill.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EFC239188E0002B5776 /* fpdf_javascript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_javascript.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_javascript.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EFD239188E0002B5776 /* fpdf_catalog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_catalog.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_catalog.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EFE239188E0002B5776 /* fpdf_searchex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_searchex.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_searchex.h"; sourceTree = SOURCE_ROOT; };
+		2CE71EFF239188E0002B5776 /* fpdf_flatten.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_flatten.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_flatten.h"; sourceTree = SOURCE_ROOT; };
+		2CE71F00239188E0002B5776 /* fpdf_ppo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_ppo.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_ppo.h"; sourceTree = SOURCE_ROOT; };
+		2CE71F01239188E0002B5776 /* fpdf_progressive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_progressive.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_progressive.h"; sourceTree = SOURCE_ROOT; };
+		2CE71F02239188E0002B5776 /* fpdf_transformpage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_transformpage.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_transformpage.h"; sourceTree = SOURCE_ROOT; };
+		2CE71F03239188E0002B5776 /* fpdf_dataavail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fpdf_dataavail.h; path = "../../../src/pdfium_osx/pdfium-darwin-debug/include/fpdf_dataavail.h"; sourceTree = SOURCE_ROOT; };
+		2CE71F042392FC4B002B5776 /* AUAppGlueAndroidBiometrics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidBiometrics.cpp; path = ../../../src/cpp/AUAppGlueAndroidBiometrics.cpp; sourceTree = SOURCE_ROOT; };
+		2CE71F052392FC4B002B5776 /* AUAppGlueAndroidBiometrics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidBiometrics.h; path = ../../../include/AUAppGlueAndroidBiometrics.h; sourceTree = SOURCE_ROOT; };
+		2CEB4DCB21B6213E00BE31EE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2CEC7D531EF4873100FC8CCC /* AUAppGlueAndroidFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueAndroidFiles.h; path = ../../../include/AUAppGlueAndroidFiles.h; sourceTree = SOURCE_ROOT; };
+		2CEC7D541EF4873100FC8CCC /* AUAppGlueAndroidFiles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueAndroidFiles.cpp; path = ../../../src/cpp/AUAppGlueAndroidFiles.cpp; sourceTree = SOURCE_ROOT; };
+		2CEC7D561EF49B2F00FC8CCC /* AUAppGlueIOSFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSFiles.h; path = ../../../include/AUAppGlueIOSFiles.h; sourceTree = SOURCE_ROOT; };
+		2CEC7D571EF49B2F00FC8CCC /* AUAppGlueOsxFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueOsxFiles.h; path = ../../../include/AUAppGlueOsxFiles.h; sourceTree = SOURCE_ROOT; };
+		2CEC7D581EF49B2F00FC8CCC /* AUAppGlueIOSFiles.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSFiles.mm; path = ../../../src/cpp/AUAppGlueIOSFiles.mm; sourceTree = SOURCE_ROOT; };
+		2CEC7D591EF49B2F00FC8CCC /* AUAppGlueOsxFiles.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueOsxFiles.mm; path = ../../../src/cpp/AUAppGlueOsxFiles.mm; sourceTree = SOURCE_ROOT; };
+		2CEC7D5E1EF4A02F00FC8CCC /* AUAppGlueWinFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueWinFiles.h; path = ../../../include/AUAppGlueWinFiles.h; sourceTree = SOURCE_ROOT; };
+		2CEC7D5F1EF4A02F00FC8CCC /* AUAppGlueWinFiles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueWinFiles.cpp; path = ../../../src/cpp/AUAppGlueWinFiles.cpp; sourceTree = SOURCE_ROOT; };
+		2CEFBD231F3E4F23002DE695 /* AUAppI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppI.h; path = ../../../include/AUAppI.h; sourceTree = "<group>"; };
+		2CF077E622ECD8A300E5EAB9 /* AUAppGlueWinSecure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AUAppGlueWinSecure.h; path = ../../../include/AUAppGlueWinSecure.h; sourceTree = "<group>"; };
+		2CF077E722ECD8A300E5EAB9 /* AUAppGlueWinSecure.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AUAppGlueWinSecure.cpp; path = ../../../src/cpp/AUAppGlueWinSecure.cpp; sourceTree = "<group>"; };
+		2CF58BC01F3A54C100118CEB /* AUAppGlueIOSGameKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUAppGlueIOSGameKit.h; path = ../../../include/AUAppGlueIOSGameKit.h; sourceTree = "<group>"; };
+		2CF58BC11F3A54C100118CEB /* AUAppGlueIOSGameKit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUAppGlueIOSGameKit.mm; path = ../../../src/cpp/AUAppGlueIOSGameKit.mm; sourceTree = "<group>"; };
+		2CF58BC41F3A552600118CEB /* AUMngrGameKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMngrGameKit.h; path = ../../../include/AUMngrGameKit.h; sourceTree = "<group>"; };
+		2CF58BC51F3A552600118CEB /* NBMngrGameKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMngrGameKit.h; path = ../../../include/NBMngrGameKit.h; sourceTree = "<group>"; };
+		2CF58BC61F3A552600118CEB /* AUMngrGameKit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMngrGameKit.cpp; path = ../../../src/cpp/AUMngrGameKit.cpp; sourceTree = "<group>"; };
+		2CF58BC71F3A552600118CEB /* NBMngrGameKit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBMngrGameKit.cpp; path = ../../../src/cpp/NBMngrGameKit.cpp; sourceTree = "<group>"; };
+		2CFF503B1942235000D44E24 /* actualizarTodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = actualizarTodos.cpp; path = ../../../../../../actualizarTodos.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C6470E41A26BC8000BE4797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB3EDE9214C7B120034A8A8 /* libnbframework-osx.a in Frameworks */,
+				2CDB96D01CCC64E000963FF6 /* libauframework-osx.a in Frameworks */,
+				2CDB96CE1CCC64DA00963FF6 /* libauframework-media-osx.a in Frameworks */,
+				2CDB96CC1CCC64D600963FF6 /* libauframework-app-osx.a in Frameworks */,
+				2C6471721A27AD5000BE4797 /* libdemos-osx.a in Frameworks */,
+				2C64711B1A26D88100BE4797 /* OpenAL.framework in Frameworks */,
+				2CCFC76C21A61BDA003808A6 /* OpenGL.framework in Frameworks */,
+				2C64711D1A26D89500BE4797 /* QuartzCore.framework in Frameworks */,
+				2C64711F1A26D8A400BE4797 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C64712B1A27A87500BE4797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C64714E1A27A8D900BE4797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDB96D21CCC6BDF00963FF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB3EDE7214C7B080034A8A8 /* libnbframework-ios.a in Frameworks */,
+				2CDB97121CCC6F7500963FF6 /* libauframework-ios.a in Frameworks */,
+				2CDB97151CCC6F7C00963FF6 /* libauframework-media-ios.a in Frameworks */,
+				2CDB97131CCC6F7900963FF6 /* libauframework-app-ios.a in Frameworks */,
+				2CDB97201CCC721A00963FF6 /* libdemos-ios.a in Frameworks */,
+				2CDB97171CCC6F8400963FF6 /* OpenAL.framework in Frameworks */,
+				2CDB97191CCC6F8D00963FF6 /* OpenGLES.framework in Frameworks */,
+				2CDB97221CCC755900963FF6 /* AudioToolbox.framework in Frameworks */,
+				2CDB971D1CCC706C00963FF6 /* CoreGraphics.framework in Frameworks */,
+				2CDB971B1CCC706100963FF6 /* QuartzCore.framework in Frameworks */,
+				2CDB971F1CCC707400963FF6 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDE692A18F8A2C400286F1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDE695518F8A2E800286F1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C053C2722088024001B0787 /* Telephony */ = {
+			isa = PBXGroup;
+			children = (
+				2C053C29220880A5001B0787 /* AUAppGlueIOSTelephony.h */,
+				2C053C2B220880A6001B0787 /* AUAppGlueIOSTelephony.mm */,
+				2C053C28220880A5001B0787 /* AUAppGlueAndroidTelephony.h */,
+				2C053C2A220880A5001B0787 /* AUAppGlueAndroidTelephony.cpp */,
+			);
+			name = Telephony;
+			sourceTree = "<group>";
+		};
+		2C053C2E22088117001B0787 /* Telephony */ = {
+			isa = PBXGroup;
+			children = (
+				2C053C3122088166001B0787 /* AUMngrOSTelephony.h */,
+				2C053C2F22088166001B0787 /* AUMngrOSTelephony.cpp */,
+				2C053C3022088166001B0787 /* NBMngrOSTelephony.h */,
+				2C053C3222088166001B0787 /* NBMngrOSTelephony.cpp */,
+			);
+			name = Telephony;
+			sourceTree = "<group>";
+		};
+		2C053C55220CC364001B0787 /* Biometrics */ = {
+			isa = PBXGroup;
+			children = (
+				2C053C4F220CC360001B0787 /* AUMngrBiometrics.h */,
+				2C053C4E220CC360001B0787 /* AUMngrBiometrics.cpp */,
+				2C053C50220CC361001B0787 /* NBMngrBiometrics.h */,
+				2C053C4D220CC360001B0787 /* NBMngrBiometrics.cpp */,
+			);
+			name = Biometrics;
+			sourceTree = "<group>";
+		};
+		2C053C56220CC86B001B0787 /* Biometrics */ = {
+			isa = PBXGroup;
+			children = (
+				2C053C58220CC8B8001B0787 /* AUAppGlueIOSBiometrics.h */,
+				2C053C57220CC8B8001B0787 /* AUAppGlueIOSBiometrics.mm */,
+				2CE71F052392FC4B002B5776 /* AUAppGlueAndroidBiometrics.h */,
+				2CE71F042392FC4B002B5776 /* AUAppGlueAndroidBiometrics.cpp */,
+			);
+			name = Biometrics;
+			sourceTree = "<group>";
+		};
+		2C0ACBCE1F02D933002F31AD /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				2C6C6F6E1EFC293C0052FBD4 /* AUMngrNotifs.h */,
+				2C6C6F701EFC293C0052FBD4 /* AUMngrNotifs.cpp */,
+				2C6C6F6F1EFC293C0052FBD4 /* NBMngrNotifs.h */,
+				2C6C6F711EFC293C0052FBD4 /* NBMngrNotifs.cpp */,
+			);
+			name = Notifications;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C0ACBCF1F02D93A002F31AD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				2C0ACBC81F02D925002F31AD /* AUMngrStore.h */,
+				2C0ACBCA1F02D925002F31AD /* AUMngrStore.cpp */,
+				2C0ACBC91F02D925002F31AD /* NBMngrStore.h */,
+				2C0ACBCB1F02D925002F31AD /* NBMngrStore.cpp */,
+			);
+			name = Store;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C0ACBD31F02ED9E002F31AD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				2C0ACBD41F030281002F31AD /* AUAppGlueIOSStore.h */,
+				2C0ACBD51F030281002F31AD /* AUAppGlueIOSStore.mm */,
+				2CC529931F03266F00666A59 /* AUAppGlueAndroidStore.h */,
+				2CC529941F03266F00666A59 /* AUAppGlueAndroidStore.cpp */,
+				2C5BE7E72970EB08009A3E0E /* AUAppGlueAndroidStoreV3.h */,
+				2C5BE7E62970EAF8009A3E0E /* AUAppGlueAndroidStoreV3.cpp */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		2C274D361F0AF1EE009D6632 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2C274D3A1F0AF6AA009D6632 /* AUIOSSurfaceView.h */,
+				2C274D341F0AEBFB009D6632 /* AUIOSSurfaceView.mm */,
+				2C274D371F0AF214009D6632 /* AUIOSMonoViewController.h */,
+				2C274D381F0AF214009D6632 /* AUIOSMonoViewController.mm */,
+				2C274D3B1F0AFEC2009D6632 /* AUIOSAudioSession.h */,
+				2C274D3C1F0AFEC2009D6632 /* AUIOSAudioSession.cpp */,
+			);
+			name = iOS;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C274D3E1F0B2E19009D6632 /* OSTools */ = {
+			isa = PBXGroup;
+			children = (
+				2C274D3F1F0B2E72009D6632 /* AUAppGlueIOSTools.h */,
+				2C274D401F0B2E72009D6632 /* AUAppGlueIOSTools.mm */,
+				2C947444234EA7AD00C8BE93 /* AUAppGlueOsxTools.h */,
+				2C947445234EA7AD00C8BE93 /* AUAppGlueOsxTools.mm */,
+				2C274D4B1F0B426D009D6632 /* AUAppGlueAndroidTools.h */,
+				2C274D4C1F0B426D009D6632 /* AUAppGlueAndroidTools.cpp */,
+				2C8ACDBD23FD708A000C629F /* AUAppGlueWinTools.h */,
+				2C8ACDBE23FD708A000C629F /* AUAppGlueWinTools.cpp */,
+			);
+			name = OSTools;
+			sourceTree = "<group>";
+		};
+		2C274D421F0B37C3009D6632 /* OSTools */ = {
+			isa = PBXGroup;
+			children = (
+				2C274D431F0B3816009D6632 /* AUMngrOSTools.h */,
+				2C274D451F0B3816009D6632 /* AUMngrOSTools.cpp */,
+				2C274D441F0B3816009D6632 /* NBMngrOSTools.h */,
+				2C274D461F0B3816009D6632 /* NBMngrOSTools.cpp */,
+			);
+			name = OSTools;
+			sourceTree = "<group>";
+		};
+		2C42499121F280E700F8EC75 /* AVCapture */ = {
+			isa = PBXGroup;
+			children = (
+				2C42499221F2915400F8EC75 /* AUAppGlueIOSAVCapture.h */,
+				2C42499321F2915400F8EC75 /* AUAppGlueIOSAVCapture.mm */,
+				2C053C372208EC62001B0787 /* AUAppGlueAndroidAVCapture.h */,
+				2C053C382208EC62001B0787 /* AUAppGlueAndroidAVCapture.cpp */,
+			);
+			name = AVCapture;
+			sourceTree = "<group>";
+		};
+		2C5BE7E82970ECDC009A3E0E /* Android */ = {
+			isa = PBXGroup;
+			children = (
+				2C5BE7EA2970ED80009A3E0E /* AppNative.java */,
+			);
+			name = Android;
+			sourceTree = "<group>";
+		};
+		2C6470E81A26BC8000BE4797 /* demos-app-osx */ = {
+			isa = PBXGroup;
+			children = (
+				2C6470EB1A26BC8000BE4797 /* AppDelegate.h */,
+				2C6470EC1A26BC8000BE4797 /* AppDelegate.mm */,
+				2C6471081A26BD6300BE4797 /* AUGLView.h */,
+				2C6471071A26BD6300BE4797 /* AUGLView.mm */,
+				2C6470F01A26BC8000BE4797 /* Images.xcassets */,
+				2C6470F21A26BC8000BE4797 /* MainMenu.xib */,
+				2C6470E91A26BC8000BE4797 /* Supporting Files */,
+			);
+			name = "demos-app-osx";
+			path = "app-test-renderText-osx";
+			sourceTree = "<group>";
+		};
+		2C6470E91A26BC8000BE4797 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C6470EA1A26BC8000BE4797 /* Info.plist */,
+				2C6471131A26C02700BE4797 /* demos-app-osx-Prefix.pch */,
+				2C6470EE1A26BC8000BE4797 /* main.mm */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C6471291A27A83100BE4797 /* lib-demos-nucleo */ = {
+			isa = PBXGroup;
+			children = (
+				2C6471691A27ABFD00BE4797 /* AUDemosRegistro.h */,
+				2C6471681A27ABFD00BE4797 /* AUDemosRegistro.cpp */,
+				2CDB972E1CCC7D4200963FF6 /* Scenes */,
+			);
+			name = "lib-demos-nucleo";
+			sourceTree = "<group>";
+		};
+		2C6C6F6D1EFC28BE0052FBD4 /* Gestores */ = {
+			isa = PBXGroup;
+			children = (
+				2CD0606E2243007B00C4EE4F /* PdfKit */,
+				2C6D372B223067E3007F50DA /* Contacts */,
+				2C053C55220CC364001B0787 /* Biometrics */,
+				2C053C2E22088117001B0787 /* Telephony */,
+				2CDB136921F7A0E80063BF46 /* AVCapture */,
+				2C0ACBCF1F02D93A002F31AD /* Store */,
+				2C0ACBCE1F02D933002F31AD /* Notifications */,
+				2CF58BC31F3A54D300118CEB /* GameKit */,
+				2C274D421F0B37C3009D6632 /* OSTools */,
+				2CA8C7DE205C7D64001B1CE2 /* OSSecure */,
+				2CCFDE761F8422C90019EA1B /* Social */,
+			);
+			name = Gestores;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C6C6F761EFC305E0052FBD4 /* AppFileSystem */ = {
+			isa = PBXGroup;
+			children = (
+				2CEC7D5E1EF4A02F00FC8CCC /* AUAppGlueWinFiles.h */,
+				2CEC7D5F1EF4A02F00FC8CCC /* AUAppGlueWinFiles.cpp */,
+				2CEC7D571EF49B2F00FC8CCC /* AUAppGlueOsxFiles.h */,
+				2CEC7D591EF49B2F00FC8CCC /* AUAppGlueOsxFiles.mm */,
+				2CEC7D561EF49B2F00FC8CCC /* AUAppGlueIOSFiles.h */,
+				2CEC7D581EF49B2F00FC8CCC /* AUAppGlueIOSFiles.mm */,
+				2CC4B3D41EF77F6500D875A8 /* AUAppGlueQnxFiles.h */,
+				2CC4B3D51EF77F6500D875A8 /* AUAppGlueQnxFiles.cpp */,
+				2CEC7D531EF4873100FC8CCC /* AUAppGlueAndroidFiles.h */,
+				2CEC7D541EF4873100FC8CCC /* AUAppGlueAndroidFiles.cpp */,
+			);
+			name = AppFileSystem;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C6C6F771EFC306D0052FBD4 /* AppNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				2C6C6F781EFC30AF0052FBD4 /* AUAppGlueIOSNotifs.h */,
+				2C6C6F791EFC30AF0052FBD4 /* AUAppGlueIOSNotifs.mm */,
+				2C6209CB1EFCBB1A00B96245 /* AUAppGlueAndroidNotifs.h */,
+				2C6209CC1EFCBB1A00B96245 /* AUAppGlueAndroidNotifs.cpp */,
+			);
+			name = AppNotifications;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C6D372B223067E3007F50DA /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				2C6D372D22306890007F50DA /* AUMngrContacts.h */,
+				2C6D372F22306891007F50DA /* AUMngrContacts.cpp */,
+				2C6D372E22306890007F50DA /* NBMngrContacts.h */,
+				2C6D372C22306890007F50DA /* NBMngrContacts.cpp */,
+			);
+			name = Contacts;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C6D373422306C2D007F50DA /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				2C6D373622306C76007F50DA /* AUAppGlueAppleContacts.h */,
+				2C6D373522306C76007F50DA /* AUAppGlueAppleContacts.mm */,
+				2C70C50B238EF1C10076E59C /* AUAppGlueAndroidContacts.h */,
+				2C70C50C238EF1C10076E59C /* AUAppGlueAndroidContacts.cpp */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
+		2C7BA48F1F85803100C34342 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				2CCFDE771F8423440019EA1B /* AUMngrFbLogin.h */,
+				2CCFDE791F8423450019EA1B /* AUMngrFbLogin.cpp */,
+				2CCFDE7A1F8423450019EA1B /* NBMngrFbLogin.h */,
+				2CCFDE781F8423440019EA1B /* NBMngrFbLogin.cpp */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		2C7BA4901F85803A00C34342 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				2C7BA48A1F857F5000C34342 /* AUMngrGoogleLogin.h */,
+				2C7BA4891F857F4F00C34342 /* AUMngrGoogleLogin.cpp */,
+				2C7BA48C1F857F5000C34342 /* NBMngrGoogleLogin.h */,
+				2C7BA48B1F857F5000C34342 /* NBMngrGoogleLogin.cpp */,
+			);
+			name = Google;
+			sourceTree = "<group>";
+		};
+		2CA8C7DE205C7D64001B1CE2 /* OSSecure */ = {
+			isa = PBXGroup;
+			children = (
+				2CA8C7E1205C7DE4001B1CE2 /* AUMngrOSSecure.h */,
+				2CA8C7E0205C7DE4001B1CE2 /* AUMngrOSSecure.cpp */,
+				2CA8C7E2205C7DE4001B1CE2 /* NBMngrOSSecure.h */,
+				2CA8C7DF205C7DE3001B1CE2 /* NBMngrOSSecure.cpp */,
+			);
+			name = OSSecure;
+			sourceTree = SOURCE_ROOT;
+		};
+		2CA8C7E7205C84B5001B1CE2 /* OSSecure */ = {
+			isa = PBXGroup;
+			children = (
+				2CA8C7E8205C8507001B1CE2 /* AUAppGlueAppleSecure.h */,
+				2CA8C7E9205C8507001B1CE2 /* AUAppGlueAppleSecure.cpp */,
+				2C19909B205E275C00B5F48C /* AUAppGlueAndroidSecure.h */,
+				2C19909A205E275B00B5F48C /* AUAppGlueAndroidSecure.cpp */,
+				2CF077E622ECD8A300E5EAB9 /* AUAppGlueWinSecure.h */,
+				2CF077E722ECD8A300E5EAB9 /* AUAppGlueWinSecure.cpp */,
+			);
+			name = OSSecure;
+			sourceTree = "<group>";
+		};
+		2CCFDE761F8422C90019EA1B /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				2C7BA48F1F85803100C34342 /* Facebook */,
+				2C7BA4901F85803A00C34342 /* Google */,
+			);
+			name = Social;
+			sourceTree = "<group>";
+		};
+		2CD0606E2243007B00C4EE4F /* PdfKit */ = {
+			isa = PBXGroup;
+			children = (
+				2CD0606F224300CF00C4EE4F /* AUMngrPdfKit.h */,
+				2CD060712243010400C4EE4F /* AUMngrPdfKit.cpp */,
+				2CD06070224300EA00C4EE4F /* NBMngrPdfKit.h */,
+				2CD060742243012000C4EE4F /* NBMngrPdfKit.cpp */,
+			);
+			name = PdfKit;
+			sourceTree = "<group>";
+		};
+		2CD0607A22430DB800C4EE4F /* PdfKit */ = {
+			isa = PBXGroup;
+			children = (
+				2CD0607B22430E1100C4EE4F /* AUAppGlueApplePdfKit.h */,
+				2CD0607C22430E3500C4EE4F /* AUAppGlueApplePdfKit.mm */,
+				2C8DBF3522FD41C10067E293 /* AUAppGluePdfium.h */,
+				2C8DBF3622FD41C10067E293 /* AUAppGluePdfium.cpp */,
+				2CE71EEE239188C6002B5776 /* PDFiumHeaders */,
+			);
+			name = PdfKit;
+			sourceTree = "<group>";
+		};
+		2CD2E7881F00962F0072D106 /* AppJNI */ = {
+			isa = PBXGroup;
+			children = (
+				2CD2E7891F00966F0072D106 /* AUAppGlueAndroidJNI.h */,
+				2CD2E78A1F00966F0072D106 /* AUAppGlueAndroidJNI.cpp */,
+				2C4FC8C7205B2BE200D496F3 /* com_auframework_AppNative.h */,
+				2C4FC8C42059DAC600D496F3 /* com_auframework_AppNative.cpp */,
+				2C4FC8C8205B3C7D00D496F3 /* com_auframework_AppNative_Wrapper.c */,
+			);
+			name = AppJNI;
+			sourceTree = SOURCE_ROOT;
+		};
+		2CDB136921F7A0E80063BF46 /* AVCapture */ = {
+			isa = PBXGroup;
+			children = (
+				2CDB136B21F7A1860063BF46 /* AUMngrAVCapture.h */,
+				2CDB136C21F7A1860063BF46 /* AUMngrAVCapture.cpp */,
+				2CDB136D21F7A1860063BF46 /* NBMngrAVCapture.h */,
+				2CDB136A21F7A1860063BF46 /* NBMngrAVCapture.cpp */,
+			);
+			name = AVCapture;
+			sourceTree = "<group>";
+		};
+		2CDB96D61CCC6BDF00963FF6 /* demos-app-ios */ = {
+			isa = PBXGroup;
+			children = (
+				2CDB96FB1CCC6C6500963FF6 /* AUAppDelegate.h */,
+				2CDB96FC1CCC6C6500963FF6 /* AUAppDelegate.mm */,
+				2CDB96FD1CCC6C6500963FF6 /* EAGLView.h */,
+				2CDB96FE1CCC6C6500963FF6 /* EAGLView.mm */,
+				2CDB96FF1CCC6C6500963FF6 /* EAGLViewController.h */,
+				2CDB97001CCC6C6500963FF6 /* EAGLViewController.mm */,
+				2CDB97021CCC6C6500963FF6 /* iOSAudioSession.h */,
+				2CDB97011CCC6C6500963FF6 /* iOSAudioSession.cpp */,
+				2CDB96E11CCC6BDF00963FF6 /* Main.storyboard */,
+				2CDB96E41CCC6BDF00963FF6 /* Images.xcassets */,
+				2CDB96E61CCC6BDF00963FF6 /* LaunchScreen.xib */,
+				2CDB97231CCC7A2500963FF6 /* Fonts */,
+				2CDB96D71CCC6BDF00963FF6 /* Supporting Files */,
+			);
+			path = "demos-app-ios";
+			sourceTree = "<group>";
+		};
+		2CDB96D71CCC6BDF00963FF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CDB96D81CCC6BDF00963FF6 /* Info.plist */,
+				2CDB97091CCC6DD500963FF6 /* demos-app-ios-Prefix.pch */,
+				2CDB97031CCC6C6500963FF6 /* main.mm */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CDB97231CCC7A2500963FF6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2CDB97241CCC7A3400963FF6 /* arial.ttf */,
+				2CDB97251CCC7A3400963FF6 /* Roboto-Bold.ttf */,
+				2CDB97261CCC7A3400963FF6 /* Roboto-Italic.ttf */,
+				2CDB97271CCC7A3400963FF6 /* Roboto-Regular.ttf */,
+				2CDB97281CCC7A3400963FF6 /* verdana.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		2CDB972E1CCC7D4200963FF6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2C64716B1A27ABFD00BE4797 /* AUEscenaDemoTextRender.h */,
+				2C64716A1A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp */,
+				2CDB97301CCC7D6200963FF6 /* AUEscenaDemoTextBox.h */,
+				2CDB972F1CCC7D6200963FF6 /* AUEscenaDemoTextBox.cpp */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		2CDE692218F8A1C400286F1F = {
+			isa = PBXGroup;
+			children = (
+				2CFF503B1942235000D44E24 /* actualizarTodos.cpp */,
+				2CDE695C18F8A32400286F1F /* lib-auframework-app */,
+				2C6471291A27A83100BE4797 /* lib-demos-nucleo */,
+				2C6470E81A26BC8000BE4797 /* demos-app-osx */,
+				2CDB96D61CCC6BDF00963FF6 /* demos-app-ios */,
+				2CDE692F18F8A2C400286F1F /* Frameworks */,
+				2CDE692E18F8A2C400286F1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CDE692E18F8A2C400286F1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CDE692D18F8A2C400286F1F /* libauframework-app-ios.a */,
+				2CDE695818F8A2E800286F1F /* libauframework-app-osx.a */,
+				2C6470E71A26BC8000BE4797 /* demos-app-osx.app */,
+				2C64712E1A27A87600BE4797 /* libdemos-osx.a */,
+				2C6471511A27A8D900BE4797 /* libdemos-ios.a */,
+				2CDB96D51CCC6BDF00963FF6 /* demos-app-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CDE692F18F8A2C400286F1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CEB4DCB21B6213E00BE31EE /* AppKit.framework */,
+				2CB3EDE8214C7B120034A8A8 /* libnbframework-osx.a */,
+				2CB3EDE6214C7B080034A8A8 /* libnbframework-ios.a */,
+				2CDB97211CCC755900963FF6 /* AudioToolbox.framework */,
+				2CDB971E1CCC707400963FF6 /* UIKit.framework */,
+				2CDB971C1CCC706C00963FF6 /* CoreGraphics.framework */,
+				2CDB971A1CCC706100963FF6 /* QuartzCore.framework */,
+				2CDB97181CCC6F8D00963FF6 /* OpenGLES.framework */,
+				2CDB97161CCC6F8400963FF6 /* OpenAL.framework */,
+				2CDB97141CCC6F7C00963FF6 /* libauframework-media-ios.a */,
+				2CDB97111CCC6F7500963FF6 /* libauframework-ios.a */,
+				2CDB96CF1CCC64E000963FF6 /* libauframework-osx.a */,
+				2CDB96CD1CCC64DA00963FF6 /* libauframework-media-osx.a */,
+				2C64711E1A26D8A400BE4797 /* Cocoa.framework */,
+				2C64711C1A26D89400BE4797 /* QuartzCore.framework */,
+				2C64711A1A26D88100BE4797 /* OpenAL.framework */,
+				2C6471181A26D87B00BE4797 /* OpenGL.framework */,
+				2C6471101A26BFA800BE4797 /* libauframework-media-osx.a */,
+				2C64710E1A26BFA400BE4797 /* libauframework-osx.a */,
+				2C64710C1A26BF9800BE4797 /* libauframework-ios.a */,
+				2C64710A1A26BF9400BE4797 /* libbox2d-osx.a */,
+				2CDE693018F8A2C400286F1F /* Foundation.framework */,
+				2CDE693E18F8A2C500286F1F /* XCTest.framework */,
+				2CDE694118F8A2C500286F1F /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CDE695C18F8A32400286F1F /* lib-auframework-app */ = {
+			isa = PBXGroup;
+			children = (
+				2CDE696518F8A3EE00286F1F /* AUAppNucleoEncabezado.h */,
+				2CDE696618F8A3EE00286F1F /* AUAppNucleoPrecompilado.h */,
+				2CDE697518F8A40400286F1F /* AUAppNucleoPrecompilado.cpp */,
+				2CDE696318F8A3EE00286F1F /* AUAppNucleo.h */,
+				2CEFBD231F3E4F23002DE695 /* AUAppI.h */,
+				2CDE695D18F8A3EE00286F1F /* AUApp.h */,
+				2CDE697118F8A40400286F1F /* AUApp.cpp */,
+				2C03B339191953C800AC54C4 /* AUAppNucleoRegistro.h */,
+				2C1BBA8C1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp */,
+				2CDE696018F8A3EE00286F1F /* AUAppSobrecargaOperadoresNew.h */,
+				2C6C6F6D1EFC28BE0052FBD4 /* Gestores */,
+				2CEC7D521EF4864A00FC8CCC /* ExternalGlues */,
+				2CDE699418F8AF5A00286F1F /* EscenasDebug */,
+				2CDE699318F8AF3D00286F1F /* EscenasAdmin */,
+				2CDE698018F8A8F500286F1F /* EscenasTransiciones */,
+			);
+			name = "lib-auframework-app";
+			sourceTree = SOURCE_ROOT;
+		};
+		2CDE698018F8A8F500286F1F /* EscenasTransiciones */ = {
+			isa = PBXGroup;
+			children = (
+				2CDE699018F8AD0800286F1F /* AUAppTransicion.h */,
+				2C9875BD18FA3020000DEB16 /* AUAppTransicion.cpp */,
+				2CDE698B18F8A99F00286F1F /* AUAppTransicionConColorSolido.h */,
+				2CDE698218F8A99200286F1F /* AUAppTransicionConColorSolido.cpp */,
+				2C7D26AF1B1F5F4700D2C76F /* AUAppTransicionConCortina.h */,
+				2C7D26AC1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp */,
+				2CDE698C18F8A99F00286F1F /* AUAppTransicionConFondo.h */,
+				2CDE698318F8A99200286F1F /* AUAppTransicionConFondo.cpp */,
+				2CDE698A18F8A99F00286F1F /* AUAppTransicionConCaptura.h */,
+				2CDE698118F8A99200286F1F /* AUAppTransicionConCaptura.cpp */,
+			);
+			name = EscenasTransiciones;
+			sourceTree = SOURCE_ROOT;
+		};
+		2CDE699318F8AF3D00286F1F /* EscenasAdmin */ = {
+			isa = PBXGroup;
+			children = (
+				2CDE696118F8A3EE00286F1F /* AUAppEscena.h */,
+				2CDE699518F8ECF600286F1F /* AUAppEscena.cpp */,
+				2CDE695F18F8A3EE00286F1F /* AUAppEscenasAdmin.h */,
+				2CDE697318F8A40400286F1F /* AUAppEscenasAdmin.cpp */,
+				2C6471141A26D12400BE4797 /* AUAppEscenasAdminSimple.h */,
+				2C6471151A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp */,
+			);
+			name = EscenasAdmin;
+			sourceTree = SOURCE_ROOT;
+		};
+		2CDE699418F8AF5A00286F1F /* EscenasDebug */ = {
+			isa = PBXGroup;
+			children = (
+				2CDE695E18F8A3EE00286F1F /* AUAppEscenasResumenDebug.h */,
+				2CDE697218F8A40400286F1F /* AUAppEscenasResumenDebug.cpp */,
+			);
+			name = EscenasDebug;
+			sourceTree = SOURCE_ROOT;
+		};
+		2CE0734D1F05BA8B0052DEC1 /* AppKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2C6C4F901F215B3400C89B1B /* AUAppGlueIOSKeyboard.h */,
+				2C6C4F911F215B3400C89B1B /* AUAppGlueIOSKeyboard.mm */,
+				2C3A86EF22023A07000625D5 /* AUAppGlueIOSKeyInput.h */,
+				2C3A86F022023A07000625D5 /* AUAppGlueIOSKeyInput.mm */,
+				2CE0734E1F05BAA00052DEC1 /* AUAppGlueAndroidKeyboard.h */,
+				2CE0734F1F05BAA00052DEC1 /* AUAppGlueAndroidKeyboard.cpp */,
+			);
+			name = AppKeyboard;
+			sourceTree = "<group>";
+		};
+		2CE71EEE239188C6002B5776 /* PDFiumHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				2CE71EF5239188E0002B5776 /* fpdf_annot.h */,
+				2CE71EF4239188DF002B5776 /* fpdf_attachment.h */,
+				2CE71EFD239188E0002B5776 /* fpdf_catalog.h */,
+				2CE71F03239188E0002B5776 /* fpdf_dataavail.h */,
+				2CE71EFA239188E0002B5776 /* fpdf_doc.h */,
+				2CE71EF6239188E0002B5776 /* fpdf_edit.h */,
+				2CE71EF7239188E0002B5776 /* fpdf_ext.h */,
+				2CE71EFF239188E0002B5776 /* fpdf_flatten.h */,
+				2CE71EFB239188E0002B5776 /* fpdf_formfill.h */,
+				2CE71EF1239188DF002B5776 /* fpdf_fwlevent.h */,
+				2CE71EFC239188E0002B5776 /* fpdf_javascript.h */,
+				2CE71F00239188E0002B5776 /* fpdf_ppo.h */,
+				2CE71F01239188E0002B5776 /* fpdf_progressive.h */,
+				2CE71EF8239188E0002B5776 /* fpdf_save.h */,
+				2CE71EFE239188E0002B5776 /* fpdf_searchex.h */,
+				2CE71EF0239188DF002B5776 /* fpdf_structtree.h */,
+				2CE71EF2239188DF002B5776 /* fpdf_sysfontinfo.h */,
+				2CE71EEF239188DF002B5776 /* fpdf_text.h */,
+				2CE71EF9239188E0002B5776 /* fpdf_thumbnail.h */,
+				2CE71F02239188E0002B5776 /* fpdf_transformpage.h */,
+				2CE71EF3239188DF002B5776 /* fpdfview.h */,
+			);
+			name = PDFiumHeaders;
+			sourceTree = "<group>";
+		};
+		2CEC7D521EF4864A00FC8CCC /* ExternalGlues */ = {
+			isa = PBXGroup;
+			children = (
+				2C5BE7E82970ECDC009A3E0E /* Android */,
+				2CD0607A22430DB800C4EE4F /* PdfKit */,
+				2C6D373422306C2D007F50DA /* Contacts */,
+				2C053C56220CC86B001B0787 /* Biometrics */,
+				2C053C2722088024001B0787 /* Telephony */,
+				2C42499121F280E700F8EC75 /* AVCapture */,
+				2C274D361F0AF1EE009D6632 /* iOS */,
+				2CD2E7881F00962F0072D106 /* AppJNI */,
+				2C274D3E1F0B2E19009D6632 /* OSTools */,
+				2CA8C7E7205C84B5001B1CE2 /* OSSecure */,
+				2C6C6F761EFC305E0052FBD4 /* AppFileSystem */,
+				2CE0734D1F05BA8B0052DEC1 /* AppKeyboard */,
+				2C6C6F771EFC306D0052FBD4 /* AppNotifications */,
+				2C0ACBD31F02ED9E002F31AD /* Store */,
+				2CF58BBF1F3A547B00118CEB /* AppGameKit */,
+			);
+			name = ExternalGlues;
+			sourceTree = SOURCE_ROOT;
+		};
+		2CF58BBF1F3A547B00118CEB /* AppGameKit */ = {
+			isa = PBXGroup;
+			children = (
+				2CF58BC01F3A54C100118CEB /* AUAppGlueIOSGameKit.h */,
+				2CF58BC11F3A54C100118CEB /* AUAppGlueIOSGameKit.mm */,
+			);
+			name = AppGameKit;
+			sourceTree = "<group>";
+		};
+		2CF58BC31F3A54D300118CEB /* GameKit */ = {
+			isa = PBXGroup;
+			children = (
+				2CF58BC41F3A552600118CEB /* AUMngrGameKit.h */,
+				2CF58BC61F3A552600118CEB /* AUMngrGameKit.cpp */,
+				2CF58BC51F3A552600118CEB /* NBMngrGameKit.h */,
+				2CF58BC71F3A552600118CEB /* NBMngrGameKit.cpp */,
+			);
+			name = GameKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2C64712C1A27A87500BE4797 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C6470E61A26BC8000BE4797 /* demos-app-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C6471011A26BC8100BE4797 /* Build configuration list for PBXNativeTarget "demos-app-osx" */;
+			buildPhases = (
+				2C6470E31A26BC8000BE4797 /* Sources */,
+				2C6470E41A26BC8000BE4797 /* Frameworks */,
+				2C6470E51A26BC8000BE4797 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "demos-app-osx";
+			productName = "app-test-renderText";
+			productReference = 2C6470E71A26BC8000BE4797 /* demos-app-osx.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C64712D1A27A87500BE4797 /* demos-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C64712F1A27A87600BE4797 /* Build configuration list for PBXNativeTarget "demos-osx" */;
+			buildPhases = (
+				2C64712A1A27A87500BE4797 /* Sources */,
+				2C64712B1A27A87500BE4797 /* Frameworks */,
+				2C64712C1A27A87500BE4797 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "demos-osx";
+			productName = "demos-osx";
+			productReference = 2C64712E1A27A87600BE4797 /* libdemos-osx.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2C6471501A27A8D900BE4797 /* demos-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C6471621A27A8D900BE4797 /* Build configuration list for PBXNativeTarget "demos-ios" */;
+			buildPhases = (
+				2C64714D1A27A8D900BE4797 /* Sources */,
+				2C64714E1A27A8D900BE4797 /* Frameworks */,
+				2C64714F1A27A8D900BE4797 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "demos-ios";
+			productName = "demos-ios";
+			productReference = 2C6471511A27A8D900BE4797 /* libdemos-ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2CDB96D41CCC6BDF00963FF6 /* demos-app-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CDB96F51CCC6BDF00963FF6 /* Build configuration list for PBXNativeTarget "demos-app-ios" */;
+			buildPhases = (
+				2CDB96D11CCC6BDF00963FF6 /* Sources */,
+				2CDB96D21CCC6BDF00963FF6 /* Frameworks */,
+				2CDB96D31CCC6BDF00963FF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "demos-app-ios";
+			productName = "demos-app-ios";
+			productReference = 2CDB96D51CCC6BDF00963FF6 /* demos-app-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2CDE692C18F8A2C400286F1F /* auframework-app-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CDE695218F8A2C500286F1F /* Build configuration list for PBXNativeTarget "auframework-app-ios" */;
+			buildPhases = (
+				2CDE692918F8A2C400286F1F /* Sources */,
+				2CDE692A18F8A2C400286F1F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "auframework-app-ios";
+			productName = "auframework-app-ios";
+			productReference = 2CDE692D18F8A2C400286F1F /* libauframework-app-ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2CDE695718F8A2E800286F1F /* auframework-app-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CDE695918F8A2E800286F1F /* Build configuration list for PBXNativeTarget "auframework-app-osx" */;
+			buildPhases = (
+				2CDE695418F8A2E800286F1F /* Sources */,
+				2CDE695518F8A2E800286F1F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "auframework-app-osx";
+			productName = "auframework-app-osx";
+			productReference = 2CDE695818F8A2E800286F1F /* libauframework-app-osx.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CDE692318F8A1C400286F1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					2C6470E61A26BC8000BE4797 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					2C64712D1A27A87500BE4797 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					2C6471501A27A8D900BE4797 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					2CDB96D41CCC6BDF00963FF6 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 6UE6B358D8;
+					};
+				};
+			};
+			buildConfigurationList = 2CDE692618F8A1C400286F1F /* Build configuration list for PBXProject "lib-auframework-app" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 2CDE692218F8A1C400286F1F;
+			productRefGroup = 2CDE692E18F8A2C400286F1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CDE692C18F8A2C400286F1F /* auframework-app-ios */,
+				2CDE695718F8A2E800286F1F /* auframework-app-osx */,
+				2C6471501A27A8D900BE4797 /* demos-ios */,
+				2C64712D1A27A87500BE4797 /* demos-osx */,
+				2CDB96D41CCC6BDF00963FF6 /* demos-app-ios */,
+				2C6470E61A26BC8000BE4797 /* demos-app-osx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C6470E51A26BC8000BE4797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C6470F11A26BC8000BE4797 /* Images.xcassets in Resources */,
+				2C6470F41A26BC8000BE4797 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDB96D31CCC6BDF00963FF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CDB972D1CCC7A3400963FF6 /* verdana.ttf in Resources */,
+				2CDB96E31CCC6BDF00963FF6 /* Main.storyboard in Resources */,
+				2CDB972C1CCC7A3400963FF6 /* Roboto-Regular.ttf in Resources */,
+				2CDB972B1CCC7A3400963FF6 /* Roboto-Italic.ttf in Resources */,
+				2CDB96E81CCC6BDF00963FF6 /* LaunchScreen.xib in Resources */,
+				2CDB972A1CCC7A3400963FF6 /* Roboto-Bold.ttf in Resources */,
+				2CDB97291CCC7A3400963FF6 /* arial.ttf in Resources */,
+				2CDB96E51CCC6BDF00963FF6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C6470E31A26BC8000BE4797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C6470EF1A26BC8000BE4797 /* main.mm in Sources */,
+				2C6471091A26BD6300BE4797 /* AUGLView.mm in Sources */,
+				2C6470ED1A26BC8000BE4797 /* AppDelegate.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C64712A1A27A87500BE4797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C64716F1A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp in Sources */,
+				2C64716C1A27ABFD00BE4797 /* AUDemosRegistro.cpp in Sources */,
+				2C3066CE21ADE6130098DF8A /* AUEscenaDemoTextBox.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C64714D1A27A8D900BE4797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C6471701A27ABFD00BE4797 /* AUEscenaDemoTextRender.cpp in Sources */,
+				2C64716D1A27ABFD00BE4797 /* AUDemosRegistro.cpp in Sources */,
+				2C3066D121ADE6130098DF8A /* AUEscenaDemoTextBox.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDB96D11CCC6BDF00963FF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CDB97081CCC6C6500963FF6 /* main.mm in Sources */,
+				2CDB97051CCC6C6500963FF6 /* EAGLView.mm in Sources */,
+				2CDB97061CCC6C6500963FF6 /* EAGLViewController.mm in Sources */,
+				2CDB97041CCC6C6500963FF6 /* AUAppDelegate.mm in Sources */,
+				2CDB97071CCC6C6500963FF6 /* iOSAudioSession.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDE692918F8A2C400286F1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA8C7E3205C7DE4001B1CE2 /* NBMngrOSSecure.cpp in Sources */,
+				2C6471161A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp in Sources */,
+				2CDE697818F8A40400286F1F /* AUAppEscenasResumenDebug.cpp in Sources */,
+				2CA8C7EA205C8507001B1CE2 /* AUAppGlueAppleSecure.cpp in Sources */,
+				2C053C3322088166001B0787 /* AUMngrOSTelephony.cpp in Sources */,
+				2C7BA48D1F857F5000C34342 /* AUMngrGoogleLogin.cpp in Sources */,
+				2C053C51220CC361001B0787 /* NBMngrBiometrics.cpp in Sources */,
+				2C053C2D220880A6001B0787 /* AUAppGlueIOSTelephony.mm in Sources */,
+				2CDE697A18F8A40400286F1F /* AUAppEscenasAdmin.cpp in Sources */,
+				2CFF503C1942235000D44E24 /* actualizarTodos.cpp in Sources */,
+				2CDE698818F8A99200286F1F /* AUAppTransicionConFondo.cpp in Sources */,
+				2CD060752243012000C4EE4F /* NBMngrPdfKit.cpp in Sources */,
+				2C274D351F0AEBFB009D6632 /* AUIOSSurfaceView.mm in Sources */,
+				2CDB137021F7A1860063BF46 /* AUMngrAVCapture.cpp in Sources */,
+				2C0ACBCD1F02D925002F31AD /* NBMngrStore.cpp in Sources */,
+				2CCFDE7B1F8423450019EA1B /* NBMngrFbLogin.cpp in Sources */,
+				2C7BA48E1F857F5000C34342 /* NBMngrGoogleLogin.cpp in Sources */,
+				2CDE697618F8A40400286F1F /* AUApp.cpp in Sources */,
+				2CA8C7E4205C7DE4001B1CE2 /* AUMngrOSSecure.cpp in Sources */,
+				2C274D411F0B2E72009D6632 /* AUAppGlueIOSTools.mm in Sources */,
+				2C274D471F0B3816009D6632 /* AUMngrOSTools.cpp in Sources */,
+				2CDB136E21F7A1860063BF46 /* NBMngrAVCapture.cpp in Sources */,
+				2CEC7D5A1EF49B2F00FC8CCC /* AUAppGlueIOSFiles.mm in Sources */,
+				2CDE698418F8A99200286F1F /* AUAppTransicionConCaptura.cpp in Sources */,
+				2CF58BC81F3A552600118CEB /* AUMngrGameKit.cpp in Sources */,
+				2C6D373722306C77007F50DA /* AUAppGlueAppleContacts.mm in Sources */,
+				2CDE698618F8A99200286F1F /* AUAppTransicionConColorSolido.cpp in Sources */,
+				2CD060722243010400C4EE4F /* AUMngrPdfKit.cpp in Sources */,
+				2C6C6F7A1EFC30AF0052FBD4 /* AUAppGlueIOSNotifs.mm in Sources */,
+				2C1BBA8D1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp in Sources */,
+				2C274D481F0B3816009D6632 /* NBMngrOSTools.cpp in Sources */,
+				2C6C6F731EFC293C0052FBD4 /* NBMngrNotifs.cpp in Sources */,
+				2C0ACBD61F030281002F31AD /* AUAppGlueIOSStore.mm in Sources */,
+				2CF58BC91F3A552600118CEB /* NBMngrGameKit.cpp in Sources */,
+				2CDE699618F8ECF600286F1F /* AUAppEscena.cpp in Sources */,
+				2CEC7D5B1EF49B2F00FC8CCC /* AUAppGlueOsxFiles.mm in Sources */,
+				2C274D3D1F0AFEC2009D6632 /* AUIOSAudioSession.cpp in Sources */,
+				2C0ACBCC1F02D925002F31AD /* AUMngrStore.cpp in Sources */,
+				2C7D26AD1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp in Sources */,
+				2CDE697E18F8A40400286F1F /* AUAppNucleoPrecompilado.cpp in Sources */,
+				2C6C6F721EFC293C0052FBD4 /* AUMngrNotifs.cpp in Sources */,
+				2C053C3522088166001B0787 /* NBMngrOSTelephony.cpp in Sources */,
+				2C274D391F0AF214009D6632 /* AUIOSMonoViewController.mm in Sources */,
+				2C9875BE18FA3020000DEB16 /* AUAppTransicion.cpp in Sources */,
+				2C5183AC22AB16D600CDAE15 /* AUAppGlueIOSKeyInput.mm in Sources */,
+				2C42499421F2915400F8EC75 /* AUAppGlueIOSAVCapture.mm in Sources */,
+				2C6C4F921F215B3400C89B1B /* AUAppGlueIOSKeyboard.mm in Sources */,
+				2CCFDE7C1F8423450019EA1B /* AUMngrFbLogin.cpp in Sources */,
+				2C6D373222306891007F50DA /* AUMngrContacts.cpp in Sources */,
+				2C053C59220CC8B8001B0787 /* AUAppGlueIOSBiometrics.mm in Sources */,
+				2CD0607D22430E3500C4EE4F /* AUAppGlueApplePdfKit.mm in Sources */,
+				2C6D373022306891007F50DA /* NBMngrContacts.cpp in Sources */,
+				2C053C53220CC361001B0787 /* AUMngrBiometrics.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDE695418F8A2E800286F1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C7BA4971F85B40E00C34342 /* NBMngrGoogleLogin.cpp in Sources */,
+				2CEC7D5C1EF49B7600FC8CCC /* AUAppGlueIOSFiles.mm in Sources */,
+				2C274D4A1F0B393A009D6632 /* NBMngrOSTools.cpp in Sources */,
+				2C947446234EA7AD00C8BE93 /* AUAppGlueOsxTools.mm in Sources */,
+				2CDB136F21F7A1860063BF46 /* NBMngrAVCapture.cpp in Sources */,
+				2C6C6F741EFC2B2F0052FBD4 /* NBMngrNotifs.cpp in Sources */,
+				2CEC7D5D1EF49B7800FC8CCC /* AUAppGlueOsxFiles.mm in Sources */,
+				2CD060732243010400C4EE4F /* AUMngrPdfKit.cpp in Sources */,
+				2CDE697918F8A40400286F1F /* AUAppEscenasResumenDebug.cpp in Sources */,
+				2CDE697B18F8A40400286F1F /* AUAppEscenasAdmin.cpp in Sources */,
+				2C053C54220CC361001B0787 /* AUMngrBiometrics.cpp in Sources */,
+				2CDE698918F8A99200286F1F /* AUAppTransicionConFondo.cpp in Sources */,
+				2CA8C7EC205C8975001B1CE2 /* AUAppGlueAppleSecure.cpp in Sources */,
+				2C053C3422088166001B0787 /* AUMngrOSTelephony.cpp in Sources */,
+				2C053C3622088166001B0787 /* NBMngrOSTelephony.cpp in Sources */,
+				2CDE697718F8A40400286F1F /* AUApp.cpp in Sources */,
+				2CDE698518F8A99200286F1F /* AUAppTransicionConCaptura.cpp in Sources */,
+				2C274D491F0B3935009D6632 /* AUMngrOSTools.cpp in Sources */,
+				2C6D373322306891007F50DA /* AUMngrContacts.cpp in Sources */,
+				2CD060762243012000C4EE4F /* NBMngrPdfKit.cpp in Sources */,
+				2C7BA4961F85B40C00C34342 /* AUMngrGoogleLogin.cpp in Sources */,
+				2CDB137121F7A1860063BF46 /* AUMngrAVCapture.cpp in Sources */,
+				2CDE698718F8A99200286F1F /* AUAppTransicionConColorSolido.cpp in Sources */,
+				2C6471171A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp in Sources */,
+				2C7D26AE1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp in Sources */,
+				2C1BBA8E1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp in Sources */,
+				2CA8C7E5205C81D6001B1CE2 /* AUMngrOSSecure.cpp in Sources */,
+				2CDE699718F8ECF600286F1F /* AUAppEscena.cpp in Sources */,
+				2C6D373822306C77007F50DA /* AUAppGlueAppleContacts.mm in Sources */,
+				2CDE697F18F8A40400286F1F /* AUAppNucleoPrecompilado.cpp in Sources */,
+				2CDFFD4D22EA5B54003B27D3 /* AUAppGlueApplePdfKit.mm in Sources */,
+				2C0ACBD11F02DE63002F31AD /* NBMngrStore.cpp in Sources */,
+				2C7BA4941F85B40400C34342 /* NBMngrFbLogin.cpp in Sources */,
+				2C0ACBD21F02DE65002F31AD /* AUMngrStore.cpp in Sources */,
+				2CA8C7E6205C81D9001B1CE2 /* NBMngrOSSecure.cpp in Sources */,
+				2C6C6F751EFC2B320052FBD4 /* AUMngrNotifs.cpp in Sources */,
+				2C9875BF18FA3020000DEB16 /* AUAppTransicion.cpp in Sources */,
+				2C053C52220CC361001B0787 /* NBMngrBiometrics.cpp in Sources */,
+				2C6D373122306891007F50DA /* NBMngrContacts.cpp in Sources */,
+				2C7BA4951F85B40600C34342 /* AUMngrFbLogin.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C6470F21A26BC8000BE4797 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C6470F31A26BC8000BE4797 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2CDB96E11CCC6BDF00963FF6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDB96E21CCC6BDF00963FF6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2CDB96E61CCC6BDF00963FF6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDB96E71CCC6BDF00963FF6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C6471021A26BC8100BE4797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "app-test-renderText-osx/demos-app-osx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "app-test-renderText-osx/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/sis-refraneronica-aiwfeoqwewzofsfysjewnfaiimtb/Build/Products/Debug",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug-iphoneos",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework-media/lib-auframework-media/projects/xcode/lib-auframework-media/build/Debug",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/cpp/lib-demos-nucleo $(inherited)";
+			};
+			name = Debug;
+		};
+		2C6471031A26BC8100BE4797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "app-test-renderText-osx/demos-app-osx-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "app-test-renderText-osx/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/sis-refraneronica-aiwfeoqwewzofsfysjewnfaiimtb/Build/Products/Debug",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug-iphoneos",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework-media/lib-auframework-media/projects/xcode/lib-auframework-media/build/Debug",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/cpp/lib-demos-nucleo $(inherited)";
+			};
+			name = Release;
+		};
+		2C6471301A27A87600BE4797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2C6471311A27A87600BE4797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2C6471631A27A8D900BE4797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2C6471641A27A8D900BE4797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CDB96F61CCC6BDF00963FF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "demos-app-ios/demos-app-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "demos-app-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug-iphoneos",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework-media/lib-auframework-media/projects/xcode/lib-auframework-media/build/Debug-iphoneos",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/cpp/lib-demos-nucleo $(inherited)";
+			};
+			name = Debug;
+		};
+		2CDB96F71CCC6BDF00963FF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "demos-app-ios/demos-app-ios-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "demos-app-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug-iphoneos",
+					"/Users/mortegam/Desktop/NIBSA_proyectos/CltNicaraguaBinary/lib-auframework-media/lib-auframework-media/projects/xcode/lib-auframework-media/build/Debug-iphoneos",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/cpp/lib-demos-nucleo $(inherited)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CDE692718F8A1C400286F1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../include $(SRCROOT)/../../../src/pdfium_osx/pdfium-darwin-debug/include";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		2CDE692818F8A1C400286F1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../include $(SRCROOT)/../../../src/pdfium_osx/pdfium-darwin-debug/include";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		2CDE694E18F8A2C500286F1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/auframework_app_ios.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 11.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2CDE694F18F8A2C500286F1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/auframework_app_ios.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 11.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CDE695A18F8A2E800286F1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2CDE695B18F8A2E800286F1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C6471011A26BC8100BE4797 /* Build configuration list for PBXNativeTarget "demos-app-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C6471021A26BC8100BE4797 /* Debug */,
+				2C6471031A26BC8100BE4797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C64712F1A27A87600BE4797 /* Build configuration list for PBXNativeTarget "demos-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C6471301A27A87600BE4797 /* Debug */,
+				2C6471311A27A87600BE4797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C6471621A27A8D900BE4797 /* Build configuration list for PBXNativeTarget "demos-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C6471631A27A8D900BE4797 /* Debug */,
+				2C6471641A27A8D900BE4797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDB96F51CCC6BDF00963FF6 /* Build configuration list for PBXNativeTarget "demos-app-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDB96F61CCC6BDF00963FF6 /* Debug */,
+				2CDB96F71CCC6BDF00963FF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDE692618F8A1C400286F1F /* Build configuration list for PBXProject "lib-auframework-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDE692718F8A1C400286F1F /* Debug */,
+				2CDE692818F8A1C400286F1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDE695218F8A2C500286F1F /* Build configuration list for PBXNativeTarget "auframework-app-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDE694E18F8A2C500286F1F /* Debug */,
+				2CDE694F18F8A2C500286F1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDE695918F8A2E800286F1F /* Build configuration list for PBXNativeTarget "auframework-app-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDE695A18F8A2E800286F1F /* Debug */,
+				2CDE695B18F8A2E800286F1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CDE692318F8A1C400286F1F /* Project object */;
+}

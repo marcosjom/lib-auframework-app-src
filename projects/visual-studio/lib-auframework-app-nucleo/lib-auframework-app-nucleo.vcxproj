@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\AUApp.h" />
+    <ClInclude Include="..\..\..\include\AUAppEscena.h" />
+    <ClInclude Include="..\..\..\include\AUAppEscenasAdmin.h" />
+    <ClInclude Include="..\..\..\include\AUAppEscenasAdminSimple.h" />
+    <ClInclude Include="..\..\..\include\AUAppEscenasResumenDebug.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidAVCapture.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidBiometrics.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidContacts.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidFiles.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidJNI.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidKeyboard.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidNotifs.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidSecure.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidStore.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidTelephony.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueAndroidTools.h" />
+    <ClInclude Include="..\..\..\include\AUAppGluePdfium.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueWinFiles.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueWinSecure.h" />
+    <ClInclude Include="..\..\..\include\AUAppGlueWinTools.h" />
+    <ClInclude Include="..\..\..\include\AUAppI.h" />
+    <ClInclude Include="..\..\..\include\AUAppNucleo.h" />
+    <ClInclude Include="..\..\..\include\AUAppNucleoEncabezado.h" />
+    <ClInclude Include="..\..\..\include\AUAppNucleoPrecompilado.h" />
+    <ClInclude Include="..\..\..\include\AUAppNucleoRegistro.h" />
+    <ClInclude Include="..\..\..\include\AUAppSobrecargaOperadoresNew.h" />
+    <ClInclude Include="..\..\..\include\AUAppTransicion.h" />
+    <ClInclude Include="..\..\..\include\AUAppTransicionConCaptura.h" />
+    <ClInclude Include="..\..\..\include\AUAppTransicionConColorSolido.h" />
+    <ClInclude Include="..\..\..\include\AUAppTransicionConCortina.h" />
+    <ClInclude Include="..\..\..\include\AUAppTransicionConFondo.h" />
+    <ClInclude Include="..\..\..\include\AUMngrAVCapture.h" />
+    <ClInclude Include="..\..\..\include\AUMngrBiometrics.h" />
+    <ClInclude Include="..\..\..\include\AUMngrContacts.h" />
+    <ClInclude Include="..\..\..\include\AUMngrFbLogin.h" />
+    <ClInclude Include="..\..\..\include\AUMngrGameKit.h" />
+    <ClInclude Include="..\..\..\include\AUMngrGoogleLogin.h" />
+    <ClInclude Include="..\..\..\include\AUMngrNotifs.h" />
+    <ClInclude Include="..\..\..\include\AUMngrOSSecure.h" />
+    <ClInclude Include="..\..\..\include\AUMngrOSTelephony.h" />
+    <ClInclude Include="..\..\..\include\AUMngrOSTools.h" />
+    <ClInclude Include="..\..\..\include\AUMngrPdfKit.h" />
+    <ClInclude Include="..\..\..\include\AUMngrStore.h" />
+    <ClInclude Include="..\..\..\include\NBMngrAVCapture.h" />
+    <ClInclude Include="..\..\..\include\NBMngrBiometrics.h" />
+    <ClInclude Include="..\..\..\include\NBMngrContacts.h" />
+    <ClInclude Include="..\..\..\include\NBMngrFbLogin.h" />
+    <ClInclude Include="..\..\..\include\NBMngrGameKit.h" />
+    <ClInclude Include="..\..\..\include\NBMngrGoogleLogin.h" />
+    <ClInclude Include="..\..\..\include\NBMngrNotifs.h" />
+    <ClInclude Include="..\..\..\include\NBMngrOSSecure.h" />
+    <ClInclude Include="..\..\..\include\NBMngrOSTelephony.h" />
+    <ClInclude Include="..\..\..\include\NBMngrOSTools.h" />
+    <ClInclude Include="..\..\..\include\NBMngrPdfKit.h" />
+    <ClInclude Include="..\..\..\include\NBMngrStore.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\cpp\AUApp.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscena.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscenasAdmin.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscenasAdminSimple.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppEscenasResumenDebug.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidAVCapture.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidBiometrics.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidContacts.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidFiles.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidJNI.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidKeyboard.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidNotifs.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidSecure.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidStore.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidTelephony.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueAndroidTools.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppGluePdfium.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinFiles.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinSecure.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinTools.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppNucleoPrecompilado.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAppNucleoRegistro.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicion.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConCaptura.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConColorSolido.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConCortina.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppTransicionConFondo.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrAVCapture.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrBiometrics.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrContacts.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrFbLogin.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrGameKit.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrGoogleLogin.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrNotifs.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrOSSecure.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrOSTelephony.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrOSTools.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrPdfKit.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMngrStore.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrAVCapture.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrBiometrics.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrContacts.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrFbLogin.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrGameKit.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrGoogleLogin.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrNotifs.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrOSSecure.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrOSTelephony.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrOSTools.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrPdfKit.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBMngrStore.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>gamealanicanucleo</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext-libs\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext-libs\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext-libs\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext-libs\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PrecompiledHeaderFile>AUAppNucleoPrecompilado.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PrecompiledHeaderFile>AUAppNucleoPrecompilado.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PrecompiledHeaderFile>AUAppNucleoPrecompilado.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PrecompiledHeaderFile>AUAppNucleoPrecompilado.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
