@@ -147,7 +147,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\cpp\AUAppGluePdfium.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAppGluePdfium.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinFiles.cpp" />
     <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinSecure.cpp" />
     <ClCompile Include="..\..\..\src\cpp\AUAppGlueWinTools.cpp" />
@@ -267,7 +272,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\sys-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\sys-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PrecompiledHeaderFile>AUAppNucleoPrecompilado.h</PrecompiledHeaderFile>
@@ -281,7 +286,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\sys-nbframework-src\include;$(ProjectDir)..\..\..\..\..\sys-nbframework\sys-nbframework-src\ext\include;$(ProjectDir)..\..\..\..\lib-box2d-src\include;$(ProjectDir)..\..\..\..\lib-auframework-src\include;$(ProjectDir)..\..\..\..\lib-auframework-media-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PrecompiledHeaderFile>AUAppNucleoPrecompilado.h</PrecompiledHeaderFile>

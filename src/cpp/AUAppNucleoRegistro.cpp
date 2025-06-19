@@ -49,7 +49,7 @@ UI16 AUMngrGoogleLogin::idTipoClase;
 #endif
 
 NB_METODO_INICIALIZADOR_CUERPO(AUAppNucleoRegistrar){
-	//PRINTF_INFO("\n\n+++++++++++++ AUAppNucleoRegistrar +++++++++++++++\n\n");
+	//printf("\n\n+++++++++++++ AUAppNucleoRegistrar +++++++++++++++\n\n");
 	NBGestorAUObjetos::registrarClase("AUAppEscena", &AUAppEscena::idTipoClase);
 	NBGestorAUObjetos::registrarClase("AUAppEscenasAdmin", &AUAppEscenasAdmin::idTipoClase);
 	NBGestorAUObjetos::registrarClase("AUAppEscenasAdminSimple", &AUAppEscenasAdminSimple::idTipoClase);

@@ -28,6 +28,8 @@ class AUEscenaDemoTextBox : public AUAppEscena, public IEscuchadorCambioPuertoVi
 		bool escenaEnPrimerPlano();
 		void escenaColocarEnPrimerPlano();
 		void escenaQuitarDePrimerPlano();
+        //
+        void escenaGetOrientations(UI32* dstMask, ENAppOrientationBit* dstPrefered, ENAppOrientationBit* dstToApplyOnce, BOOL* dstAllowAutoRotate);
 		//
 		bool escenaEstaAnimandoSalida();
 		void escenaAnimarSalida();

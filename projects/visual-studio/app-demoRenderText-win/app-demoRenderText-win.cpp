@@ -12,7 +12,10 @@
 #include "AUFrameworkBase.h"
 #include "AUFrameworkMedia.h"
 #include "AUAppNucleo.h"
-
+//
+#include "nb/core/NBMngrStructMaps.h"
+#include "nb/core/NBMngrProcess.h"
+//
 #define USE_DEMO_TEXT_RENDER
 //#define USE_DEMO_TEXTBOX
 
@@ -416,6 +419,12 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 					int			nCmdShow)			// Window Show State
 {
 	MSG		msg;	// Windows Message Structure
+	//
+	NBMngrProcess_init();
+	NBMngrStructMaps_init();
+	//NBSocket_initEngine();
+	//NBSocket_initWSA();
+	//
 	_usuIdMostrar[0] = '\0';
 	_usuNomMostrar[0] = '\0';
 	//------------------------
@@ -487,9 +496,9 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 							int y = GET_Y_LPARAM(msg.lParam);
 							//PRINTF_INFO("BUTTON-DOWN x(%d) y(%d)\n", x, y);
 							if(_touchIsDown){
-								_app->touchFinalizado(1, x, y, false);
+								NBGestorTouches::touchFinalizar(1, x, y, false);
 							}
-							_app->touchIniciado(1, x, y);
+							NBGestorTouches::touchIniciar(1, x, y);
 							_touchIsDown = true;
 						}
 						break;
@@ -501,7 +510,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 							int y = GET_Y_LPARAM(msg.lParam);
 							//PRINTF_INFO("BUTTON-UP x(%d) y(%d)\n", x, y);
 							if(_touchIsDown){
-								_app->touchFinalizado(1, x, y, false);
+								NBGestorTouches::touchFinalizar(1, x, y, false);
 								_touchIsDown = false;
 							}
 						}
@@ -513,7 +522,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 							int y = GET_Y_LPARAM(msg.lParam);
 							//PRINTF_INFO("MOUSEMOVE x(%d) y(%d).\n", x, y);
 							if(_touchIsDown){
-								_app->touchMovido(1, x, y);
+								NBGestorTouches::touchMover(1, x, y);
 							}
 						}
 						break;
@@ -564,5 +573,9 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 		KillGLWindow();									// Kill The Window
 		return (msg.wParam);							// Exit The Program
 	}
+	//NBSocket_finishWSA();
+	//NBSocket_releaseEngine();
+	NBMngrStructMaps_release();
+	NBMngrProcess_release();
 	return 0;
 }

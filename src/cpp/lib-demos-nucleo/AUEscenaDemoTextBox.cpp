@@ -236,6 +236,12 @@ void AUEscenaDemoTextBox::escenaQuitarDePrimerPlano(){
 
 //
 
+void AUEscenaDemoTextBox::escenaGetOrientations(UI32* dstMask, ENAppOrientationBit* dstPrefered, ENAppOrientationBit* dstToApplyOnce, BOOL* dstAllowAutoRotate){
+    //
+}
+
+//
+
 bool AUEscenaDemoTextBox::escenaEstaAnimandoSalida(){
 	return false;
 }

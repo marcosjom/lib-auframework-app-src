@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2050
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib-auframework-app-nucleo", "lib-auframework-app-nucleo\lib-auframework-app-nucleo.vcxproj", "{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}"
 EndProject
@@ -18,7 +18,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app-demoRenderText-win", "a
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{B594AACA-F939-4A19-8699-840D972C77ED}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nbframework", "..\..\..\..\sys-nbframework\lib-nbframework-src\projects\visual-studio\nbframework\nbframework.vcxproj", "{7FDDBC68-B369-4346-BA6E-7C1CE2FF732F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nbframework", "..\..\..\..\sys-nbframework\sys-nbframework-src\projects\visual-studio\nbframework\nbframework.vcxproj", "{7FDDBC68-B369-4346-BA6E-7C1CE2FF732F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib-auframework", "..\..\..\lib-auframework-src\projects\visual-studio\auframework\lib-auframework.vcxproj", "{A3DD7FE1-CACF-4CD6-BE77-0D696E5CC4D0}"
 EndProject
@@ -34,22 +34,22 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Debug|Win32.ActiveCfg = Debug|Win32
 		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Debug|Win32.Build.0 = Debug|Win32
-		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Debug|x64.ActiveCfg = Debug|Win32
+		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Debug|x64.ActiveCfg = Debug|x64
 		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Release|Win32.ActiveCfg = Release|Win32
 		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Release|Win32.Build.0 = Release|Win32
-		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Release|x64.ActiveCfg = Release|Win32
+		{77E53C2B-9272-4BE7-B42D-33BCBD54FA34}.Release|x64.ActiveCfg = Release|x64
 		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Debug|Win32.ActiveCfg = Debug|Win32
 		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Debug|Win32.Build.0 = Debug|Win32
-		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Debug|x64.ActiveCfg = Debug|Win32
+		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Debug|x64.ActiveCfg = Debug|x64
 		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Release|Win32.ActiveCfg = Release|Win32
 		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Release|Win32.Build.0 = Release|Win32
-		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Release|x64.ActiveCfg = Release|Win32
+		{EF57A78E-EB9D-417A-A29A-CFDF3809E2CF}.Release|x64.ActiveCfg = Release|x64
 		{D7546C11-1150-43DF-98B9-387620A16097}.Debug|Win32.ActiveCfg = Debug|Win32
 		{D7546C11-1150-43DF-98B9-387620A16097}.Debug|Win32.Build.0 = Debug|Win32
-		{D7546C11-1150-43DF-98B9-387620A16097}.Debug|x64.ActiveCfg = Debug|Win32
+		{D7546C11-1150-43DF-98B9-387620A16097}.Debug|x64.ActiveCfg = Debug|x64
 		{D7546C11-1150-43DF-98B9-387620A16097}.Release|Win32.ActiveCfg = Release|Win32
 		{D7546C11-1150-43DF-98B9-387620A16097}.Release|Win32.Build.0 = Release|Win32
-		{D7546C11-1150-43DF-98B9-387620A16097}.Release|x64.ActiveCfg = Release|Win32
+		{D7546C11-1150-43DF-98B9-387620A16097}.Release|x64.ActiveCfg = Release|x64
 		{7FDDBC68-B369-4346-BA6E-7C1CE2FF732F}.Debug|Win32.ActiveCfg = Debug|Win32
 		{7FDDBC68-B369-4346-BA6E-7C1CE2FF732F}.Debug|Win32.Build.0 = Debug|Win32
 		{7FDDBC68-B369-4346-BA6E-7C1CE2FF732F}.Debug|x64.ActiveCfg = Debug|x64
@@ -68,10 +68,10 @@ Global
 		{A3DD7FE1-CACF-4CD6-BE77-0D696E5CC4D0}.Release|x64.Build.0 = Release|x64
 		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Debug|Win32.ActiveCfg = Debug|Win32
 		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Debug|Win32.Build.0 = Debug|Win32
-		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Debug|x64.ActiveCfg = Debug|Win32
+		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Debug|x64.ActiveCfg = Debug|x64
 		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Release|Win32.ActiveCfg = Release|Win32
 		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Release|Win32.Build.0 = Release|Win32
-		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Release|x64.ActiveCfg = Release|Win32
+		{CBA4579C-AD7E-40BB-A1D5-86A421610234}.Release|x64.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

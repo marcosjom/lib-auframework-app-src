@@ -258,7 +258,7 @@ bool AUAppGlueWinTools::shareFile(void* pData, const char* filepathh, const char
 					BOOL fileExists = FALSE;
 					{
                         STNBFileRef stream = NBFile_alloc(NULL);
-						if(NBFile_open(&stream, strNewPath.str, ENNBFileMode_Read)){
+						if(NBFile_open(stream, strNewPath.str, ENNBFileMode_Read)){
 							fileExists = TRUE;
 							NBFile_close(stream);
 						}

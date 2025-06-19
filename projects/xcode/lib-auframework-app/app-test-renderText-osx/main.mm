@@ -7,9 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#include "nb/core/NBMngrStructMaps.h"
+#include "nb/core/NBMngrProcess.h"
 
 int main(int argc, const char * argv[]) {
 	int r = 0;
+    NBMngrProcess_init();
+    NBMngrStructMaps_init();
+    //NBSocket_initEngine();
+    //NBSocket_initWSA();
 	if(!AUApp::inicializarNucleo(AUAPP_BIT_MODULO_RED)){
 		PRINTF_ERROR("No se pudo incializar NUCLEO\n");
 		return -1;
@@ -35,5 +41,9 @@ int main(int argc, const char * argv[]) {
 		r = NSApplicationMain(argc, argv);
 	}
 	AUApp::finalizarNucleo();
+    //NBSocket_finishWSA();
+    //NBSocket_releaseEngine();
+    NBMngrStructMaps_release();
+    NBMngrProcess_release();
 	return r;
 }

@@ -1760,8 +1760,8 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../include $(SRCROOT)/../../../src/pdfium_osx/pdfium-darwin-debug/include";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-nbframework/sys-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../include $(SRCROOT)/../../../src/pdfium_osx/pdfium-darwin-debug/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -1771,8 +1771,8 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../include $(SRCROOT)/../../../src/pdfium_osx/pdfium-darwin-debug/include";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-nbframework/sys-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../include $(SRCROOT)/../../../src/pdfium_osx/pdfium-darwin-debug/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;

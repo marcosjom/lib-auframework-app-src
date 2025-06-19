@@ -328,6 +328,12 @@ void AUEscenaDemoTextRender::escenaQuitarDePrimerPlano(){
 
 //
 
+void AUEscenaDemoTextRender::escenaGetOrientations(UI32* dstMask, ENAppOrientationBit* dstPrefered, ENAppOrientationBit* dstToApplyOnce, BOOL* dstAllowAutoRotate) {
+	//
+}
+
+//
+
 bool AUEscenaDemoTextRender::escenaEstaAnimandoSalida(){
 	return false;
 }

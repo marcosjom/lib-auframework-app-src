@@ -45,7 +45,7 @@
 
 //Automaticamente invocada antes de 'main'
 NB_METODO_INICIALIZADOR_CUERPO(AUApp_inicializarMemoria) {
-	//PRINTF_INFO("\n\n++++ ------ MEMORIA INICIALIZADA MEDIANTE CONSTRUCTOR ------ ++++.\n\n");
+	//printf("\n\n++++ ------ MEMORIA INICIALIZADA MEDIANTE CONSTRUCTOR ------ ++++.\n\n");
 	NBGestorMemoria::inicializar(1, (1024 * 1024 * (2.2f)), 8191,	//Zonas de memoria NUCLEO/AGIL: cantidadPregeneradas, bytesMinPorZona, registrosIndicesMinimoPorZona
 								 1, (1024 * 1024 * (1.1f)), 512);	//Zonas de memoria TEMPORAL: cantidadPregeneradas, bytesMinPorZona, registrosIndicesMinimoPorZona
 };
@@ -53,7 +53,7 @@ NB_METODO_INICIALIZADOR_CUERPO(AUApp_inicializarMemoria) {
 //Automaticamente invocada despues de 'main'
 //PENDIENTE, rehabilitar para GCC
 /*NB_METODO_FINALIZADOR(AUApp_finalizarMemoria, NB_PRIORIDAD_CONSTRUCTOR_BASE) {
-	PRINTF_INFO("++++ ------ MEMORIA FINALIZADA MEDIANTE CONSTRUCTOR ------ ++++.\n");
+	printf("++++ ------ MEMORIA FINALIZADA MEDIANTE CONSTRUCTOR ------ ++++.\n");
 	NBGestorMemoria::finalizar();
 };*/
 

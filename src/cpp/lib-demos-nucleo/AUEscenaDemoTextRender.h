@@ -36,6 +36,8 @@ class AUEscenaDemoTextRender : public AUAppEscena, public IEscuchadorCambioPuert
 		void escenaColocarEnPrimerPlano();
 		void escenaQuitarDePrimerPlano();
 		//
+		void escenaGetOrientations(UI32* dstMask, ENAppOrientationBit* dstPrefered, ENAppOrientationBit* dstToApplyOnce, BOOL* dstAllowAutoRotate);
+		//
 		bool escenaEstaAnimandoSalida();
 		void escenaAnimarSalida();
 		void escenaAnimarEntrada();

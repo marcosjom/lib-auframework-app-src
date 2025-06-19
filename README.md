@@ -9,13 +9,21 @@ The original repository has activity:
   
 # lib-auframework-app-src
 
-Library to build mobile and desktop apps in C++.
+Library to build mobile and desktop apps in C++. It provides abstraction layers to be used by auframework-based projects.
 
 This library depends of:
 
 - lib-auframework-media-src
 - lib-auframework-src
-- lib-nbframework-src
+- sys-nbframework-src
+
+# Spanish Language
+
+Created by Marcos Ortega.
+
+This library was designed in spanish, intended to be used by latin-american university students to build academic and professional projects.
+
+sys-nbframework-src is an english and professionally-intended evolition of this library. 
 
 # Deprecated
 
