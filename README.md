@@ -1,12 +1,9 @@
 # Moved to Github
 
-This repository was moved from another service to Github.
+This repository was moved to Github. My original repository has ~7 years of activity from 2016-04-27 to 2023-02-21:
 
-The original repository has activity:
+https://bitbucket.org/nicaraguabinary/lib-auframework-app-src/
 
-- from  2016-04-27
-- up to 2023-02-21
-  
 # lib-auframework-app-src
 
 Library to build mobile and desktop apps in C++. It provides abstraction layers to be used by auframework-based projects.
