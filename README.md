@@ -11,6 +11,8 @@ Library to add an OS's abstraction layer into command-line-tools and cores for v
 - Mouse/multi-touch actions
 - Files drag-and-drop
 - Copy/paste clipboard
+- User prefered language
+- User prefered text size
 - Visual hints for text autocompletion (iOS and Android)
 - Others...
 
