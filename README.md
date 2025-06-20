@@ -4,13 +4,14 @@ This repository was moved to Github. My original repository has ~7 years of acti
 
 # lib-auframework-app-src
 
-Library to add and OS's abstraction layers into command-line-tools and cores for visual-apps and services in C++, like:
+Library to add an OS's abstraction layer into command-line-tools and cores for visual-apps and services in C++, including:
 
-- Rendering view.
+- The main rendering view (OpenGL).
 - Keyboard actions (virtual and physical)
 - Mouse/multi-touch actions
 - Files drag-and-drop
-- Autocomplete visual hints (iOS and Android)
+- Copy/paste clipboard
+- Visual hints for text autocompletion (iOS and Android)
 - Others...
 
 This library depends of:
