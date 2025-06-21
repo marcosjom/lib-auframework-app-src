@@ -24,11 +24,11 @@ LOCAL_LDLIBS			:= -llog -lOpenSLES -lGLESv1_CM -landroid #-lOpenSLES -landroid (
 
 LOCAL_C_INCLUDES		:= \
 $(LOCAL_PATH)/../../../../include/lib-sereneh-core \
-$(LOCAL_PATH)/../../../../../../../CltNicaraguaBinary/lib-auframework/lib-auframework/include \
-$(LOCAL_PATH)/../../../../../../../CltNicaraguaBinary/lib-auframework-app/lib-auframework-app/include/lib-auframework-app-nucleo \
-$(LOCAL_PATH)/../../../../../../../CltNicaraguaBinary/lib-auframework-media/lib-auframework-media/include
-#$(LOCAL_PATH)/../../../../../../../CltNicaraguaBinary/lib-nixtla-audio/lib-nixtla-audio/include
-#$(LOCAL_PATH)/../../../../../../../CltNicaraguaBinary/lib-box2d/lib-box2d/include
+$(LOCAL_PATH)/../../../../../../lib-auframework/lib-auframework/include \
+$(LOCAL_PATH)/../../../../../../lib-auframework-app/lib-auframework-app/include/lib-auframework-app-nucleo \
+$(LOCAL_PATH)/../../../../../../lib-auframework-media/lib-auframework-media/include
+#$(LOCAL_PATH)/../../../../../../lib-nixtla-audio/lib-nixtla-audio/include
+#$(LOCAL_PATH)/../../../../../../lib-box2d/lib-box2d/include
 
 LOCAL_SRC_FILES         := com_serenehearts_android_AppNative.cpp
 include $(BUILD_SHARED_LIBRARY)

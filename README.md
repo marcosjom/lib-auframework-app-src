@@ -49,6 +49,8 @@ For simplicity, create this folder structure:
 
 You can create your own folders structure but it will require to update some paths in the projects and scripts.
 
+Follow the instructions in the `sys-nbframework-src/ext/*_howToBuild.txt` and `lib-auframework-src/c/*_howToBuild.txt` files to download the source of third-party embedded libraries. Optionally, these libraries can be dynamically linked to the ones installed in the operating system.
+
 The following steps will create static libraries. In your project you should link to each `static-libray` and add a reference to its `include` folder.
 
 ## Windows

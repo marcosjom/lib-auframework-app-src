@@ -13,8 +13,8 @@ LOCAL_CFLAGS    += -ffunction-sections -fdata-sections #-fvisibility=hidden
 
 LOCAL_C_INCLUDES	:= \
 $(LOCAL_PATH)/../../include \
-$(LOCAL_PATH)/../../../../sys-nbframework/lib-nbframework-src/include \
-$(LOCAL_PATH)/../../../../sys-nbframework/lib-nbframework-src/src/ext/quirc \
+$(LOCAL_PATH)/../../../../sys-nbframework/sys-nbframework-src/include \
+$(LOCAL_PATH)/../../../../sys-nbframework/sys-nbframework-src/src/ext/quirc \
 $(LOCAL_PATH)/../../../lib-box2d-src/include \
 $(LOCAL_PATH)/../../../lib-auframework-src/include \
 $(LOCAL_PATH)/../../../lib-auframework-media-src/include
