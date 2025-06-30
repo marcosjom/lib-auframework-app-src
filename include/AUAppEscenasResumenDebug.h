@@ -26,58 +26,7 @@ enum ENResumenDebugIcono {
 	ENResumenDebugIcono_Separador1,
 	#endif
 	//ENResumenDebugIcono_cargaAnimacion,	//Carga de trabajo de animar
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_ESCENA
-	ENResumenDebugIcono_GLEscenasRender,	//Escenas renderizadas
-	ENResumenDebugIcono_GLBufferLlenos,		//Buffer de vertices y escenasRender llenos
-	ENResumenDebugIcono_GLFrameBuffCambios,	//Veces que se cambio de Framebuffer
-	ENResumenDebugIcono_IlumLuces,			//Luces en total
-	ENResumenDebugIcono_IlumProdSombras,	//Produccion de sombras
-	ENResumenDebugIcono_IlumConsumoSombras,	//Consumo de sombras
-	#endif
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_ESCENA_OBJETOS
-	ENResumenDebugIcono_GLMatrices,			//Matrices recorridas en el ciclo de renderizado
-	ENResumenDebugIcono_GLModelosAct,		//Modelos actualizados en el ciclo de renderizado
-	ENResumenDebugIcono_GLModeloRend,		//Modelos renderizados en el ciclo de renderizado
-	#endif
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL
-	ENResumenDebugIcono_GLCambiosFrameBuffers,			//Cambios de unidades framebuffers
-	ENResumenDebugIcono_GLCambiosFrameBuffersTargets,	//Cambios de unidades destinos de framebuffers
-	ENResumenDebugIcono_GLCambiosTexUnidClts, //Cambios de unidades de texturas clientes
-	ENResumenDebugIcono_GLCambiosTexUnidServ, //Cambios de unidades de texturas servidor
-	ENResumenDebugIcono_GLCambiosTex,		//Cambios de texturas ligadas
-	ENResumenDebugIcono_GLCambiosVBOs,		//Cambios de modo de vertices (monoTexturas, biTexturas, etc...)
-	ENResumenDebugIcono_GLVertices,			//Conteo de verticesGL utilizados
-	ENResumenDebugIcono_GLIndices,			//Conteo de indicesGL utilizados
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL_TRIANGULOS_RENDERIZADOS
-	ENResumenDebugIcono_GLTriangulos,		//Triangulos renderizados
-	ENResumenDebugIcono_GLAreaRender,		//Texeles cuadrados renderizados
-	#endif
-	#endif
 	ENResumenDebugIcono_Separador2,
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_TEXTURAS
-	ENResumenDebugIcono_TexRGBA,			//Texturas RGBA
-	ENResumenDebugIcono_TexRGB,				//Texturas RGB
-	ENResumenDebugIcono_TexGris,			//Texturas GRIS
-	ENResumenDebugIcono_TexGrisAlpha,		//Texturas GRIS con ALPHA
-	ENResumenDebugIcono_TexAlpha,			//Texturas ALPHA
-	ENResumenDebugIcono_Separador3,
-	#endif
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_AUDIO
-	ENResumenDebugIcono_AudFuentes,			//Fuentes de sonido (OpenAL)
-	ENResumenDebugIcono_AudBuffs,			//Bufferes de sonido (OpenAL)
-	ENResumenDebugIcono_AudAStreams,		//Flujos de sonido hacia archivos
-	ENResumenDebugIcono_RamAud,				//Uso de memoria de audio (OpenAL)
-	ENResumenDebugIcono_Separador4,
-	#endif
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_ESCENA_CUERPOS
-	ENResumenDebugIcono_IlumCuerpos,		//Cuerpos en todal
-	ENResumenDebugIcono_IlumFigFisica,		//Figuras fisica producidas en total
-	ENResumenDebugIcono_IlumVertsFisica,	//Vertices fisica producidas en total
-	ENResumenDebugIcono_IlumFigSombras,		//Figuras sombras producidas en todal
-	ENResumenDebugIcono_IlumVertsSombras,	//Vertices sombras producidas en todal
-	ENResumenDebugIcono_IlumFigIlum,		//Figuras iluminadas producidas en total
-	ENResumenDebugIcono_IlumVertsIlum,		//Vertices iluminadas producidas en total
-	#endif
 	//
 	ENResumenDebugIcono_Conteo
 };
@@ -165,9 +114,6 @@ class AUEscenaResumenDebug : public AUEscenaContenedor, public NBAnimador {
 		void						acumularCiclosVolcado(const NBEstadoCicloVolcado &ciclosPorEstado);
 		void						tickSegundoRecopilarInformacion(CICLOS_CPU_TIPO cicloActualDeProceso, bool actualizarDatosTexto, bool actualizarGraficos, bool imprimirEnConsola);
 		//
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL
-		virtual void				actualizarArbolModelosGL(const NBPropRenderizado &propsRenderizado, const NBPropIluminacion &propsIluminacion, const NBPropHeredadasRender &propsHeredadas);
-		#endif
 		virtual PTRfunCmdsGL		actualizarModeloGL(const NBPropRenderizado &propsRenderizado, const NBPropIluminacion &propsIluminacion, const NBPropHeredadasRender &propsHeredadas);
 		static void					enviarComandosGL(UI8* punteroDatosModelo);
 		//

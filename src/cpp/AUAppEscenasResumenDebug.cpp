@@ -141,9 +141,6 @@ void AUEscenaResumenDebug::tickSegundoRecopilarInformacion(CICLOS_CPU_TIPO ciclo
 	AU_GESTOR_PILA_LLAMADAS_PUSH_3("AUEscenaResumenDebug::tickSegundoRecopilarInformacion")
 	if(this->idEscena!=-1){
 		CICLOS_CPU_TIPO ciclosCpuPorSeg; CICLOS_CPU_POR_SEGUNDO(ciclosCpuPorSeg);
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_ESCENA_OBJETOS
-		STEscenaEstadObjs estadisticasObjetosEscena = NBGestorEscena::debugEstadisticasObjs();
-		#endif
 		//Reorganizar (si es necesario)
 		const NBCajaAABB cajaResumenDebug = NBGestorEscena::cajaProyeccionGrupo(this->idEscena, ENGestorEscenaGrupo_DebugFrontal);
 		_strResumenConsola.vaciar();
@@ -190,99 +187,6 @@ void AUEscenaResumenDebug::tickSegundoRecopilarInformacion(CICLOS_CPU_TIPO ciclo
 		//
 		if(actualizarDatosTexto){
 			_ciclosAcumSinActualizarMemoria++;
-			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_ESCENA
-			STEscenaEstadisticas estadisticasEscenas = NBGestorEscena::debugEstadisticasEscenasYResetearCiclos();
-			//Escenas renderizadas
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", estadisticasEscenas.cantEscenasRenderizadas);
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLEscenasRender])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Escenas: %s\n", _strTmp.str());
-			//Buffer de datos llenos
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d de %d bufferDatos llenos", NBGestorEscena::bufferDatosConteoLlenos(), NBGESTORESCENA_CANTIDAD_BUFFERES_DATOS);
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLBufferLlenos])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("BuffDat: %s\n", _strTmp.str());
-			//Cambios de framebuffer
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", estadisticasEscenas.cantCambiosFrameBufer); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLFrameBuffCambios])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cambios FrameBuffers: %s\n", _strTmp.str());
-			//Luces
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", estadisticasEscenas.cantLucesRenderizadas); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumLuces])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Luces: %s\n", _strTmp.str());
-			//Produccion de sombras
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d prod, %d sombras (%.1f%% CPU)", estadisticasEscenas.cantConsumidoresSombras, estadisticasEscenas.cantSombrasProducidas, (float)(100.0f*(float)estadisticasEscenas.ciclosProduciendoSombras/(float)ciclosCpuPorSeg)); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumProdSombras])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Produccion de sombras: %s\n", _strTmp.str());
-			//Consumo de sombras
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d cnsm (%.1f%% CPU, %.1f%% actVer, %.1f%% grpSmb, %.1f%% segFig, %.1f%% acmCol)", estadisticasEscenas.cantProductoresSombras, (float)(100.0f*(float)estadisticasEscenas.ciclosConsumiendoSombras/(float)ciclosCpuPorSeg), (float)(100.0f*(float)estadisticasEscenas.ciclosActualizandoVertices/(float)ciclosCpuPorSeg), (float)(100.0f*(float)estadisticasEscenas.ciclosAgrupandoSombras/(float)ciclosCpuPorSeg), (float)(100.0f*(float)estadisticasEscenas.ciclosSegmentandoFiguras/(float)ciclosCpuPorSeg), (float)(100.0f*(float)estadisticasEscenas.ciclosAcumulandoColores/(float)ciclosCpuPorSeg)); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumConsumoSombras])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Consumo de sombras: %s\n", _strTmp.str());
-			#endif
-			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_ESCENA_OBJETOS
-			//Matrices recorridas y actualizada
-			_strTmp.vaciar(); if(estadisticasObjetosEscena.conteoMatricesRecorridas!=0) _strTmp.agregarConFormato("%d (%.1f%% act.)", estadisticasObjetosEscena.conteoMatricesRecorridas, (float)(100.0f*(float)estadisticasObjetosEscena.conteoMatricesActualizadas/(float)estadisticasObjetosEscena.conteoMatricesRecorridas)); 
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLMatrices])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Matrices: %s\n", _strTmp.str());
-			//Modelos recorridos y actualizados
-			_strTmp.vaciar();
-			if(estadisticasObjetosEscena.conteoModelosRecorridos!=0) _strTmp.agregarConFormato("%d (%.1f%% act.)", estadisticasObjetosEscena.conteoModelosRecorridos, (float)(100.0f*(float)estadisticasObjetosEscena.conteoModelosActualizados/(float)estadisticasObjetosEscena.conteoModelosRecorridos));
-			else  _strTmp.agregarConFormato("%d", estadisticasObjetosEscena.conteoModelosRecorridos);
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLModelosAct])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Modelos Act: %s\n", _strTmp.str());
-			//Modelos recorridos y renderizados
-			_strTmp.vaciar();
-			if(estadisticasObjetosEscena.conteoModelosEscena!=0) _strTmp.agregarConFormato("%d (%.1f%% rend.) (%d conts, %d no-conts)", estadisticasObjetosEscena.conteoModelosEscena, (float)(100.0f*(float)estadisticasObjetosEscena.conteoModelosRenderizados/(float)estadisticasObjetosEscena.conteoModelosEscena), estadisticasObjetosEscena.conteoModelosContenedores, estadisticasObjetosEscena.conteoModelosNoContenedores);
-			else _strTmp.agregarConFormato("%d", estadisticasObjetosEscena.conteoModelosEscena);
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLModeloRend])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Modelos Rend: %s\n", _strTmp.str());
-			#endif
-			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL
-			STGestorGLEstadisticas glEstadisticas = NBGestorGL::estadisticasDeAcciones();
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)glEstadisticas.cantCambiosFrameBuffers); _strTmp.agregar(" FB"); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLCambiosFrameBuffers])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cambios de glFrameBuffers: %s\n", _strTmp.str());
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)glEstadisticas.cantCambiosFrameBuffersTargets); _strTmp.agregar(" FBTarget"); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLCambiosFrameBuffersTargets])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cambios de glFrameBuffersTargets: %s\n", _strTmp.str());
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)glEstadisticas.cantCambiosUnidadTexturaCliente); _strTmp.agregar(" texUnit"); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLCambiosTexUnidClts])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cambios de glUnidRexClt: %s\n", _strTmp.str());
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)glEstadisticas.cantCambiosUnidadTexturaServidor); _strTmp.agregar(" texServ"); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLCambiosTexUnidServ])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cambios de glUnidRexSrv: %s\n", _strTmp.str());
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)glEstadisticas.cantCambiosTexturas); _strTmp.agregar(" texGL"); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLCambiosTex])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cambios de glTexturas: %s\n", _strTmp.str());
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)glEstadisticas.cantCambiosDeVBO); _strTmp.agregar(" VBOs"); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLCambiosVBOs])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cambios de glModoVerticesGL: %s\n", _strTmp.str());
-			//VerticesGL
-			const SI32 vertsUso			= NBGestorGL::conteoVerticesGLUsados();
-			const SI32 vertsCargados	= NBGestorGL::conteoVerticesGLEnviadosHaciaBufferGL();
-			const SI32 vertsIgnorabls	= NBGestorGL::debugConteoVerticesGLIgnorables();
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d ", vertsCargados - vertsIgnorabls);
-			if(vertsCargados!=0){
-				_strTmp.agregarConFormato("(%.1f%% en uso)", (100.0f * (float)vertsUso / (float)vertsCargados));
-			}
-			_strTmp.agregarConFormato(" (+%d ignorables)", vertsIgnorabls);
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLVertices])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("VerticesGL: %s\n", _strTmp.str());
-			//IndicesGL
-			const SI32 indsUso			= NBGestorGL::conteoIndicesGLUsados();
-			const SI32 indsIgnorabls	= NBGestorGL::debugConteoIndicesGLIgnorables();
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", indsUso - indsIgnorabls);
-			_strTmp.agregarConFormato(" (+%d ignorables)", indsIgnorabls);
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLIndices])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("IndicesGL: %s\n", _strTmp.str());
-			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL_TRIANGULOS_RENDERIZADOS
-			//TraingulosGL
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)(glEstadisticas.cantTriangulosRenderizados - glEstadisticas.cantTriangulosRenderizadosIgnorables));
-			_strTmp.agregarConFormato(" (+%d ignorables)", glEstadisticas.cantTriangulosRenderizadosIgnorables);
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLTriangulos])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("TriangulosGL: %s\n", _strTmp.str());
-			//Area texeles renderizados
-			const float areaTexelesRenderizad	= glEstadisticas.areaTexelesRenderizados - glEstadisticas.areaTexelesRenderizadosIgnorables;
-			const NBTamano tamPantalla			= NBGestorEscena::propiedadesEscena(_iScene).tamanoEscenaGL;
-			const float areaTexelesPantalla		= (tamPantalla.ancho*tamPantalla.alto);
-			_strTmp.vaciar();
-			privCadenaAgregarEnFormatoMillones(areaTexelesRenderizad, &_strTmp);
-			_strTmp.agregarConFormato(" (%.1fx)", ((float)areaTexelesRenderizad / (float)areaTexelesPantalla));
-			_strTmp.agregarConFormato(" (+");
-			privCadenaAgregarEnFormatoMillones(glEstadisticas.areaTexelesRenderizadosIgnorables, &_strTmp);
-			_strTmp.agregarConFormato(" ignorables)");
-			((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_GLAreaRender])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Area texeles rend: %s\n", _strTmp.str());
-			#endif
-			#endif
 			//Estadisticas de memoria
 			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTION_MEMORIA
 			//Estado de la memoria por tipo
@@ -331,72 +235,6 @@ void AUEscenaResumenDebug::tickSegundoRecopilarInformacion(CICLOS_CPU_TIPO ciclo
 			//Audio
 			UI32 bytesAudio; SI32 conteoFuentesALEnUso, conteoBufferes, conteoBufferesStream, conteoStreams;
 			bytesAudio	= NBGestorSonidos::debugBytesTotalBufferes(&conteoFuentesALEnUso, &conteoBufferes, &conteoBufferesStream, &conteoStreams);
-			#endif
-			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_AUDIO
-			STGestorSonidosEstado estadoAudio = NBGestorSonidos::estadoGestor();
-			//Fuentes
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d (%d asig.)", estadoAudio.countSources, estadoAudio.countSourcesAssigned); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_AudFuentes])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("FuentesAL: %s\n", _strTmp.str());
-			//Bufferes
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", estadoAudio.countPlayBuffers); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_AudBuffs])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("BuferesAL: %s\n", _strTmp.str());
-			//Streams
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", estadoAudio.countSourcesStream); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_AudAStreams])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("StreamsAL: %s\n", _strTmp.str());
-			//Memoria de audio
-			_strTmp.vaciar(); privAgregarCadenaEnFormatoBytes(estadoAudio.sizePlayBuffers, &_strTmp); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_RamAud])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("MemoriaAud: %s\n", _strTmp.str());
-			#endif
-			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_TEXTURAS
-			//Texturas RGBA
-			UI32 bytesTexturas; SI32 conteoTexturas;
-			bytesTexturas = NBGestorTexturas::debugBytesTotalTexturasDelColor(COLOR_RGBA8, &conteoTexturas);
-			privCadenaEnFormatoCantidadMasBytes(conteoTexturas, bytesTexturas, &_strTmp); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_TexRGBA])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Tex RGBA: %s\n", _strTmp.str());
-			//Texturas RGB
-			bytesTexturas = NBGestorTexturas::debugBytesTotalTexturasDelColor(COLOR_RGB8, &conteoTexturas);
-			privCadenaEnFormatoCantidadMasBytes(conteoTexturas, bytesTexturas, &_strTmp); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_TexRGB])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Tex RGB: %s\n", _strTmp.str());
-			//Texturas GRIS
-			bytesTexturas = NBGestorTexturas::debugBytesTotalTexturasDelColor(COLOR_GRIS8, &conteoTexturas);
-			privCadenaEnFormatoCantidadMasBytes(conteoTexturas, bytesTexturas, &_strTmp); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_TexGris])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Tex Gris: %s\n", _strTmp.str());
-			//Texturas GRIS ALPHA
-			bytesTexturas = NBGestorTexturas::debugBytesTotalTexturasDelColor(COLOR_GRISALPHA8, &conteoTexturas);
-			privCadenaEnFormatoCantidadMasBytes(conteoTexturas, bytesTexturas, &_strTmp); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_TexGrisAlpha])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Tex GrisAlpha: %s\n", _strTmp.str());
-			//Texturas ALPHA
-			bytesTexturas = NBGestorTexturas::debugBytesTotalTexturasDelColor(COLOR_ALPHA8, &conteoTexturas);
-			privCadenaEnFormatoCantidadMasBytes(conteoTexturas, bytesTexturas, &_strTmp); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_TexAlpha])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Tex Alpha: %s\n", _strTmp.str());
-			#endif
-			//Cuerpos
-			#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_ESCENA_CUERPOS
-			UI32 conteoCuerpos;
-			UI32 conteoFigurasSombra, conteoFigurasIluminadas, conteoFigurasFisica;
-			UI32 conteoVerticesSombra, conteoVerticesIluminadas, conteoVerticesFisica;
-			NBGestorEscena::debugConteoCuerpos(&conteoCuerpos, &conteoFigurasSombra, &conteoFigurasIluminadas, &conteoFigurasFisica, &conteoVerticesSombra, &conteoVerticesIluminadas, &conteoVerticesFisica);
-			//Cuerpos
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)conteoCuerpos); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumCuerpos])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Cuerpos: %s\n", _strTmp.str());
-			//Figuras fisica
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)conteoFigurasFisica); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumFigFisica])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Fijaciones fisica: %s\n", _strTmp.str());
-			//Figuras sombras
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)conteoFigurasSombra); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumFigSombras])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Fuentes sombras: %s\n", _strTmp.str());
-			//Figuras iluminadas
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)conteoFigurasIluminadas); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumFigIlum])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Fig iluminadas: %s\n", _strTmp.str());
-			//Vertices fisica
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)conteoVerticesFisica); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumVertsFisica])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Vertices fijaciones: %s\n", _strTmp.str());
-			//Vertices sombras
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)conteoVerticesSombra); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumVertsSombras])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Vertices fuentes sombras: %s\n", _strTmp.str());
-			//Vertices iluminadas
-			_strTmp.vaciar(); _strTmp.agregarConFormato("%d", (SI32)conteoVerticesIluminadas); ((AUEscenaTexto*)_textos.elemento[ENResumenDebugIcono_IlumVertsIlum])->establecerTexto(_strTmp.str());
-			_strResumenConsola.agregarConFormato("Vertices figs. ilum: %s\n", _strTmp.str());
 			#endif
 			if(imprimirEnConsola) PRINTF_INFO("RESUMEN DEBUG ----------\n%s", _strResumenConsola.str());
 		}
@@ -494,23 +332,8 @@ void AUEscenaResumenDebug::tickSegundoRecopilarInformacion(CICLOS_CPU_TIPO ciclo
 	AU_GESTOR_PILA_LLAMADAS_POP_3
 }
 
-#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL
-void AUEscenaResumenDebug::actualizarArbolModelosGL(const NBPropRenderizado &propsRenderizado, const NBPropIluminacion &propsIluminacion, const NBPropHeredadasRender &propsHeredadas){
-	AU_GESTOR_PILA_LLAMADAS_PUSH_3("AUEscenaResumenDebug::actualizarArbolModelosGL")
-	const bool debugEstadoOrigModoIgnorar = NBGestorGL::debugModoAcumularVertsIndsIgnorar();
-	NBGestorGL::debugEstablecerModoAcumularVertsIndsIgnorar(true);
-	this->AUEscenaContenedor::actualizarArbolModelosGL(propsRenderizado, propsIluminacion, propsHeredadas);
-	NBGestorGL::debugEstablecerModoAcumularVertsIndsIgnorar(debugEstadoOrigModoIgnorar);
-	AU_GESTOR_PILA_LLAMADAS_POP_3
-}
-#endif
-
 PTRfunCmdsGL AUEscenaResumenDebug::actualizarModeloGL(const NBPropRenderizado &propsRenderizado, const NBPropIluminacion &propsIluminacion, const NBPropHeredadasRender &propsHeredadas){
 	AU_GESTOR_PILA_LLAMADAS_PUSH_3("AUEscenaResumenDebug::actualizarModeloGL")
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL
-	const bool debugEstadoOrigModoIgnorar = NBGestorGL::debugModoAcumularVertsIndsIgnorar();
-	NBGestorGL::debugEstablecerModoAcumularVertsIndsIgnorar(true);
-	#endif
 	NBASSERT(idEscena!=-1) //Solo si esta en escena
 	SI32 modelosTotal	= (_visualCiclos.conteo + (_visualZonasMemoria.conteo * 12) + (_visualCiclos.conteo==0?0:1)); //+1 el fondo
 	if(modelosTotal!=0){
@@ -610,9 +433,6 @@ PTRfunCmdsGL AUEscenaResumenDebug::actualizarModeloGL(const NBPropRenderizado &p
 		STResumenDebugRender* datosRender	= (STResumenDebugRender*)&(propsRenderizado.bytesDatosModelos->elemento[iPosDatosRender]);
 		datosRender->bloqueIndicesGL		= NB_GESTOR_GL_DAME_ELEMS_PARA_TRIANGSTRIPS_4(ENVerticeGlTipo_MonoTextura, bloqueVerticesGL, modelosTotal);
 	}
-	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL
-	NBGestorGL::debugEstablecerModoAcumularVertsIndsIgnorar(debugEstadoOrigModoIgnorar);
-	#endif
 	AU_GESTOR_PILA_LLAMADAS_POP_3
 	return (modelosTotal!=0 ? &AUEscenaResumenDebug::enviarComandosGL : NULL);
 }
@@ -727,71 +547,6 @@ AUTextura* AUEscenaResumenDebug::privTexturaDeIcono(ENResumenDebugIcono icono) {
 		case ENResumenDebugIcono_Separador0:
 			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugSeparador.png");
 			break;
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_ESCENA
-		case ENResumenDebugIcono_GLEscenasRender:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLEscenasRender.png");
-			break;
-		case ENResumenDebugIcono_GLBufferLlenos:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLEscenasRender.png");
-			break;
-		case ENResumenDebugIcono_GLFrameBuffCambios:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLCambioFrameBuffers.png");
-			break;
-		case ENResumenDebugIcono_IlumLuces:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposLuces.png");
-			break;
-		case ENResumenDebugIcono_IlumProdSombras:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposFigurasSombras.png");
-			break;
-		case ENResumenDebugIcono_IlumConsumoSombras:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposFigurasIluminadas.png");
-			break;
-		#endif
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_ESCENA_OBJETOS
-		case ENResumenDebugIcono_GLMatrices:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLMatricesActualizadas.png");
-			break;
-		case ENResumenDebugIcono_GLModelosAct:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLModelosActualizados.png");
-			break;
-		case ENResumenDebugIcono_GLModeloRend:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLModlosRenderizados.png");
-			break;
-		#endif
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL
-		case ENResumenDebugIcono_GLCambiosFrameBuffers:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLCambioBuffers.png");
-			break;
-		case ENResumenDebugIcono_GLCambiosFrameBuffersTargets:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLCambioBuffers.png");
-			break;
-		case ENResumenDebugIcono_GLCambiosTexUnidClts:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLCambioTexturas.png");
-			break;
-		case ENResumenDebugIcono_GLCambiosTexUnidServ:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLCambioTexturas.png");
-			break;
-		case ENResumenDebugIcono_GLCambiosTex:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLCambioTexturas.png");
-			break;
-		case ENResumenDebugIcono_GLCambiosVBOs:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLCambioBuffers.png");
-			break;
-		case ENResumenDebugIcono_GLVertices:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLVertices.png");
-			break;
-		case ENResumenDebugIcono_GLIndices:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLIndices.png");
-			break;
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_GL_TRIANGULOS_RENDERIZADOS
-		case ENResumenDebugIcono_GLTriangulos:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLTriangulo.png");
-			break;
-		case ENResumenDebugIcono_GLAreaRender:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugGLAreaPintado.png");
-			break;
-		#endif
-		#endif
 		case ENResumenDebugIcono_Separador2:
 			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugSeparador.png");
 			break;
@@ -810,67 +565,6 @@ AUTextura* AUEscenaResumenDebug::privTexturaDeIcono(ENResumenDebugIcono icono) {
 			break;
 		case ENResumenDebugIcono_Separador1:
 			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugSeparador.png");
-			break;
-		#endif
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_TEXTURAS
-		case ENResumenDebugIcono_TexRGBA:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugTexRGBA.png");
-			break;
-		case ENResumenDebugIcono_TexRGB:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugTexRGB.png");
-			break;
-		case ENResumenDebugIcono_TexGris:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugTexGris.png");
-			break;
-		case ENResumenDebugIcono_TexGrisAlpha:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugTexGrisConAlpha.png");
-			break;
-		case ENResumenDebugIcono_TexAlpha:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugTexAlpha.png");
-			break;
-		case ENResumenDebugIcono_Separador3:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugSeparador.png");
-			break;
-
-		#endif
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTOR_AUDIO
-		case ENResumenDebugIcono_AudFuentes:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugAudFtes.png");
-			break;
-		case ENResumenDebugIcono_AudBuffs:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugAudBuffs.png");
-			break;
-		case ENResumenDebugIcono_AudAStreams:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugAudStreams.png");
-			break;
-		case ENResumenDebugIcono_RamAud:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugRamAud.png");
-			break;
-		case ENResumenDebugIcono_Separador4:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugSeparador.png");
-			break;
-		#endif
-		#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_ESCENA_CUERPOS
-		case ENResumenDebugIcono_IlumCuerpos:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerpos.png");
-			break;
-		case ENResumenDebugIcono_IlumFigSombras:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposFigurasSombras.png");
-			break;
-		case ENResumenDebugIcono_IlumFigIlum:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposFigurasIluminadas.png");
-			break;
-		case ENResumenDebugIcono_IlumFigFisica:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposFigurasFisica.png");
-			break;
-		case ENResumenDebugIcono_IlumVertsSombras:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposVerticesSombra.png");
-			break;
-		case ENResumenDebugIcono_IlumVertsIlum:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposVerticesIluminadas.png");
-			break;
-		case ENResumenDebugIcono_IlumVertsFisica:
-			textura = NBGestorTexturas::texturaDesdeArchivo("Interfaces/Motor/icoDebugCuerposVerticesFisica.png");
 			break;
 		#endif
 		default:

@@ -77,29 +77,6 @@
 
 #define AUAPP_BIT_MODULO_RED	1
 
-//Para casos TRI o BI hilo
-#if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-	#ifndef CONFIG_NB_GESTION_MEMORIA_IMPLEMENTAR_MUTEX
-	#warning "ADVERTENCIA DE CONFIGURACION: la APP utilizara multiples hilos PERO la Gestion de Memoria no es multihio."
-	#endif
-	#define APPHILO_CLASE							NBHILO_CLASE
-	#define APPHILO_MUTEX_CLASE						NBHILO_MUTEX_CLASE
-	#define APPHILO_MUTEX_INICIALIZAR(MUTEX)		NBHILO_MUTEX_INICIALIZAR(MUTEX)
-	#define APPHILO_MUTEX_FINALIZAR(MUTEX)			NBHILO_MUTEX_FINALIZAR(MUTEX)
-	#define APPHILO_COND_CLASE						NBHILO_COND_CLASE
-	#define APPHILO_COND_INICIALIZAR(COND)			NBHILO_COND_INICIALIZAR(COND)
-	#define APPHILO_COND_FINALIZAR(COND)			NBHILO_COND_FINALIZAR(COND)
-	#define APPHILO_ACTIVA_MUTEX(mutex)				NBHILO_MUTEX_ACTIVAR(mutex);
-	#define APPHILO_DESACTIVA_MUTEX(mutex)			NBHILO_MUTEX_DESACTIVAR(mutex);
-	#define APPHILO_ESPERA_CONDICIONAL(cond, mutex)	NBHILO_COND_ESPERAR(cond, mutex);
-	#define APPHILO_DISPARA_CONDICIONAL(cond)		NBHILO_COND_DISPARAR(cond);
-#else
-	#define APPHILO_ACTIVA_MUTEX(mutex)
-	#define APPHILO_DESACTIVA_MUTEX(mutex)
-	#define APPHILO_ESPERA_CONDICIONAL(cond, mutex)
-	#define APPHILO_DISPARA_CONDICIONAL(cond)
-#endif
-
 //------------------------
 // LINKING TO INTERNAL LIBRARIES
 //Note: these linking methods are defined as MACROS instead of FUNCTIONS
@@ -256,23 +233,6 @@ struct STAppHilos {
 		NBTamano				ppiScreen;	//pixel-per-inch
 		NBTamano				dpiScene;	//dot-per-inch
 	} redim;
-	//
-	#if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-	bool						hiloProductorEscenaTrabajando;
-	AUHilo*						hiloProductorEscena;			//La animacion se ejecutará en pararlelo al renderizado, asi se aprovecharan los ciclos de espera a la GPU
-	APPHILO_MUTEX_CLASE			mutexBufferesEscena;			//Semaforo para acceder/editar los estados de lo bufferes de escena
-	APPHILO_MUTEX_CLASE			mutexEsperaProducirEscena;		//Semaforo para la espera a que se llene un buffer escena
-	APPHILO_MUTEX_CLASE			mutexEsperaConsumirEscena;		//Semaforo para la espera a que se vacie un buffer escena
-	APPHILO_COND_CLASE			condEsperaProducirEscena;		//...que se llene un buffer escena
-	APPHILO_COND_CLASE			condEsperaConsumirEscena;		//...que se vacie un buffer escena
-	#endif
-	#ifdef APP_IMPLEMENTAR_TRI_HILO
-	SI32						ticksCargandoRecursos;
-	bool						hiloConsumidorEscenaTrabajando;
-	AUHilo*						hiloConsumidorEscena;			//La animacion se ejecutará en pararlelo al renderizado, asi se aprovecharan los ciclos de espera a la GPU
-	APPHILO_MUTEX_CLASE			mutexEsperaConsumirRender;		//Semaforo para la espera a que se vuelque el renderBuffer a pantalla
-	APPHILO_COND_CLASE			condEsperaConsumirRender;		//...que se vuelque el renderBuffer a pantalla
-	#endif
 };
 
 //

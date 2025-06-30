@@ -479,8 +479,8 @@ int AUAppGluePdfium_WriteBlock(struct FPDF_FILEWRITE_* pThis, const void* pData,
 		STNBPdfiumWriteBlock* bb = (STNBPdfiumWriteBlock*)pThis;
 		NBASSERT(bb->base.version == 1)
 		NBASSERT(bb->base.WriteBlock == AUAppGluePdfium_WriteBlock)
-		if(bb->file != NULL){
-			if(NBFile_write(bb->file, pData, size, 1)){
+		if(NBFile_isOpen(bb->file)){
+			if(NBFile_write(bb->file, pData, size)){
 				r = size;
 			}
 		}
@@ -494,7 +494,7 @@ BOOL AUAppGluePdfium::docWriteToFilepath(void* param, void* docRef, const char* 
 	AUAppGluePdfiumDoc* dd = (AUAppGluePdfiumDoc*)docRef;
 	if(obj != NULL && dd != NULL){
         STNBFileRef file = NBFile_alloc(NULL);
-		if(!NBFile_open(&file, filepath, ENNBFileMode_Write)){
+		if(!NBFile_open(file, filepath, ENNBFileMode_Write)){
 			PRINTF_ERROR("AUAppGluePdfium, could not open file for write: '%s'.\n", filepath);
 		} else {
 			NBFile_lock(file);
@@ -509,7 +509,7 @@ BOOL AUAppGluePdfium::docWriteToFilepath(void* param, void* docRef, const char* 
 						NBMemory_setZeroSt(bb, STNBPdfiumWriteBlock);
 						bb.base.version		= 1;
 						bb.base.WriteBlock	= AUAppGluePdfium_WriteBlock;
-						bb.file				= &file;
+						bb.file				= file;
 						if(FPDF_SaveAsCopy(dd->doc, &bb.base, 0)){
 							r = TRUE;
 						}
@@ -983,14 +983,14 @@ BOOL AUAppGluePdfium_renderPageImg(FPDF_DOCUMENT doc, FPDF_PAGE fpage, const STN
 				//PNG bitmap
 				{
                     STNBFileRef stream = NBFile_alloc(NULL);
-					if(!NBFile_openAsDataRng(&stream, (void*)data, dataSz)){
+					if(!NBFile_openAsDataRng(stream, (void*)data, dataSz)){
 						r = FALSE;
 					} else {
 						NBFile_lock(stream);
 						{
 							STNBBitmap bmp;
 							NBBitmap_init(&bmp);
-							if(!NBPng_loadFromFile(&stream, TRUE, &bmp, NULL)){
+							if(!NBPng_loadFromFile(stream, TRUE, &bmp, NULL)){
 								r = FALSE;
 							} else {
 								//Render
@@ -1358,7 +1358,7 @@ BOOL AUAppGluePdfium_renderPage(FPDF_DOCUMENT doc, FPDF_FONT* fontContentRef, co
 											NBString_initWithSz(&imgData, 100 * 1024, 100 * 1024, 0.25f);
 											{
                                                 STNBFileRef stream = NBFile_alloc(NULL);
-												if(!NBFile_openAsString(&stream, &imgData)){
+												if(!NBFile_openAsString(stream, &imgData)){
 													NBASSERT(FALSE) //ERROR
 												} else {
 													ENNBPdfRenderPageItmImgType imgType = ENNBPdfRenderPageItmImgType_Count;
@@ -1388,7 +1388,7 @@ BOOL AUAppGluePdfium_renderPage(FPDF_DOCUMENT doc, FPDF_FONT* fontContentRef, co
 														NBFile_unlock(stream);
 													} else {
 														//Save as PNG
-														if(!NBPng_saveDataToFile(&bmpProps, bmpData, &stream, ENPngCompressLvl_9)){
+														if(!NBPng_saveDataToFile(&bmpProps, bmpData, stream, ENPngCompressLvl_9)){
 															r = FALSE; NBASSERT(FALSE)
 														} else {
 															imgType = ENNBPdfRenderPageItmImgType_Png;

@@ -1750,39 +1750,6 @@ bool AUApp::inicializarJuego(AUAppEscenasAdmin* gameplays){
 			_datosHilos.redim.dpiScene.ancho	= 0;	//dot-per-inch
 			_datosHilos.redim.dpiScene.alto		= 0;	//dot-per-inch
 		}
-		#if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-		_datosHilos.hiloProductorEscenaTrabajando = false;
-		APPHILO_MUTEX_INICIALIZAR(&_datosHilos.mutexBufferesEscena);
-		APPHILO_MUTEX_INICIALIZAR(&_datosHilos.mutexEsperaProducirEscena);
-		APPHILO_MUTEX_INICIALIZAR(&_datosHilos.mutexEsperaConsumirEscena);
-		APPHILO_COND_INICIALIZAR(&_datosHilos.condEsperaProducirEscena);
-		APPHILO_COND_INICIALIZAR(&_datosHilos.condEsperaConsumirEscena);
-		#endif
-		#if defined(APP_IMPLEMENTAR_TRI_HILO)
-		_datosHilos.ticksCargandoRecursos			= 0;
-		_datosHilos.hiloConsumidorEscenaTrabajando	= false;
-		APPHILO_MUTEX_INICIALIZAR(&_datosHilos.mutexEsperaConsumirRender);
-		APPHILO_COND_INICIALIZAR(&_datosHilos.condEsperaConsumirRender);
-		#endif
-		//CREAR HILOS DE RENDERIZADO Y ANIMACION
-		#if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-		_datosHilos.hiloProductorEscena = new AUHilo("AUApp::hiloProductorEscena");
-		if(!_datosHilos.hiloProductorEscena->crearHiloYEjecuta(funcProductorDatosEscena, &_datosHilos)){
-			PRINTF_ERROR("crearHiloYEjecuta, no se pudo crear el hilo PRODUCTOR-ESCENA\n");
-			NBASSERT(false) //no se pudo crear el hilo de animacion
-		} else {
-			PRINTF_INFO("HILO PRODUCTOR-ESCENA creado\n");
-		}
-		#endif
-		#if defined(APP_IMPLEMENTAR_TRI_HILO)
-		_datosHilos.hiloConsumidorEscena = new AUHilo("AUApp::hiloConsumidorEscena");
-		if(_datosHilos.hiloConsumidorEscena->crearHiloYEjecuta(funcConsumidorDatosEscena, &_datosHilos)){
-			PRINTF_ERROR("crearHiloYEjecuta, no se pudo crear el hilo CONSUMIDOR-ESCENA\n");
-			NBASSERT(false) //no se pudo crear el hilo de animacion
-		} else {
-			PRINTF_INFO("HILO CONSUMIDOR-ESCENA creado\n");
-		}
-		#endif
 		_datosHilos.hiloPrincipalIniciado		= true;
 		hiloIniciado();
 		exito = true;
@@ -1795,20 +1762,6 @@ void AUApp::finalizarJuego(){
 	AU_GESTOR_PILA_LLAMADAS_PUSH_APP("AUApp::finalizarJuego")
 	//Esperar los hilos
 	_datosHilos.finalizandoPrograma = true;
-#	if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-	while(_datosHilos.hiloProductorEscenaTrabajando){
-		_datosHilos.finalizandoPrograma = true;
-		NBHILO_SLEEP_MS(50);
-	}
-	if(_datosHilos.hiloProductorEscena != NULL) _datosHilos.hiloProductorEscena->liberar(NB_RETENEDOR_NULL); _datosHilos.hiloProductorEscena = NULL;
-#	endif
-#	if defined(APP_IMPLEMENTAR_TRI_HILO)
-	while(_datosHilos.hiloConsumidorEscenaTrabajando){
-		_datosHilos.finalizandoPrograma = true;
-		NBHILO_SLEEP_MS(50);
-	}
-	if(_datosHilos.hiloConsumidorEscena != NULL) _datosHilos.hiloConsumidorEscena->liberar(NB_RETENEDOR_NULL); _datosHilos.hiloConsumidorEscena = NULL;
-#	endif
 	//Liberar recursos
 	if(_gameplays != NULL){
 		_gameplays->liberar(NB_RETENEDOR_THIS);
@@ -1917,28 +1870,14 @@ float AUApp::tickJuego(const ENAUAppTickTipo tipoTick, const bool acumularFrames
 			 }
 			 _usTickAnterior = tiempoIni;
 			 }*/
-#			if defined(APP_IMPLEMENTAR_TRI_HILO)
-			funcConsumidorDatosRender(&_datosHilos);
-#			elif defined(APP_IMPLEMENTAR_BI_HILO)
-			funcConsumidorDatosEscena(&_datosHilos);
-			funcConsumidorDatosRender(&_datosHilos);
-#			else
 			funcProductorDatosEscena(&_datosHilos);
 			funcConsumidorDatosEscena(&_datosHilos);
 			funcConsumidorDatosRender(&_datosHilos);
-#			endif
 		} else /*if(tipoTick == ENAUAppTickTipo_TimerManual)*/{
 			CICLOS_CPU_TIPO cicloIni; CICLOS_CPU_HILO(cicloIni)
-#			if defined(APP_IMPLEMENTAR_TRI_HILO)
-			funcConsumidorDatosRender(&_datosHilos);
-#			elif defined(APP_IMPLEMENTAR_BI_HILO)
-			funcConsumidorDatosEscena(&_datosHilos);
-			funcConsumidorDatosRender(&_datosHilos);
-#			else
 			funcProductorDatosEscena(&_datosHilos);
 			funcConsumidorDatosEscena(&_datosHilos);
 			funcConsumidorDatosRender(&_datosHilos);
-#			endif
 			CICLOS_CPU_TIPO cicloFin; CICLOS_CPU_HILO(cicloFin)
 			CICLOS_CPU_TIPO ciclosCpuPorSeg; CICLOS_CPU_POR_SEGUNDO(ciclosCpuPorSeg);
 			const float msPorTick	= (1000.0f / (float)NBGestorAnimadores::ticksPorSegundo());
@@ -1979,11 +1918,6 @@ void AUApp::tickSoloSonidos(const float segsTranscurridos){
 	}
 	//Execute if this is the only active call
 	if(tickCallsCur == 1){
-#		if defined(APP_IMPLEMENTAR_TRI_HILO)
-		NBASSERT(false)
-#		elif defined(APP_IMPLEMENTAR_BI_HILO)
-		NBASSERT(false)
-#		else
 #		ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
 		if(NBGestorSonidos::gestorInicializado()){
 			NBGestorSonidos::tickSonido(segsTranscurridos);
@@ -1994,7 +1928,6 @@ void AUApp::tickSoloSonidos(const float segsTranscurridos){
 		NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE() //Verify pointers after tick
 		AUApp::aplicarAutoliberaciones();
 		NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE() //Verify pointers after autoreleases
-#		endif
 	}
 	{
 		NBHILO_MUTEX_ACTIVAR(&_tickMutex);
@@ -2015,13 +1948,7 @@ void AUApp::tickSoloProducirRender(){
 	}
 	//Execute if this is the only active call
 	if(tickCallsCur == 1){
-#		if defined(APP_IMPLEMENTAR_TRI_HILO)
-		NBASSERT(false)
-#		elif defined(APP_IMPLEMENTAR_BI_HILO)
-		NBASSERT(false)
-#		else
 		funcProductorDatosEscena(&_datosHilos);
-#		endif
 	}
 	{
 		NBHILO_MUTEX_ACTIVAR(&_tickMutex);
@@ -2042,14 +1969,8 @@ void AUApp::tickSoloConsumirRender(){
 	}
 	//Execute if this is the only active call
 	if(tickCallsCur == 1){
-#		if defined(APP_IMPLEMENTAR_TRI_HILO)
-		NBASSERT(false)
-#		elif defined(APP_IMPLEMENTAR_BI_HILO)
-		NBASSERT(false)
-#		else
 		funcConsumidorDatosEscena(&_datosHilos);
 		funcConsumidorDatosRender(&_datosHilos);
-#		endif
 	}
 	{
 		NBHILO_MUTEX_ACTIVAR(&_tickMutex);
@@ -2064,23 +1985,9 @@ void AUApp::hiloIniciado() {
 	NBASSERT(_juegoCargado==false)
 	bool nuevoEstado = _datosHilos.hiloPrincipalIniciado;
 	//
-#	if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-	nuevoEstado = nuevoEstado && _datosHilos.hiloProductorEscenaTrabajando;
-#	endif
-	//
-#	if defined(APP_IMPLEMENTAR_TRI_HILO)
-	nuevoEstado = nuevoEstado && _datosHilos.hiloConsumidorEscenaTrabajando;
-#	endif
-	//
 	_juegoCargado = nuevoEstado;
 	//
-#	if defined(APP_IMPLEMENTAR_TRI_HILO)
-	if(nuevoEstado) PRINTF_INFO("APP TODOS LOS HILOS (TRIO) HAN SIDO INICIADOS\n");
-#	elif defined(APP_IMPLEMENTAR_BI_HILO)
-	if(nuevoEstado) PRINTF_INFO("APP TODOS LOS HILOS (BI) HAN SIDO INICIADOS\n");
-#	else
 	if(nuevoEstado) PRINTF_INFO("APP TODOS LOS HILOS (MONO) HAN SIDO INICIADOS\n");
-#	endif
 	//
 	AU_GESTOR_PILA_LLAMADAS_POP_APP
 }
@@ -2277,12 +2184,6 @@ void AUApp::funcProductorDatosEscena(void* datos){
 	NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 	//
 	//[datosSincronizadoHilos->vistaOpenGL activarContextoOpenGL]; //Pendiente de implementar
-	#if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-	SI32 ciclosEspera = 0;
-	datosSincronizadoHilos->hiloProductorEscenaTrabajando = true;
-	app->hiloIniciado();
-	PRINTF_INFO("AUAPP-Productor, HILO PRODUCTOR de escenas iniciado\n");
-	#endif
 	NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 	//Keyboard (do this here to avoid multiple show/hide keyboard during ant the same tick)
 	if(NBGestorTeclas::gestorInicializado()){
@@ -2294,9 +2195,6 @@ void AUApp::funcProductorDatosEscena(void* datos){
 	}
 	NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 	//
-	#if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-	while(!datosSincronizadoHilos->finalizandoPrograma)
-	#endif
 	{
 		//NBASSERT(app->_framesAcumRetraso >= 0)
 		BOOL mustRenderScene = TRUE;
@@ -2375,13 +2273,7 @@ void AUApp::funcProductorDatosEscena(void* datos){
 							 NBASSERT(false)
 							 }* /
 							//DESCARTAR LA ESCENA PRODUCIDA ANTERIORMENTE
-#							ifdef APP_IMPLEMENTAR_TRI_HILO
-							APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
 							datosSincronizadoHilos->renderbufferLlenado = false;
-							APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
-#							else
-							datosSincronizadoHilos->renderbufferLlenado = false;
-#							endif
 						}
 						NBGestorEscena::cambioDefinicionMoverHaciaEstadoSiguiente();
 						NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
@@ -2428,11 +2320,9 @@ void AUApp::funcProductorDatosEscena(void* datos){
 		}
 		//Bloquear buffer
 		{
-			APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
 			if(NBGestorEscena::gestorInicializado()){
 				NBGestorEscena::bufferDatosEnEscrituraBloquear();
 			}
-			APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
 			NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 		}
 		//
@@ -2444,11 +2334,6 @@ void AUApp::funcProductorDatosEscena(void* datos){
 			// ACTUALIZAR MATRICES Y PRODUCIR ESCENA
 			// --------------------------------------
 			//ACTUALIZAR MATRICES Y MODELOS
-#			if defined(CONFIG_NB_INCLUIR_VALIDACIONES_ASSERT) && (defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO))
-			if(NBGestorEscena::gestorInicializado()){
-				NBGestorEscena::debugMarcarBloqueoModelosEscena(true); //Para depurar que ningun objeto se modifique durante la creacion de modelos
-			}
-#			endif
 			estadoCicloJuego.marcarIniMatricesActualizadas();
 			if(NBGestorEscena::gestorInicializado()){
 				NBGestorEscena::actualizarMatricesYModelos(&models);
@@ -2508,8 +2393,6 @@ void AUApp::funcProductorDatosEscena(void* datos){
 				//NOTIFICAR AL CONSUMIDOR QUE HE PRODUCIDO UN BUFFER (para su lectura)
 				//PRINTF_INFO("AUAPP-Productor, bufferDatosEnEscrituraLlenar + bufferDatosEnEscrituraDesbloquear.\n");
 				{
-					APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaProducirEscena);
-					APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
 					if(NBGestorEscena::gestorInicializado()){
 						if(mustRenderScene){
 							NBGestorEscena::bufferDatosEnEscrituraLlenar(); //PRINTF_INFO("+++ BUFFER PRODUCIDO: %d llenos\n", NBGestorEscena::bufferDatosConteoLlenos());
@@ -2518,17 +2401,9 @@ void AUApp::funcProductorDatosEscena(void* datos){
 						}
 						NBGestorEscena::bufferDatosEnEscrituraDesbloquear(); //PRINTF_INFO("BUFFER-ESCENA PRODUCIDO\n"); NBGestorEscena::debugImprimirEstadoBufferes();
 					}
-					APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
-					APPHILO_DISPARA_CONDICIONAL(&datosSincronizadoHilos->condEsperaProducirEscena);
-					APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaProducirEscena);
 				}
 				NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 			}
-#			if defined(CONFIG_NB_INCLUIR_VALIDACIONES_ASSERT) && (defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO))
-			if(NBGestorEscena::gestorInicializado()){
-				NBGestorEscena::debugMarcarBloqueoModelosEscena(false); //Para depurar que ningun objeto se modifique durante la creacion de modelos
-			}
-#			endif
 			NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 			// --------------------------------------
 			// ANIMAR ESCENA
@@ -2622,38 +2497,13 @@ void AUApp::funcProductorDatosEscena(void* datos){
 		// --------------------------------------
 		// ESPERAR A QUE EXISTA UN BUFFER LIBRE
 		// --------------------------------------
-#		if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-		APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirEscena);
-		bool esperar = false; ciclosEspera = 0;
-		do {
-			APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
-			esperar = (datosSincronizadoHilos->modoRenderSecuencial && (NBGestorEscena::bufferDatosConteoLlenos()!=0 || NBGestorEscena::bufferDatosConteoBloqueados()!=0)); //Si se esta en modo secuencial (esperar a que todos los bufferes sean consumidos)
-			if(!esperar){
-				if(NBGestorEscena::gestorInicializado()){
-					esperar = (!NBGestorEscena::bufferDatosEnEscrituraMoverHaciaSiguienteNoBloqueado()); //Si el modo secuencial no limita, entonces intentar mover al siguiente buffer
-				}
-			}
-			APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
-			if(esperar) {
-				APPHILO_ESPERA_CONDICIONAL(&datosSincronizadoHilos->condEsperaConsumirEscena, &datosSincronizadoHilos->mutexEsperaConsumirEscena);
-			}
-			ciclosEspera++;
-			NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
-		} while(esperar); if(ciclosEspera>2) PRINTF_INFO("%d ciclos esperando consumo de escena (%s)\n", ciclosEspera, datosSincronizadoHilos->modoRenderSecuencial?"secuencial":"no-secuencial");
-		APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirEscena);
-#		else
 		if(NBGestorEscena::gestorInicializado()){
 			NBGestorEscena::bufferDatosEnEscrituraMoverHaciaSiguiente();
 			NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 		}
-#		endif
 		NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 		//PRINTF_INFO("AUAPP-Productor, NBGestorEscena::bufferDatosEnEscrituraMoverHaciaSiguiente.\n");
 	}
-#	if defined(APP_IMPLEMENTAR_TRI_HILO) || defined(APP_IMPLEMENTAR_BI_HILO)
-	PRINTF_INFO("AUApp, FIN DE HILO PRODUCTOR RENDER\n");
-	datosSincronizadoHilos->hiloProductorEscenaTrabajando = false;
-#	endif
 }
 
 void AUApp::funcConsumidorDatosEscena(void* datos){
@@ -2663,42 +2513,25 @@ void AUApp::funcConsumidorDatosEscena(void* datos){
 	NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 	//
 	//[datosSincronizadoHilos->vistaOpenGL activarContextoOpenGL]; //Pendiente de implementar
-	#if defined(APP_IMPLEMENTAR_TRI_HILO)
-	datosSincronizadoHilos->hiloConsumidorEscenaTrabajando = true;
-	app->hiloIniciado();
-	PRINTF_INFO("AUApp-Consumidor, HILO CONSUMIDOR de escenas iniciado\n");
-	#endif
 	//Ciclo de renderizado
-	#if defined(APP_IMPLEMENTAR_TRI_HILO)
-	while(!datosSincronizadoHilos->finalizandoPrograma){
-	#endif
 		//ESPERAR A QUE SE PRODUZCA UN BUFFER (si el siguiente no esta lleno)
 		{
-			APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaProducirEscena);
 			bool esperar = false; ciclosEspera = 0;
 			do {
-				APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
 				esperar = false;
 				if(NBGestorEscena::gestorInicializado()){
 					esperar = (!NBGestorEscena::bufferDatosEnLecturaMoverHaciaSiguienteNoBloqueado());
 				}
-#				if !defined(APP_IMPLEMENTAR_TRI_HILO) && !defined(APP_IMPLEMENTAR_BI_HILO)
 				NBASSERT(!esperar) //En mono-hilo, este ciclo seria infinito
-#				endif
-				APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
-				if(esperar){ APPHILO_ESPERA_CONDICIONAL(&datosSincronizadoHilos->condEsperaProducirEscena, &datosSincronizadoHilos->mutexEsperaProducirEscena); }
 				ciclosEspera++;
 			} while(esperar); //if(ciclosEspera>1) PRINTF_INFO("%d ciclos esperando produccion de escena\n", ciclosEspera);
 			{
-				APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
 				if(NBGestorEscena::gestorInicializado()){
 					//PRINTF_INFO("AUAPP-Consumidor, NBGestorEscena::bufferDatosEnLecturaBloquear.\n");
 					NBGestorEscena::bufferDatosEnLecturaBloquear();
 					NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 				}
-				APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena);
 			}
-			APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaProducirEscena);
 		}
 		//
 		datosSincronizadoHilos->modoRenderSecuencial = false;
@@ -2749,60 +2582,30 @@ void AUApp::funcConsumidorDatosEscena(void* datos){
 			}
 			app->_estadisticas.ticksRenderEnSegAcum++;
 			//NOTIFICAR AL CONSUMIDOR DE RENDER QUE SE HA PRODUCIDO UNO
-			#if defined(APP_IMPLEMENTAR_TRI_HILO)
-			APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
-			#endif
 			datosSincronizadoHilos->renderbufferLlenado = escenaProducida;
-			#if defined(APP_IMPLEMENTAR_TRI_HILO)
-			APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
-			#endif
 		}
 		// --------------------------------------
 		// EJECUTAR ACCIONES QUE REQUIEREN BUFFERES VACIOS (modo mono-hilo)
 		// Y NOTIFICAR AL PRODUCTOR QUE HE CONSUMIDO UN BUFFER (posiblemente liberandolo para su escritura)
 		// --------------------------------------
 		{
-			APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirEscena); //mutexCondBufferConsumido
 			{
-				APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena); //mutexCondBufferConsumido
 				if(NBGestorEscena::gestorInicializado()){
 					//PRINTF_INFO("AUAPP-Consumidor, NBGestorEscena::bufferDatosEnLecturaVaciar.\n");
 					NBGestorEscena::bufferDatosEnLecturaVaciar(); //PRINTF_INFO("--- BUFFER CONSUMIDO: %d llenos\n", NBGestorEscena::bufferDatosConteoLlenos());
 					NBGestorEscena::bufferDatosEnLecturaDesbloquear(); //PRINTF_INFO("BUFFER-ESCENA CONSUMIDO\n"); NBGestorEscena::debugImprimirEstadoBufferes();
 					NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 				}
-				APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexBufferesEscena); //mutexCondBufferConsumido
 			}
 			NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
-			APPHILO_DISPARA_CONDICIONAL(&datosSincronizadoHilos->condEsperaConsumirEscena);
-			APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirEscena);
 		}
-#		if defined(APP_IMPLEMENTAR_TRI_HILO)
-		//ESPERAR A QUE EL RENDER SEA VOLCADO EN PANTALLA
-		APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
-		ciclosEspera = 0;
-		while(datosSincronizadoHilos->renderbufferLlenado){
-			APPHILO_ESPERA_CONDICIONAL(&datosSincronizadoHilos->condEsperaConsumirRender, &datosSincronizadoHilos->mutexEsperaConsumirRender);
-			ciclosEspera++;
-		} //if(ciclosEspera>1) PRINTF_INFO("%d ciclos esperando consumo de renderBuffer\n", ciclosEspera);
-		APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
-		NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
-#		endif
 	//
-#	if defined(APP_IMPLEMENTAR_TRI_HILO)
-	}
-	PRINTF_INFO("AUApp, FIN DE HILO CONSUMIDOR RENDER\n");
-	datosSincronizadoHilos->hiloConsumidorEscenaTrabajando = false;
-#	endif
 }
 
 void AUApp::funcConsumidorDatosRender(void* datos){
 	STAppHilos* datosSincronizadoHilos = (STAppHilos*)datos;
 	AUApp* app	= datosSincronizadoHilos->app;
 	//VOLCAR RENDERIZADO HACIA PANTALLA (si el render esta lleno)
-	#if defined(APP_IMPLEMENTAR_TRI_HILO)
-	APPHILO_ACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
-	#endif
 	if(datosSincronizadoHilos->renderbufferLlenado && app->_callbacks.funcVolcarBuffer != NULL){
 		//PRINTF_INFO("AUAPP-Render, funcVolcarBuffer.\n");
 		if(app->_resumenDebug != NULL){
@@ -2816,16 +2619,6 @@ void AUApp::funcConsumidorDatosRender(void* datos){
 		}
 		datosSincronizadoHilos->renderbufferLlenado = false;
 	} //else { PRINTF_INFO("ADVERTENCIA: ignorando tickPantalla porque no habia un renderBuffer producido\n"); }
-	#if defined(APP_IMPLEMENTAR_TRI_HILO)
-	//Para que el hilo de produccion deje de cargar y continue produciendo
-	if(datosSincronizadoHilos->modoRenderSecuencial){
-		datosSincronizadoHilos->ticksCargandoRecursos++;
-	} else {
-		datosSincronizadoHilos->ticksCargandoRecursos = 0;
-	}
-	APPHILO_DISPARA_CONDICIONAL(&datosSincronizadoHilos->condEsperaConsumirRender);
-	APPHILO_DESACTIVA_MUTEX(&datosSincronizadoHilos->mutexEsperaConsumirRender);
-	#endif
 }
 
 #if defined(CONFIG_NB_GESTOR_MEMORIA_REGISTRAR_BLOQUES) && defined(CONFIG_NB_GESTOR_MEMORIA_IMPLEMENTAR_GRUPOS_ZONAS_MEMORIA) && defined(CONFIG_NB_GESTOR_MEMORIA_GUARDAR_NOMBRES_PUNTEROS)
