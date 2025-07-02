@@ -151,7 +151,7 @@ bool AUAppTransicionConFondo::tickTransicion(float segsTranscurridos){
 					_animadorObjsEscena->animarPosicion(_datosCargaFondo.fondoEntranteCapa, posCapaFndAct, 0.6f, ENAnimPropVelocidad_Desacelerada3, 0.3f);
 					NBGestorEscena::establecerEscenaLimpiaColorBuffer(_iScene, false);
 				}
-				const NBColor8 colorBlanco(255, 255, 255, 255);
+                const NBColor8 colorBlanco = { 255, 255, 255, 255 };
 				NBGestorEscena::agregarObjetoCapa(_iScene, ENGestorEscenaGrupo_Fondo, _datosCargaFondo.fondoEntranteCapa, colorBlanco);
 			}
 		}
