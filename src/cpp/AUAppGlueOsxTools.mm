@@ -355,7 +355,7 @@ void AUAppGlueOsxTools::setBarStyle(void* pData, const ENStatusBarStyle style){
 BOOL AUAppGlueOsxTools::concatDeviceName(void* pData, STNBString* dst){
 	BOOL r = FALSE;
 	if(pData != NULL){
-		AUAppGlueOsxToolsData* data = (AUAppGlueOsxToolsData*)pData;
+        /*AUAppGlueOsxToolsData* data = (AUAppGlueOsxToolsData*)pData;
 		@autoreleasepool {
 			NSString* dName = (NSString *)SCDynamicStoreCopyComputerName(NULL, NULL);
 			if(dName != nil){
@@ -363,7 +363,7 @@ BOOL AUAppGlueOsxTools::concatDeviceName(void* pData, STNBString* dst){
 				r = TRUE;
 				[dName release];
 			}
-		}
+		}*/
 	}
 	return r;
 }

@@ -12,8 +12,11 @@
 
 int main(int argc, const char * argv[]) {
 	int r = 0;
-    NBMngrProcess_init();
-    NBMngrStructMaps_init();
+    //These could be automatically called by 'AUFrameworkBaseInicializar'
+    if(!NBMngrProcess_isInited()){
+        NBMngrProcess_init();
+        NBMngrStructMaps_init();
+    }
     //NBSocket_initEngine();
     //NBSocket_initWSA();
 	if(!AUApp::inicializarNucleo(AUAPP_BIT_MODULO_RED)){

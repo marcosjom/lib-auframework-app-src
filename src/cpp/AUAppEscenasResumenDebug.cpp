@@ -451,13 +451,13 @@ void AUEscenaResumenDebug::agregadoEnEscena(){
 	AU_GESTOR_PILA_LLAMADAS_PUSH_3("AUEscenaResumenDebug::agregadoEnEscena")
 	this->establecerGrupoAnimacion(ENGestorAnimadoresGrupo_Nucleo); //Animador importante: seguir ejecutando al pausar el GamePlay
 	NBGestorAnimadores::agregarAnimador(this, this);
-	//AUEscenaContenedor::agregadoEnEscena(); //COMENTARIADO, por ahora AUEscenaContenedor::agregadoEnEscena no hace nada.
+	AUEscenaContenedor::agregadoEnEscena();
 	AU_GESTOR_PILA_LLAMADAS_POP_3
 }
 					   
 void AUEscenaResumenDebug::quitandoDeEscena(){
 	AU_GESTOR_PILA_LLAMADAS_PUSH_3("AUEscenaResumenDebug::quitandoDeEscena")
-	//AUEscenaContenedor::quitandoDeEscena(); //COMENTARIADO, por ahora AUEscenaContenedor::quitandoDeEscena no hace nada.
+	AUEscenaContenedor::quitandoDeEscena();
 	NBGestorAnimadores::quitarAnimador(this);
 	AU_GESTOR_PILA_LLAMADAS_POP_3
 }

@@ -63,6 +63,8 @@
 		2C6D373322306891007F50DA /* AUMngrContacts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D372F22306891007F50DA /* AUMngrContacts.cpp */; };
 		2C6D373722306C77007F50DA /* AUAppGlueAppleContacts.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D373522306C76007F50DA /* AUAppGlueAppleContacts.mm */; };
 		2C6D373822306C77007F50DA /* AUAppGlueAppleContacts.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D373522306C76007F50DA /* AUAppGlueAppleContacts.mm */; };
+		2C702EA72E16CA79009BFCAB /* NBMngrGameKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF58BC71F3A552600118CEB /* NBMngrGameKit.cpp */; };
+		2C702EA82E16CAE4009BFCAB /* AUMngrGameKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF58BC61F3A552600118CEB /* AUMngrGameKit.cpp */; };
 		2C7BA48D1F857F5000C34342 /* AUMngrGoogleLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BA4891F857F4F00C34342 /* AUMngrGoogleLogin.cpp */; };
 		2C7BA48E1F857F5000C34342 /* NBMngrGoogleLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BA48B1F857F5000C34342 /* NBMngrGoogleLogin.cpp */; };
 		2C7BA4941F85B40400C34342 /* NBMngrFbLogin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFDE781F8423440019EA1B /* NBMngrFbLogin.cpp */; };
@@ -1376,11 +1378,13 @@
 				2CDB137121F7A1860063BF46 /* AUMngrAVCapture.cpp in Sources */,
 				2CDE698718F8A99200286F1F /* AUAppTransicionConColorSolido.cpp in Sources */,
 				2C6471171A26D13500BE4797 /* AUAppEscenasAdminSimple.cpp in Sources */,
+				2C702EA82E16CAE4009BFCAB /* AUMngrGameKit.cpp in Sources */,
 				2C7D26AE1B1F5F3D00D2C76F /* AUAppTransicionConCortina.cpp in Sources */,
 				2C1BBA8E1901A2D500FB9C06 /* AUAppNucleoRegistro.cpp in Sources */,
 				2CA8C7E5205C81D6001B1CE2 /* AUMngrOSSecure.cpp in Sources */,
 				2CDE699718F8ECF600286F1F /* AUAppEscena.cpp in Sources */,
 				2C6D373822306C77007F50DA /* AUAppGlueAppleContacts.mm in Sources */,
+				2C702EA72E16CA79009BFCAB /* NBMngrGameKit.cpp in Sources */,
 				2CDE697F18F8A40400286F1F /* AUAppNucleoPrecompilado.cpp in Sources */,
 				2CDFFD4D22EA5B54003B27D3 /* AUAppGlueApplePdfKit.mm in Sources */,
 				2C0ACBD11F02DE63002F31AD /* NBMngrStore.cpp in Sources */,
