@@ -1657,7 +1657,7 @@ BOOL AUApp::privConfigureForResolution(const NBTamanoI wSize, const NBTamano ppi
 			PRINTF_INFO("ESCALA HACIA ESCENA HD (PNG/X2): %f (%s, %.1f dpi)\n", _escalaHaciaHD, _escalaHaciaHDEsManual ? "manual" : "automatica", pppSceneAvg);
 			NBGestorTexturas::establecerTamanosTexturasDeAmbito(NBGestorTexturas::indiceAmbitoTexturasActual(), 1024, 512);
 			NBGestorTexturas::establecerPrefijoRutas("PNG/X2/", 2, 1.0f, ENTexturaResolucion_Escena);
-		} else if(pppSceneAvg < 395.0f){ //390, because some devices are 400 x 399 dpi (do not validate against 400 dpi).
+		} else if(pppSceneAvg < 500.0 /*395.0f*/){ //iPhone8+ = 400ppp, iPhone16PorMax = 458ppp
 			PRINTF_INFO("ESCALA HACIA ESCENA HD (PNG/X4): %f (%s, %.1f dpi)\n", _escalaHaciaHD, _escalaHaciaHDEsManual ? "manual" : "automatica", pppSceneAvg);
 			NBGestorTexturas::establecerTamanosTexturasDeAmbito(NBGestorTexturas::indiceAmbitoTexturasActual(), 2048, 1024);
 			NBGestorTexturas::establecerPrefijoRutas("PNG/X4/", 4, 1.0f, ENTexturaResolucion_Escena);
@@ -1673,7 +1673,7 @@ BOOL AUApp::privConfigureForResolution(const NBTamanoI wSize, const NBTamano ppi
 		} else if(pppScreenAvg < 195.0f){ //190, because some devices are 200 x 199 dpi (do not validate against 200 dpi).
 			PRINTF_INFO("ESCALA HACIA PANTALLA (PNG/X2): %f (%s, %.1f dpi)\n", _escalaHaciaHD, _escalaHaciaHDEsManual ? "manual" : "automatica", pppScreenAvg);
 			NBGestorTexturas::establecerPrefijoRutas("PNG/X2/", 2, 1.0f, ENTexturaResolucion_Pantalla);
-		} else if(pppScreenAvg < 395.0f){ //390, because some devices are 400 x 399 dpi (do not validate against 400 dpi).
+		} else if(pppScreenAvg < 500.0 /*395.0f*/){ //iPhone8+ = 400ppp, iPhone16PorMax = 458ppp
 			PRINTF_INFO("ESCALA HACIA PANTALLA (PNG/X4): %f (%s, %.1f dpi)\n", _escalaHaciaHD, _escalaHaciaHDEsManual ? "manual" : "automatica", pppScreenAvg);
 			NBGestorTexturas::establecerPrefijoRutas("PNG/X4/", 4, 1.0f, ENTexturaResolucion_Pantalla);
 		} else {
