@@ -10,40 +10,82 @@
 #include "AUAppNucleoPrecompilado.h"
 #include "AUAppNucleoEncabezado.h"
 
+#include <OpenAL/alc.h>
+#import <AVFoundation/AVAudioSession.h>
+//#include <AudioToolbox/AudioToolbox.h> //2025-07-06, deprecated on iOS7
+
+
+#ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
+@interface AUIOSAudioSessionDelegate : NSObject {
+    AUIOSAudioSession* obj;
+}
+- (id) initWithObj:(AUIOSAudioSession*)obj;
+- (void) interruption:(NSNotification*)notification;
+@end
+#endif
+
+#ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
+@implementation AUIOSAudioSessionDelegate
+- (id) initWithObj:(AUIOSAudioSession*)pObj {
+    obj = pObj;
+    return [super init];
+}
+
+- (void) interruption:(NSNotification*)notification {
+    // get the user info dictionary
+    NSDictionary *interuptionDict = notification.userInfo;
+    // get the AVAudioSessionInterruptionTypeKey enum from the dictionary
+    NSInteger interuptionType = [[interuptionDict valueForKey:AVAudioSessionInterruptionTypeKey] integerValue];
+    // decide what to do based on interruption type here...
+    switch (interuptionType) {
+        case AVAudioSessionInterruptionTypeBegan:
+            if(obj != NULL){
+                obj->sessionInterruptStarted();
+            }
+            break;
+        case AVAudioSessionInterruptionTypeEnded:
+            if(obj != NULL){
+                obj->sessionInterruptEnded();
+            }
+            break;
+        default:
+            break;
+    }
+}
+@end
+#endif
+
 #ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
 AUIOSAudioSession::AUIOSAudioSession(){
-	_categoriaActual		= 0;
+	_categoriaActual		= ENAUIOSAudioSessionCat_Count;
 	_sessionIniciada		= false;
 	_sessionActiva			= false;
 	_sessionInterrumpida	= false;
 	_sessionEstabaActivaAntesDeInterrumpir	= false;
-	_contextoOpenAL			= NULL;
-	/*
-	 INPUTS
-	 const CFStringRef kAudioSessionInputRoute_LineIn;
-	 const CFStringRef kAudioSessionInputRoute_BuiltInMic;
-	 const CFStringRef kAudioSessionInputRoute_HeadsetMic;
-	 const CFStringRef kAudioSessionInputRoute_BluetoothHFP;
-	 const CFStringRef kAudioSessionInputRoute_USBAudio;
-	 */
-	/*
-	 OUTPUTS
-	 const CFStringRef kAudioSessionOutputRoute_LineOut;
-	 const CFStringRef kAudioSessionOutputRoute_Headphones;
-	 const CFStringRef kAudioSessionOutputRoute_BluetoothHFP;
-	 const CFStringRef kAudioSessionOutputRoute_BluetoothA2DP;
-	 const CFStringRef kAudioSessionOutputRoute_BuiltInReceiver;
-	 const CFStringRef kAudioSessionOutputRoute_BuiltInSpeaker;
-	 const CFStringRef kAudioSessionOutputRoute_USBAudio;
-	 const CFStringRef kAudioSessionOutputRoute_HDMI;
-	 const CFStringRef kAudioSessionOutputRoute_AirPlay;
-	 */
 	//
-	if(AudioSessionInitialize(NULL, NULL, AUIOSAudioSession::escuchadorDeInterrupciones, this)!=0){ //run loop, run loop mode, metodo escuchador de interrupciones, datos que son pasados al metodo escuchador
+    _delegate               = [[AUIOSAudioSessionDelegate alloc] initWithObj: this];
+    //
+    {
+        NSError *error = nil;
+        AVAudioSession* session = [AVAudioSession sharedInstance];
+        if(![session setCategory:AVAudioSessionCategoryPlayback error:&error]){
+            PRINTF_ERROR("iOS: no se pudo inicializar la sesion de audio: '%s'", [[error description] UTF8String]);
+        } else {
+            _sessionIniciada = true;
+            //observe interruptions
+            [[NSNotificationCenter defaultCenter] addObserver:_delegate
+                                                         selector:@selector(interruption:)
+                                                             name:AVAudioSessionInterruptionNotification
+                                                           object:nil];
+        }
+    }
+    //
+    //2025-07-06, deprecated on iOS7
+    /*if(AudioSessionInitialize(NULL, NULL, AUIOSAudioSession::escuchadorDeInterrupciones, this)!=0){ //run loop, run loop mode, metodo escuchador de interrupciones, datos que son pasados al metodo escuchador
 		PRINTF_ERROR("iOS: no se pudo inicializar la sesion de audio\n");
 	} else {
 		_sessionIniciada = true;
-		/*CAMBIOS ESCUCHABLES
+		/ *CAMBIOS ESCUCHABLES
 		 kAudioSessionProperty_AudioRouteChange
 		 kAudioSessionProperty_CurrentHardwareOutputVolume
 		 kAudioSessionProperty_AudioInputAvailable
@@ -51,7 +93,7 @@ AUIOSAudioSession::AUIOSAudioSession(){
 		 kAudioSessionProperty_InputSources
 		 kAudioSessionProperty_OutputDestinations
 		 kAudioSessionProperty_InputGainAvailable
-		 kAudioSessionProperty_InputGainScalar*/
+		 kAudioSessionProperty_InputGainScalar* /
 		//Registrar escuchador de cambios de salida
 		AudioSessionPropertyID idCambioEscuchar;
 		idCambioEscuchar = kAudioSessionProperty_AudioRouteChange;
@@ -70,11 +112,16 @@ AUIOSAudioSession::AUIOSAudioSession(){
 		AudioSessionAddPropertyListener (idCambioEscuchar, AUIOSAudioSession::escuchadorDeEventos, NULL);
 		idCambioEscuchar = kAudioSessionProperty_InputGainScalar;
 		AudioSessionAddPropertyListener (idCambioEscuchar, AUIOSAudioSession::escuchadorDeEventos, NULL);
-	}
+	}*/
 }
 
 AUIOSAudioSession::~AUIOSAudioSession(){
 	desactivarSesion();
+    //
+    if(_delegate != nil){
+        [_delegate release];
+        _delegate = nil;
+    }
 }
 
 bool AUIOSAudioSession::activarSesion(){
@@ -82,13 +129,23 @@ bool AUIOSAudioSession::activarSesion(){
 	if(_sessionInterrumpida){
 		PRINTF_ERROR("iOS, no se pudo activar la sesion de audio mientras esta interrumpida\n");
 	} else {
-		if(AudioSessionSetActive(true)!=0){
+        NSError* err = nil;
+        if(![[AVAudioSession sharedInstance] setActive:YES error:&err]){
+            PRINTF_ERROR("iOS, no se pudo activar la sesion de audio: '%s'.\n", err == nil ? "unknown" : [[err description] UTF8String]);
+        } else {
+            PRINTF_INFO("iOS Sesion de audio activada\n");
+            NBGestorSonidos::contextActivate();
+            _sessionActiva = true;
+            exito = true;
+        }
+        //2025-07-06, deprecated on iOS7
+		/*if(AudioSessionSetActive(true)!=0){
 			PRINTF_ERROR("iOS, no se pudo activar la sesion de audio\n");
 		} else {
 			PRINTF_INFO("iOS Sesion de audio activada\n");
 			_sessionActiva = true;
 			exito = true;
-		}
+		}*/
 	}
 	return exito;
 }
@@ -98,13 +155,23 @@ bool AUIOSAudioSession::desactivarSesion(){
 	if(_sessionInterrumpida){
 		PRINTF_ERROR("iOS, no se pudo desactivar la sesion de audio mientras esta interrumpida\n");
 	} else {
-		if(AudioSessionSetActive(false)!=0){
+        NSError* err = nil;
+        if(![[AVAudioSession sharedInstance] setActive:NO error:&err]){
+            PRINTF_ERROR("iOS, no se pudo activar la sesion de audio: '%s'.\n", err == nil ? "unknown" : [[err description] UTF8String]);
+        } else {
+            PRINTF_INFO("iOS Sesion de audio activada\n");
+            NBGestorSonidos::contextDeactivate();
+            _sessionActiva = false;
+            exito = true;
+        }
+        //2025-07-06, deprecated on iOS7
+		/*if(AudioSessionSetActive(false)!=0){
 			PRINTF_ERROR("iOS, no se pudo desactivar la sesion de audio\n");
 		} else {
 			PRINTF_INFO("iOS Sesion de audio desactivada\n");
 			_sessionActiva = false;
 			exito = true;
-		}
+		}*/
 	}
 	return exito;
 }
@@ -117,8 +184,30 @@ bool AUIOSAudioSession::sessionInterrumpida(){
 	return _sessionInterrumpida;
 }
 
+void AUIOSAudioSession::sessionInterruptStarted(){
+    PRINTF_INFO("Sonido iOS: interrupcion iniciada\n");
+    _sessionEstabaActivaAntesDeInterrumpir = _sessionActiva;
+    _sessionActiva        = false;
+    _sessionInterrumpida    = true;
+    NBGestorSonidos::contextDeactivate();
+}
+
+void AUIOSAudioSession::sessionInterruptEnded(){
+    PRINTF_INFO("Sonido iOS: interrupcion finalizada\n");
+    _sessionActiva        = _sessionEstabaActivaAntesDeInterrumpir;
+    _sessionInterrumpida    = false;
+    NBGestorSonidos::contextActivate();
+}
+
 bool AUIOSAudioSession::otroSonidoSeEstaReproduciendo(){
-	bool otroAudioPresente = false;
+    bool r = false;
+    AVAudioSession* session = [AVAudioSession sharedInstance];
+    {
+        r = [session isOtherAudioPlaying];
+    }
+    return r;
+    //2025-07-06, deprecated on iOS7
+    /*bool otroAudioPresente = false;
 	UInt32 otroAudioSeEstaReproduciendo;
 	UInt32 tamanoVariable = sizeof(otroAudioSeEstaReproduciendo);
 	if(AudioSessionGetProperty(kAudioSessionProperty_OtherAudioIsPlaying, &tamanoVariable, &otroAudioSeEstaReproduciendo)!=0){
@@ -126,17 +215,38 @@ bool AUIOSAudioSession::otroSonidoSeEstaReproduciendo(){
 	} else {
 		otroAudioPresente = otroAudioSeEstaReproduciendo;
 	}
-	return otroAudioPresente;
+	return otroAudioPresente;*/
 }
 
-void AUIOSAudioSession::establecerContextoOpenAL(ALCcontext* contextoOpenAL){
-	_contextoOpenAL = contextoOpenAL;
+AVAudioSessionCategory AUIOSAudioSession_enToAVAudioSessionCategory(const ENAUIOSAudioSessionCat cat){
+    switch(cat){
+        case ENAUIOSAudioSessionCat_Ambient: return AVAudioSessionCategoryAmbient;
+        case ENAUIOSAudioSessionCat_SoloAmbient: return AVAudioSessionCategorySoloAmbient;
+        case ENAUIOSAudioSessionCat_Playback: return AVAudioSessionCategoryPlayback;
+        case ENAUIOSAudioSessionCat_Record: return AVAudioSessionCategoryRecord;
+        case ENAUIOSAudioSessionCat_PlayAndRecord: return AVAudioSessionCategoryPlayAndRecord;
+        case ENAUIOSAudioSessionCat_MultiRoute: return AVAudioSessionCategoryMultiRoute;
+        default: break;
+    }
+    return AVAudioSessionCategoryAmbient;
 }
 
 //Para reproduccion de audio:
 //Si hay otro audio reproduciendose se recomienda usar la categoria: kAudioSessionCategory_AmbientSound
 //en caso contrario: kAudioSessionCategory_SoloAmbientSound
-bool AUIOSAudioSession::establecerCategoria(UInt32 kAudioSessionCategory_paramtro){
+bool AUIOSAudioSession::establecerCategoria(const ENAUIOSAudioSessionCat pCat){
+    bool r = false;
+    NSError *err = nil;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    AVAudioSessionCategory cat = AUIOSAudioSession_enToAVAudioSessionCategory(pCat);
+    if(![session setCategory:cat error:&err]){
+        PRINTF_ERROR("iOS: no se pudo estabecer la categoria de session de audio: '%s'\n", err == nil ? "unknown" : [[err description] UTF8String]);
+    } else {
+        r = true;
+        _categoriaActual = pCat;
+    }
+    return r;
+    //2025-07-06, deprecated on iOS7
 	/*
 	 kAudioSessionCategory_AmbientSound              = 'ambi',
 	 kAudioSessionCategory_SoloAmbientSound          = 'solo',
@@ -144,7 +254,7 @@ bool AUIOSAudioSession::establecerCategoria(UInt32 kAudioSessionCategory_paramtr
 	 kAudioSessionCategory_RecordAudio               = 'reca',
 	 kAudioSessionCategory_PlayAndRecord             = 'plar',
 	 kAudioSessionCategory_AudioProcessing           = 'proc'
-	 */
+	 * /
 	bool exito = false;
 	if(AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(kAudioSessionCategory_paramtro), &kAudioSessionCategory_paramtro)!=0){
 		PRINTF_ERROR("iOS: no se pudo estabecer la categoria de session de audio\n");
@@ -152,34 +262,52 @@ bool AUIOSAudioSession::establecerCategoria(UInt32 kAudioSessionCategory_paramtr
 		exito = true;
 		_categoriaActual = kAudioSessionCategory_paramtro;
 	}
-	return exito;
+	return exito;*/
 }
 
 //Util para cuando se esta grabando audio y se desea reproducir los sonidos por los parlantes.
 //O bien cuando el usuario coloca o quita los auriculares.
 //Cuando se establecer una categoria que implica grabacion de audio, automaticamente
 bool AUIOSAudioSession::sobreescribirSalida(bool haciaParlantes){
-	bool exito = false;
+    bool r = false;
+    NSError *err = nil;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    if(![session overrideOutputAudioPort:(haciaParlantes ? AVAudioSessionPortOverrideSpeaker : AVAudioSessionPortOverrideNone) error:&err]){
+        PRINTF_ERROR("iOS: no se pudo sobreescribir la ruta de salida de audio: '%s'.\n", err == nil ? "unknown" : [[err description] UTF8String]);
+    }
+    return r;
+    //2025-07-06, deprecated on iOS7
+	/*bool exito = false;
 	UInt32 sobreescripcionDeRuta = (haciaParlantes?kAudioSessionOverrideAudioRoute_Speaker:kAudioSessionOverrideAudioRoute_None);
 	if(AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(sobreescripcionDeRuta), &sobreescripcionDeRuta)){
 		PRINTF_ERROR("iOS: no se pudo sobreescribir la ruta de salida de audio\n");
 	} else {
 		exito = true;
 	}
-	return exito;
+	return exito;*/
 }
 
 bool AUIOSAudioSession::permitirCapturaDesdeBluetooth(bool permitirBluetooth){
-	bool exito = false;
+    bool r = false;
+    NBASSERT(FALSE) //unimplemented yet!
+    /*AVAudioSession *session = [AVAudioSession sharedInstance];
+    if(![session  error:&err]){
+        PRINTF_ERROR("iOS: no se pudo sobreescribir la ruta de salida de audio: '%s'.\n", err == nil ? "unknown" : [[err description] UTF8String]);
+    }*/
+    return r;
+    //2025-07-06, deprecated on iOS7
+	/*bool exito = false;
 	UInt32 bluetoothPermitido = (permitirBluetooth?1:0);
 	if(AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryEnableBluetoothInput, sizeof(bluetoothPermitido), &bluetoothPermitido)){
 		PRINTF_ERROR("iOS: no se pudo establecer que esta permitida captura desde bluetooth\n");
 	} else {
 		exito = true;
 	}
-	return exito;
+	return exito;*/
 }
 
+//2025-07-06, deprecated on iOS7
+/*
 void AUIOSAudioSession::escuchadorDeInterrupciones(void* datosDeUsuario, UInt32 estadoDeInterrupcion){
 	AUIOSAudioSession* sessionAudio = (AUIOSAudioSession*)datosDeUsuario;
 	if(estadoDeInterrupcion==kAudioSessionBeginInterruption){
@@ -194,10 +322,12 @@ void AUIOSAudioSession::escuchadorDeInterrupciones(void* datosDeUsuario, UInt32 
 		sessionAudio->_sessionInterrumpida	= false;
 		if(sessionAudio->_contextoOpenAL != NULL) alcMakeContextCurrent(sessionAudio->_contextoOpenAL);
 	}
-}
+}*/
 
+//2025-07-06, deprecated on iOS7
+/*
 void AUIOSAudioSession::escuchadorDeEventos(void* datosDeUsuario, AudioSessionPropertyID idPropiedad, UInt32 tamValorPropiedad, const void* valorPropiedad){
-	/*CAMBIOS ESCUCHABLES
+	/ *CAMBIOS ESCUCHABLES
 	 kAudioSessionProperty_AudioRouteChange (iOS 2.0)
 	 kAudioSessionProperty_CurrentHardwareOutputVolume (iOS 2.1)
 	 kAudioSessionProperty_AudioInputAvailable (iOS 2.2)
@@ -205,7 +335,7 @@ void AUIOSAudioSession::escuchadorDeEventos(void* datosDeUsuario, AudioSessionPr
 	 kAudioSessionProperty_InputSources (iOS 5.0)
 	 kAudioSessionProperty_OutputDestinations (iOS 5.0)
 	 kAudioSessionProperty_InputGainAvailable (iOS 5.0)
-	 kAudioSessionProperty_InputGainScalar (iOS 5.0)*/
+	 kAudioSessionProperty_InputGainScalar (iOS 5.0)* /
 	if(idPropiedad==kAudioSessionProperty_CurrentHardwareOutputVolume){ //(iOS 2.1)
 		Float32 nuevoVolumenSalida			= *((Float32*)valorPropiedad);
 		PRINTF_INFO("Sonido iOS: volumen de salida: %f\n", nuevoVolumenSalida);
@@ -243,7 +373,7 @@ void AUIOSAudioSession::escuchadorDeEventos(void* datosDeUsuario, AudioSessionPr
 		} else {
 			strCambioRuta->agregar(" (razon: desconocida)");
 		}
-		/*
+		/ *
 		 enum {
 		 kAudioSessionRouteChangeReason_Unknown                    = 0,
 		 kAudioSessionRouteChangeReason_NewDeviceAvailable         = 1,
@@ -254,12 +384,12 @@ void AUIOSAudioSession::escuchadorDeEventos(void* datosDeUsuario, AudioSessionPr
 		 kAudioSessionRouteChangeReason_WakeFromSleep              = 6,
 		 kAudioSessionRouteChangeReason_NoSuitableRouteForCategory = 7
 		 };
-		 */
+		 * /
 		strCambioRuta->agregar("\n");
 		PRINTF_INFO("%s", strCambioRuta->str());
 		strCambioRuta->liberar(NB_RETENEDOR_NULL);
 	}
-}
+}*/
 
 #endif
 

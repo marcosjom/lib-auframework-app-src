@@ -75,12 +75,6 @@
 			if(!_app->inicializarMultimedia(LEER_PRECACHE, LEER_CACHE, ESCRIBIR_CACHE, true /*initGraphics*/, 60)){
 				PRINTF_ERROR("No se pudo inicializar el motor multimedia\n"); NBASSERT(false);
 			} else {
-				//
-#				ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
-				//ALCcontext* contextoOpenAL = NULL; NBGestorSonidos::dameContexto(&contextoOpenAL);
-				//_sessionAudio->establecerContextoOpenAL(contextoOpenAL);
-#				endif
-				//
 				//_app->aplicarConfiguracion(); //[self activarIdiomaPreferido];
 				//Determinar la escala de la pantalla
 				const float pantallaEscala		= [_vistaOpenGL escalaParaAnchoNativo];
@@ -218,7 +212,6 @@
 	}
 	//Session de audio iOS
 #	ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
-	_sessionAudio->establecerContextoOpenAL(NULL);
 	_sessionAudio->desactivarSesion();
 #	endif
 	#ifdef CONFIG_NB_GESTOR_MEMORIA_REGISTRAR_BLOQUES

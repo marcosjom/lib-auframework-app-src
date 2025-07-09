@@ -117,8 +117,7 @@ typedef struct AUIOSMonoViewData_ {
 						data->audioSession	= new AUIOSAudioSession();
 						//data->audioSession->establecerCategoria(kAudioSessionCategory_PlayAndRecord);
 						//data->audioSession->sobreescribirSalida(true);
-						data->audioSession->establecerCategoria(data->audioSession->otroSonidoSeEstaReproduciendo() ? kAudioSessionCategory_AmbientSound : kAudioSessionCategory_SoloAmbientSound);
-						data->audioSession->activarSesion();
+						data->audioSession->establecerCategoria(data->audioSession->otroSonidoSeEstaReproduciendo() ? ENAUIOSAudioSessionCat_Ambient : ENAUIOSAudioSessionCat_SoloAmbient);
 #						endif
 						//
 						STAppCallbacks appCallbacks;
@@ -134,6 +133,9 @@ typedef struct AUIOSMonoViewData_ {
 							PRINTF_ERROR("No se pudo inicializar el motor grafico\n");
 							NBASSERT(false);
 						} else {
+#                           ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
+                            data->audioSession->activarSesion();
+#                           endif
 							//Sync layer scale with backing scale (enable high-res)
 							UIScreen* curScreen	= [window screen];
 							if(curScreen == nil){
@@ -207,7 +209,6 @@ typedef struct AUIOSMonoViewData_ {
 		if(data->viewContainer != nil) [data->viewContainer release]; data->viewContainer = nil;
 #		ifndef CONFIG_NB_UNSUPPORT_AUDIO_IO
 		if(data->audioSession != NULL){
-			data->audioSession->establecerContextoOpenAL(NULL);
 			data->audioSession->desactivarSesion();
 			delete data->audioSession;
 			data->audioSession = NULL;
@@ -639,7 +640,7 @@ typedef struct AUIOSMonoViewData_ {
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-	UIInterfaceOrientation r = 0;
+	UIInterfaceOrientation r = UIInterfaceOrientationPortrait;
 	const UI32 orient = NBMngrOSTools::getOrientationPrefered();
 	if(orient & ENAppOrientationBit_Portrait){
 		r = UIInterfaceOrientationPortrait;

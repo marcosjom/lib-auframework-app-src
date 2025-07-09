@@ -9,8 +9,19 @@
 #if !defined(Gameplay_iOS_AudioSession_h) && !defined(CONFIG_NB_UNSUPPORT_AUDIO_IO)
 #define Gameplay_iOS_AudioSession_h
 
-#include <OpenAL/alc.h>
-#include <AudioToolbox/AudioToolbox.h>
+//ENAUIOSAudioSessionCat
+
+typedef enum ENAUIOSAudioSessionCat_ {
+    ENAUIOSAudioSessionCat_Ambient = 0
+    , ENAUIOSAudioSessionCat_SoloAmbient
+    , ENAUIOSAudioSessionCat_Playback
+    , ENAUIOSAudioSessionCat_Record
+    , ENAUIOSAudioSessionCat_PlayAndRecord
+    , ENAUIOSAudioSessionCat_MultiRoute
+    //
+    , ENAUIOSAudioSessionCat_Count
+} ENAUIOSAudioSessionCat;
+
 
 class AUIOSAudioSession {
 	public:
@@ -23,20 +34,22 @@ class AUIOSAudioSession {
 		bool			sessionInterrumpida();
 		//
 		bool			otroSonidoSeEstaReproduciendo();
-		void			establecerContextoOpenAL(ALCcontext* contextoOpenAL);
-		bool			establecerCategoria(UInt32 kAudioSessionCategory_paramtro);
+		bool			establecerCategoria(const ENAUIOSAudioSessionCat cat);
 		bool			sobreescribirSalida(bool haciaParlantes);
 		bool			permitirCapturaDesdeBluetooth(bool permitirBluetooth);
 		//
-		static void		escuchadorDeInterrupciones(void* datosDeUsuario, UInt32 estadoDeInterrupcion);
-		static void		escuchadorDeEventos(void* datosDeUsuario, AudioSessionPropertyID idPropiedad, UInt32 tamValorPropiedad, const void* valorPropiedad);
+        void            sessionInterruptStarted();
+        void            sessionInterruptEnded();
+        //2025-07-06, deprecated on iOS7
+        //static void        escuchadorDeInterrupciones(void* datosDeUsuario, UInt32 estadoDeInterrupcion);
+		//static void	escuchadorDeEventos(void* datosDeUsuario, AudioSessionPropertyID idPropiedad, UInt32 tamValorPropiedad, const void* valorPropiedad);
 	protected:
 		bool			_sessionIniciada;		//
 		bool			_sessionActiva;			//determina si la session esta activa (inclusive por interrupciones)
 		bool			_sessionInterrumpida;	//determina si la session esta en una interrupcion
 		bool			_sessionEstabaActivaAntesDeInterrumpir;
-		UInt32			_categoriaActual;
-		ALCcontext*		_contextoOpenAL;
+        ENAUIOSAudioSessionCat _categoriaActual;
+        id              _delegate;  //to handle interruptions
 };
 
 #endif
