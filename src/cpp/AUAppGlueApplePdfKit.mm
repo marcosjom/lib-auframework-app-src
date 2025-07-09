@@ -386,7 +386,7 @@ void* AUAppGlueApplePdfKit::docOpenFromRenderJob(void* param, const STNBPdfRende
 															NBString_initWithSz(&imgData, 100 * 1024, 100 * 1024, 0.25f);
 															{
                                                                 STNBFileRef stream = NBFile_alloc(NULL);
-																if(!NBFile_openAsString(&stream, &imgData)){
+																if(!NBFile_openAsString(stream, &imgData)){
 																	NBASSERT(FALSE) //ERROR
 																} else {
 																	ENNBPdfRenderPageItmImgType imgType = ENNBPdfRenderPageItmImgType_Count;
@@ -396,7 +396,7 @@ void* AUAppGlueApplePdfKit::docOpenFromRenderJob(void* param, const STNBPdfRende
 																			//Save as JPEG
 																			STNBJpegWrite jWrite;
 																			NBJpegWrite_init(&jWrite);
-																			if(!NBJpegWrite_feedStart(&jWrite, bmpData, (bmpProps.bytesPerLine * bmpProps.size.height), bmpProps, &stream, 85, 10)){
+																			if(!NBJpegWrite_feedStart(&jWrite, bmpData, (bmpProps.bytesPerLine * bmpProps.size.height), bmpProps, stream, 85, 10)){
 																				r = FALSE; NBASSERT(FALSE)
 																			} else {
 																				SI32 ciclesCount = 0;
@@ -416,7 +416,7 @@ void* AUAppGlueApplePdfKit::docOpenFromRenderJob(void* param, const STNBPdfRende
 																		NBFile_unlock(stream);
 																	} else {
 																		//Save as PNG
-																		if(!NBPng_saveDataToFile(&bmpProps, bmpData, &stream, ENPngCompressLvl_9)){
+																		if(!NBPng_saveDataToFile(&bmpProps, bmpData, stream, ENPngCompressLvl_9)){
 																			r = FALSE; NBASSERT(FALSE)
 																		} else {
 																			imgType = ENNBPdfRenderPageItmImgType_Png;
@@ -1497,7 +1497,7 @@ ENMngrPdfKitRenderResult AUAppGlueApplePdfKit::renderContinue(void* param, void*
 																NBString_initWithSz(&imgData, 100 * 1024, 100 * 1024, 0.25f);
 																{
                                                                     STNBFileRef stream = NBFile_alloc(NULL);
-																	if(!NBFile_openAsString(&stream, &imgData)){
+																	if(!NBFile_openAsString(stream, &imgData)){
 																		NBASSERT(FALSE) //ERROR
 																	} else {
 																		ENNBPdfRenderPageItmImgType imgType = ENNBPdfRenderPageItmImgType_Count;
@@ -1507,7 +1507,7 @@ ENMngrPdfKitRenderResult AUAppGlueApplePdfKit::renderContinue(void* param, void*
 																				//Save as JPEG
 																				STNBJpegWrite jWrite;
 																				NBJpegWrite_init(&jWrite);
-																				if(!NBJpegWrite_feedStart(&jWrite, bmpData, (bmpProps.bytesPerLine * bmpProps.size.height), bmpProps, &stream, 85, 10)){
+																				if(!NBJpegWrite_feedStart(&jWrite, bmpData, (bmpProps.bytesPerLine * bmpProps.size.height), bmpProps, stream, 85, 10)){
 																					NBASSERT(FALSE)
 																				} else {
 																					SI32 ciclesCount = 0;
@@ -1527,7 +1527,7 @@ ENMngrPdfKitRenderResult AUAppGlueApplePdfKit::renderContinue(void* param, void*
 																			NBFile_unlock(stream);
 																		} else {
 																			//Save as PNG
-																			if(!NBPng_saveDataToFile(&bmpProps, bmpData, &stream, ENPngCompressLvl_9)){
+																			if(!NBPng_saveDataToFile(&bmpProps, bmpData, stream, ENPngCompressLvl_9)){
 																				NBASSERT(FALSE)
 																			} else {
 																				imgType = ENNBPdfRenderPageItmImgType_Png;
